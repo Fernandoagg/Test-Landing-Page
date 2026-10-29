@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados del proyecto */
+html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #fbf7f1;
+      color: #17132b;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      letter-spacing: -0.02em;
+    }
+    .pill-btn {
+      border-radius: 999px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      text-decoration: none;
+      user-select: none;
+    }
+    .pill-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(107, 60, 255, 0.25);
+    }
+    .pill-btn:active {
+      transform: translateY(0);
+    }
+    .pill-tag {
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      white-space: nowrap;
+    }
+    .scribble-underline {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .scribble-underline svg {
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 10px;
+      pointer-events: none;
+    }
+    @media (min-width: 640px) {
+      .scribble-underline svg {
+        bottom: -8px;
+        height: 12px;
+      }
+    }
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 35s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .tab-active {
+      background-color: #17132b !important;
+      color: #ffffff !important;
+      border-color: #17132b !important;
+    }
+    .tab-active span {
+      box-shadow: 0 0 0 2px #ffffff;
+    }
+    .custom-shadow {
+      box-shadow: 0 20px 40px -12px rgba(23, 19, 43, 0.1), 0 8px 16px -6px rgba(23, 19, 43, 0.05);
+    }
+    /* Estilización de scroll horizontal táctil */
+    .touch-scroll {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #c9b6ff transparent;
+    }
+    .touch-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .touch-scroll::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+    .touch-scroll::-webkit-scrollbar-thumb {
+      background: #c9b6ff;
+      border-radius: 10px;
+    }

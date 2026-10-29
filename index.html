@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+  <title>TEST Idiomas · Inglés especializado para Empresas y Organizaciones</title>
+  
+  <!-- Google Fonts: Bricolage Grotesque & Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="selection:bg-lima selection:text-tinta">
+
+  <!-- 1. BARRA DE NAVEGACIÓN SUPERIOR (Sticky y completamente responsiva) -->
+  <header class="sticky top-0 z-50 bg-[#fbf7f1]/95 backdrop-blur-md border-b border-[#e7e0d4]/80 transition-all duration-300">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Logotipo -->
+      <a class="flex flex-col select-none group mr-4 sm:mr-8 shrink-0" href="#hero">
+        <div class="flex items-center gap-1.5">
+          <span class="font-display font-extrabold text-2xl sm:text-[28px] leading-none tracking-tight text-tinta group-hover:text-violeta transition-colors">TEST</span>
+          <span class="inline-block w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-lima"></span>
+        </div>
+        <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.22em] text-violeta uppercase leading-none mt-1">IDIOMAS</span>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden lg:flex items-center gap-8 font-semibold text-[15px] text-[#5d5873] whitespace-nowrap">
+        <a class="hover:text-violeta transition-colors" href="#especialidades">Especialidades</a>
+        <a class="hover:text-violeta transition-colors" href="#ruta">Ruta del equipo</a>
+        <a class="hover:text-violeta transition-colors" href="#metodologia">Seguimiento</a>
+        <a class="hover:text-violeta transition-colors" href="#inversion">Inversión</a>
+        <a class="hover:text-violeta transition-colors" href="#preguntas">Preguntas</a>
+      </nav>
+
+      <!-- Botón CTA Header + Botón Hamburguesa Mobile -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
+        <a class="pill-btn h-9 sm:h-11 px-3.5 sm:px-6 bg-violeta text-white hover:bg-violeta/90 shadow-md text-xs sm:text-sm shadow-violeta/20 whitespace-nowrap" href="#formulario">
+          <span class="hidden sm:inline">Solicitar propuesta para mi equipo ↗</span>
+          <span class="sm:hidden">Cotizar ↗</span>
+        </a>
+
+        <!-- Botón menú móvil -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl text-tinta hover:bg-violeta/10 focus:outline-none transition-colors" aria-label="Abrir menú de navegación">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-borde bg-[#fbf7f1] px-4 pt-2 pb-6 space-y-3 font-semibold text-sm text-muted shadow-xl transition-all duration-300">
+      <a class="block py-2.5 px-3 rounded-lg hover:bg-violeta-light hover:text-violeta transition-colors border-b border-borde/40" href="#especialidades">Especialidades por industria</a>
+      <a class="block py-2.5 px-3 rounded-lg hover:bg-violeta-light hover:text-violeta transition-colors border-b border-borde/40" href="#ruta">Ruta de aprendizaje del equipo</a>
+      <a class="block py-2.5 px-3 rounded-lg hover:bg-violeta-light hover:text-violeta transition-colors border-b border-borde/40" href="#metodologia">Metodología y seguimiento</a>
+      <a class="block py-2.5 px-3 rounded-lg hover:bg-violeta-light hover:text-violeta transition-colors border-b border-borde/40" href="#inversion">Inversión corporativa</a>
+      <a class="block py-2.5 px-3 rounded-lg hover:bg-violeta-light hover:text-violeta transition-colors border-b border-borde/40" href="#preguntas">Preguntas frecuentes</a>
+      <div class="pt-2">
+        <a class="pill-btn w-full h-12 bg-violeta text-white hover:bg-violeta/90 shadow-md text-sm text-center" href="#formulario">
+          Solicitar propuesta para mi equipo ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO CORPORATIVO -->
+  <section class="relative pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 overflow-hidden border-b border-borde" id="hero">
+    <!-- Blobs difuminados pastel de fondo -->
+    <div class="absolute top-5 left-5 w-64 sm:w-96 h-64 sm:h-96 bg-violeta-pastel/40 rounded-full filter blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-0 left-1/4 w-60 sm:w-80 h-60 sm:h-80 bg-lima-pastel/45 rounded-full filter blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-10 right-5 w-64 sm:w-96 h-64 sm:h-96 bg-coral-pastel/35 rounded-full filter blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Texto del Hero -->
+        <div class="col-span-12 lg:col-span-7 pr-0 lg:pr-6 text-left">
+          <div class="inline-flex items-center gap-2 mb-4 sm:mb-5">
+            <span class="w-2 h-2 rounded-full bg-violeta animate-pulse"></span>
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta">
+              INGLÉS DIFERENTE. INGLÉS ESPECIALIZADO PARA ORGANIZACIONES.
+            </span>
+          </div>
+
+          <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[54px] leading-[1.12] sm:leading-[1.08] tracking-tight text-tinta mb-5 sm:mb-6">
+            El inglés que impulsa a tu equipo. Habla el idioma de 
+            <span class="text-violeta scribble-underline">
+              tu sector.
+              <svg preserveAspectRatio="none" viewBox="0 0 100 20">
+                <path d="M0 12 Q 25 18, 50 11 T 100 13" fill="none" stroke="#c9f45c" stroke-linecap="round" stroke-width="5"></path>
+              </svg>
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg leading-relaxed text-muted mb-6 sm:mb-8 max-w-2xl font-normal">
+            Plataforma digital de autoestudio con lecciones precargadas. Tu equipo construye una base sólida de inglés general (A1–B2) y se especializa en Negocios, Turismo, Gastronomía o Medicina.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-8">
+            <a class="pill-btn h-12 sm:h-14 px-6 sm:px-8 bg-violeta text-white hover:bg-violeta/90 text-sm sm:text-base shadow-lg shadow-violeta/25 text-center" href="#formulario">
+              Solicitar propuesta para mi equipo ↗
+            </a>
+            <a class="font-display font-bold text-sm sm:text-base text-tinta hover:text-violeta flex items-center justify-center sm:justify-start gap-1.5 transition-colors py-1" href="#especialidades">
+              Ver especialidades →
+            </a>
+          </div>
+
+          <!-- Feature badge en pill responsivo -->
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3 text-xs font-semibold text-tinta/85 bg-white/80 backdrop-blur-sm border border-borde py-2.5 px-4 rounded-2xl sm:rounded-full w-full sm:w-fit shadow-xs">
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="inline-block w-2 h-2 rounded-full bg-menta"></span>
+              <span class="font-bold text-violeta">100% en línea</span>
+            </div>
+            <span class="hidden sm:inline text-borde">|</span>
+            <span class="leading-snug">Autoestudio asincrónico · ≈ 5 h mínimas / semana · Reportes periódicos de seguimiento</span>
+          </div>
+        </div>
+
+        <!-- Columna Gráfica / Mockup Interactivo del Hero -->
+        <div class="col-span-12 lg:col-span-5 relative py-6 sm:py-8 mt-2 lg:mt-0">
+          <div class="relative w-full max-w-[440px] sm:max-w-[480px] mx-auto min-h-[380px] sm:min-h-[440px] flex items-center justify-center px-1 sm:px-0">
+            
+            <!-- Tarjeta rotada de fondo -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-violeta to-coral rounded-[28px] sm:rounded-[34px] transform -rotate-3 sm:-rotate-6 shadow-2xl opacity-90 scale-95"></div>
+
+            <!-- Tarjeta principal interactiva -->
+            <div class="relative w-full bg-white rounded-[24px] sm:rounded-[30px] p-5 sm:p-7 border border-borde transform rotate-1 sm:rotate-2 custom-shadow z-10">
+              
+              <div class="flex items-center justify-between mb-4 sm:mb-5">
+                <span class="pill-tag bg-violeta-light text-violeta font-display text-xs">
+                  <span class="w-2 h-2 rounded-full bg-violeta"></span>
+                  Negocios · Caso real
+                </span>
+                <span class="text-[11px] sm:text-xs font-bold text-muted bg-[#fbf7f1] px-2.5 py-1 rounded-full border border-borde">
+                  Mód. 5 · L-3
+                </span>
+              </div>
+
+              <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
+                <div class="bg-[#fbf7f1] p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-borde">
+                  <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted block mb-1">Contexto laboral (Español):</span>
+                  <p class="text-xs sm:text-sm font-medium text-tinta">"Revisemos el reporte trimestral con el equipo directivo."</p>
+                </div>
+
+                <div class="flex items-center justify-center my-1 text-violeta">
+                  <div class="flex items-center gap-1.5 sm:gap-2 bg-violeta/10 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold">
+                    <span>ES</span>
+                    <svg class="w-3.5 h-3.5 text-violeta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+                    </svg>
+                    <span>EN</span>
+                  </div>
+                </div>
+
+                <div class="bg-violeta/5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-violeta/20">
+                  <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-violeta block mb-1">Frase profesional nativa (Inglés):</span>
+                  <p class="font-display font-extrabold text-base sm:text-lg text-tinta leading-snug">
+                    “Let's review the quarterly report with the team.”
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center text-[11px] sm:text-xs font-bold mb-1.5">
+                  <span class="text-muted">Retención por repetición espaciada</span>
+                  <span class="text-violeta font-display">94% completado</span>
+                </div>
+                <div class="w-full h-2 sm:h-2.5 bg-[#ede6ff] rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-violeta to-menta rounded-full" style="width: 94%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Badges flotantes ajustados de manera responsiva para evitar overflow -->
+            <div class="absolute -top-3 sm:-top-4 left-2 sm:left-0 transform -rotate-3 z-20 shadow-md">
+              <span class="pill-tag bg-white text-tinta border border-tinta/10 text-[11px] sm:text-xs font-bold py-1 sm:py-1.5">✦ Running Meetings</span>
+            </div>
+            <div class="absolute -top-4 sm:-top-5 right-2 sm:right-0 transform rotate-4 sm:rotate-6 z-20 shadow-md">
+              <span class="pill-tag bg-lima text-tinta text-[11px] sm:text-xs font-bold py-1 sm:py-1.5">✦ Check-in & Hospitality</span>
+            </div>
+            <div class="absolute bottom-3 left-2 sm:-left-6 transform -rotate-4 sm:-rotate-6 z-20 shadow-md">
+              <span class="pill-tag bg-cielo text-tinta text-[11px] sm:text-xs font-bold py-1 sm:py-1.5">✦ Business Emails</span>
+            </div>
+            <div class="absolute -bottom-4 sm:-bottom-5 right-2 sm:right-2 transform -rotate-2 z-20 shadow-md">
+              <span class="pill-tag bg-menta text-tinta text-[11px] sm:text-xs font-bold py-1 sm:py-1.5">✦ Patient First Contact</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MARQUESINA INCLINADA -->
+  <div class="relative py-3.5 sm:py-4 bg-tinta transform -rotate-1 origin-left my-2 overflow-hidden z-20 border-y-2 border-lima">
+    <div class="marquee-container">
+      <div class="marquee-track flex items-center gap-6 sm:gap-8 text-white font-display font-bold text-base sm:text-lg md:text-[22px]">
+        <span>Let's schedule a follow-up meeting</span>
+        <span class="text-lima">✦</span>
+        <span>Welcome to your hotel, how can I help you?</span>
+        <span class="text-lima">✦</span>
+        <span>Culinary techniques & kitchen vocabulary</span>
+        <span class="text-lima">✦</span>
+        <span>First contact with the patient & medical terminology</span>
+        <span class="text-lima">✦</span>
+        <span class="text-lima">Tu organización. Tu sector. Su inglés.</span>
+        <span class="text-lima">✦</span>
+        <!-- Duplicado para loop continuo -->
+        <span>Let's schedule a follow-up meeting</span>
+        <span class="text-lima">✦</span>
+        <span>Welcome to your hotel, how can I help you?</span>
+        <span class="text-lima">✦</span>
+        <span>Culinary techniques & kitchen vocabulary</span>
+        <span class="text-lima">✦</span>
+        <span>First contact with the patient & medical terminology</span>
+        <span class="text-lima">✦</span>
+        <span class="text-lima">Tu organización. Tu sector. Su inglés.</span>
+        <span class="text-lima">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. FILA DE DATOS CLAVE -->
+  <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-14 sm:pb-20">
+    <div class="border-t-2 border-tinta pt-8 sm:pt-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        
+        <div class="border-l-2 border-tinta/20 pl-4 sm:pl-6">
+          <div class="font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-none text-tinta mb-2 flex items-center gap-1.5">
+            4 + 1
+            <span class="w-3 h-3 rounded-full bg-violeta inline-block"></span>
+          </div>
+          <p class="text-xs sm:text-sm font-semibold text-muted leading-snug">
+            especialidades técnicas más curso corto de Turismo Fundamental
+          </p>
+        </div>
+
+        <div class="border-l-2 border-tinta/20 pl-4 sm:pl-6">
+          <div class="font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-none text-tinta mb-2 flex items-center gap-1.5">
+            60–80 h
+            <span class="w-3 h-3 rounded-full bg-lima inline-block"></span>
+          </div>
+          <p class="text-xs sm:text-sm font-semibold text-muted leading-snug">
+            por nivel (≈ 3 meses con mínimo 5 h por semana de dedicación)
+          </p>
+        </div>
+
+        <div class="border-l-2 border-tinta/20 pl-4 sm:pl-6">
+          <div class="font-display font-extrabold text-3xl sm:text-4xl lg:text-[44px] leading-none text-tinta mb-2 flex items-center gap-1.5">
+            100%
+            <span class="text-xl sm:text-2xl text-violeta font-bold">digital</span>
+          </div>
+          <p class="text-xs sm:text-sm font-semibold text-muted leading-snug">
+            autoestudio asincrónico con lecciones precargadas, sin horarios fijos
+          </p>
+        </div>
+
+        <div class="border-l-2 border-tinta/20 pl-4 sm:pl-6">
+          <div class="font-display font-extrabold text-2xl sm:text-3xl lg:text-[36px] leading-tight text-tinta mb-2 flex items-center gap-1.5">
+            Examen diagnóstico
+            <span class="w-3 h-3 rounded-full bg-sol inline-block shrink-0"></span>
+          </div>
+          <p class="text-xs sm:text-sm font-semibold text-muted leading-snug">
+            evaluación de ubicación para cada integrante del equipo antes de iniciar
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SECCIÓN ESPECIALIDADES CON PESTAÑAS INTERACTIVAS COMPLETAS -->
+  <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16" id="especialidades">
+    <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+      <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-2 sm:mb-3">
+        ESPECIALIZACIÓN POR INDUSTRIA
+      </span>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-tinta">
+        El mismo idioma. El contexto real de tu organización.
+      </h2>
+    </div>
+
+    <!-- Pestañas interactivas tipo píldora -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
+      <button class="tab-btn pill-btn min-h-[42px] sm:h-12 px-4 sm:px-6 border-2 border-tinta tab-active text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all" data-tab="negocios">
+        <span class="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-violeta"></span>
+        Negocios y Administración
+      </button>
+      <button class="tab-btn pill-btn min-h-[42px] sm:h-12 px-4 sm:px-6 border-2 border-tinta bg-white text-tinta hover:bg-cielo/15 text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all" data-tab="turismo">
+        <span class="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-cielo"></span>
+        Hospitalidad y Turismo
+      </button>
+      <button class="tab-btn pill-btn min-h-[42px] sm:h-12 px-4 sm:px-6 border-2 border-tinta bg-white text-tinta hover:bg-coral/15 text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all" data-tab="gastronomia">
+        <span class="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-coral"></span>
+        Gastronomía
+      </button>
+      <button class="tab-btn pill-btn min-h-[42px] sm:h-12 px-4 sm:px-6 border-2 border-tinta bg-white text-tinta hover:bg-menta/15 text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all" data-tab="medicina">
+        <span class="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-menta"></span>
+        Inglés Médico
+      </button>
+    </div>
+
+    <!-- PANELES DINÁMICOS POR ESPECIALIDAD -->
+
+    <!-- PANEL 1: NEGOCIOS -->
+    <div id="panel-negocios" class="tab-panel bg-violeta-light rounded-3xl sm:rounded-[40px] p-5 sm:p-8 lg:p-12 border-2 border-violeta/30 shadow-xl mb-10 sm:mb-12 transition-all">
+      <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-violeta/20 text-xs font-bold text-violeta mb-4">
+            <span>01 / ESPECIALIDAD</span>
+            <span>·</span>
+            <span>Negocios y Administración</span>
+          </div>
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-tinta mb-4 leading-snug">
+            Inglés para reuniones, presentaciones y comunicación de negocios.
+          </h3>
+          <div class="bg-white/85 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-violeta/20 mb-5 sm:mb-6">
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-muted block mb-3">
+              Ruta estructurada: 4 módulos General + 3 módulos Especialidad (Total: 7 módulos · ≈ 21 meses)
+            </span>
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap mb-2">
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A2 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B2 General</span>
+              <span class="text-violeta font-bold">→</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-violeta text-white rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Negocios I</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-violeta text-white rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Negocios II</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-violeta text-white rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Negocios III</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-muted font-medium">60–80 h por nivel · Con dedicación estimada de mínimo 5 horas semanales.</p>
+          </div>
+          <div class="mb-6 sm:mb-8">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-tinta block mb-2 sm:mb-3">
+              Temario Oficial Desarrollado:
+            </span>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Presenting (Presentaciones)</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Running Meetings</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Performance Management</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Leadership</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Business Communications</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Interviewing & Hiring</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Networking & Small Talk</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-violeta/20">Scheduling & Office Admin</span>
+            </div>
+          </div>
+          <a class="pill-btn w-full sm:w-auto h-12 px-7 bg-violeta text-white hover:bg-violeta/90 text-sm shadow-md text-center" href="#formulario">
+            Solicitar propuesta de Negocios ↗
+          </a>
+        </div>
+        <div class="col-span-12 lg:col-span-5 flex justify-center mt-4 lg:mt-0">
+          <div class="w-full max-w-[300px] bg-white rounded-[40px] sm:rounded-[44px] border-[8px] sm:border-[10px] border-tinta p-4 shadow-2xl relative">
+            <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-tinta rounded-full mx-auto mb-4"></div>
+            <div class="bg-[#fbf7f1] rounded-2xl p-3 border border-borde mb-3">
+              <span class="text-[10px] font-extrabold uppercase text-violeta block">Simulación de reunión directiva</span>
+              <p class="text-xs font-bold text-tinta">Q3 Budget & Strategy Alignment</p>
+            </div>
+            <div class="space-y-3 mb-4 text-xs">
+              <div class="bg-gray-100 p-2.5 rounded-2xl rounded-tl-none border border-gray-200">
+                <span class="font-bold text-[10px] text-muted block">Directora Regional</span>
+                <p class="font-medium text-tinta">“Could you walk us through the variance in the operational expenses?”</p>
+              </div>
+              <div class="bg-violeta text-white p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[90%] shadow-sm">
+                <span class="font-bold text-[10px] text-white/80 block">Tu colaborador / Participante</span>
+                <p class="font-medium">“Certainly. As you can see on slide four, the surplus reflects optimized logistics.”</p>
+              </div>
+            </div>
+            <div class="bg-lima/30 border border-lima p-2.5 rounded-xl text-center">
+              <span class="text-[11px] font-extrabold text-tinta flex items-center justify-center gap-1">✓ Lección completada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: TURISMO (Oculto por defecto) -->
+    <div id="panel-turismo" class="tab-panel hidden bg-cielo-card rounded-3xl sm:rounded-[40px] p-5 sm:p-8 lg:p-12 border-2 border-cielo/40 shadow-xl mb-10 sm:mb-12 transition-all">
+      <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-cielo/30 text-xs font-bold text-cielo mb-4">
+            <span>02 / ESPECIALIDAD</span>
+            <span>·</span>
+            <span>Hospitalidad y Turismo</span>
+          </div>
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-tinta mb-4 leading-snug">
+            Atención al huésped, hospitalidad y excelencia en servicio bilingüe.
+          </h3>
+          <div class="bg-white/85 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-cielo/30 mb-5 sm:mb-6">
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-muted block mb-3">
+              Ruta estructurada: 4 módulos General + 2 módulos Especialidad (Total: 6 módulos · ≈ 18 meses)
+            </span>
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap mb-2">
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A2 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B2 General</span>
+              <span class="text-cielo font-bold">→</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-cielo text-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Turismo I</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-cielo text-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Turismo II</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-muted font-medium">60–80 h por nivel · Con dedicación estimada de mínimo 5 horas semanales.</p>
+          </div>
+          <div class="mb-6 sm:mb-8">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-tinta block mb-2 sm:mb-3">
+              Temario Oficial Desarrollado:
+            </span>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Front Desk & Concierge</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Atención a quejas y peticiones</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Instalaciones y amenidades</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Reservaciones y Check-out</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Tours & Local Guidance</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-cielo/30">Manejo de incidentes y traslados</span>
+            </div>
+          </div>
+          <a class="pill-btn w-full sm:w-auto h-12 px-7 bg-cielo text-tinta hover:bg-cielo/90 font-bold text-sm shadow-md text-center" href="#formulario">
+            Solicitar propuesta de Turismo ↗
+          </a>
+        </div>
+        <div class="col-span-12 lg:col-span-5 flex justify-center mt-4 lg:mt-0">
+          <div class="w-full max-w-[300px] bg-white rounded-[40px] sm:rounded-[44px] border-[8px] sm:border-[10px] border-tinta p-4 shadow-2xl relative">
+            <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-tinta rounded-full mx-auto mb-4"></div>
+            <div class="bg-[#fbf7f1] rounded-2xl p-3 border border-borde mb-3">
+              <span class="text-[10px] font-extrabold uppercase text-cielo block">Simulación de Front Desk</span>
+              <p class="text-xs font-bold text-tinta">Guest Check-in & Special Request</p>
+            </div>
+            <div class="space-y-3 mb-4 text-xs">
+              <div class="bg-gray-100 p-2.5 rounded-2xl rounded-tl-none border border-gray-200">
+                <span class="font-bold text-[10px] text-muted block">Huésped Internacional</span>
+                <p class="font-medium text-tinta">“Good evening, could you arrange an early airport shuttle for tomorrow morning?”</p>
+              </div>
+              <div class="bg-cielo text-tinta p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[90%] shadow-sm font-medium">
+                <span class="font-bold text-[10px] text-tinta/80 block">Recepcionista / Colaborador</span>
+                <p>“Certainly, Mr. Davies. I have booked your shuttle for 6:30 AM and arranged your express checkout.”</p>
+              </div>
+            </div>
+            <div class="bg-lima/30 border border-lima p-2.5 rounded-xl text-center">
+              <span class="text-[11px] font-extrabold text-tinta flex items-center justify-center gap-1">✓ Lección completada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: GASTRONOMÍA (Oculto por defecto) -->
+    <div id="panel-gastronomia" class="tab-panel hidden bg-[#ffe7e0] rounded-3xl sm:rounded-[40px] p-5 sm:p-8 lg:p-12 border-2 border-coral/40 shadow-xl mb-10 sm:mb-12 transition-all">
+      <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-coral/30 text-xs font-bold text-coral mb-4">
+            <span>03 / ESPECIALIDAD</span>
+            <span>·</span>
+            <span>Gastronomía</span>
+          </div>
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-tinta mb-4 leading-snug">
+            Cocina internacional, técnicas culinarias y servicio de sala.
+          </h3>
+          <div class="bg-white/85 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-coral/30 mb-5 sm:mb-6">
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-muted block mb-3">
+              Ruta estructurada: 4 módulos General + 2 módulos Especialidad (Total: 6 módulos · ≈ 18 meses)
+            </span>
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap mb-2">
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A2 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B2 General</span>
+              <span class="text-coral font-bold">→</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-coral text-white rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Gastronomía I</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-coral text-white rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Gastronomía II</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-muted font-medium">60–80 h por nivel · Con dedicación estimada de mínimo 5 horas semanales.</p>
+          </div>
+          <div class="mb-6 sm:mb-8">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-tinta block mb-2 sm:mb-3">
+              Temario Oficial Desarrollado:
+            </span>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Brigada de cocina & jerarquías</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Técnicas y cortes culinarios</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Vocabulario de salón y barra</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Alérgenos y dietas especiales</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Maridaje y cata básica</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-coral/30">Seguridad alimentaria e higiene</span>
+            </div>
+          </div>
+          <a class="pill-btn w-full sm:w-auto h-12 px-7 bg-coral text-white hover:bg-coral/90 text-sm shadow-md text-center" href="#formulario">
+            Solicitar propuesta de Gastronomía ↗
+          </a>
+        </div>
+        <div class="col-span-12 lg:col-span-5 flex justify-center mt-4 lg:mt-0">
+          <div class="w-full max-w-[300px] bg-white rounded-[40px] sm:rounded-[44px] border-[8px] sm:border-[10px] border-tinta p-4 shadow-2xl relative">
+            <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-tinta rounded-full mx-auto mb-4"></div>
+            <div class="bg-[#fbf7f1] rounded-2xl p-3 border border-borde mb-3">
+              <span class="text-[10px] font-extrabold uppercase text-coral block">Simulación en Cocina & Salón</span>
+              <p class="text-xs font-bold text-tinta">Dietary Needs & Order Accuracy</p>
+            </div>
+            <div class="space-y-3 mb-4 text-xs">
+              <div class="bg-gray-100 p-2.5 rounded-2xl rounded-tl-none border border-gray-200">
+                <span class="font-bold text-[10px] text-muted block">Chef Ejecutivo</span>
+                <p class="font-medium text-tinta">“Did table four confirm their allergy restrictions on the grilled salmon?”</p>
+              </div>
+              <div class="bg-coral text-white p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[90%] shadow-sm font-medium">
+                <span class="font-bold text-[10px] text-white/80 block">Capitán / Mesero</span>
+                <p>“Yes, Chef. Strict nut allergy confirmed. The kitchen team has sanitized the station.”</p>
+              </div>
+            </div>
+            <div class="bg-lima/30 border border-lima p-2.5 rounded-xl text-center">
+              <span class="text-[11px] font-extrabold text-tinta flex items-center justify-center gap-1">✓ Lección completada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 4: INGLÉS MÉDICO (Oculto por defecto) -->
+    <div id="panel-medicina" class="tab-panel hidden bg-menta-card rounded-3xl sm:rounded-[40px] p-5 sm:p-8 lg:p-12 border-2 border-menta/40 shadow-xl mb-10 sm:mb-12 transition-all">
+      <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-menta/30 text-xs font-bold text-menta mb-4">
+            <span>04 / ESPECIALIDAD</span>
+            <span>·</span>
+            <span>Inglés Médico</span>
+          </div>
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-tinta mb-4 leading-snug">
+            Comunicación clínica, anamnesis y terminología médica precisa.
+          </h3>
+          <div class="bg-white/85 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-menta/30 mb-5 sm:mb-6">
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-muted block mb-3">
+              Ruta estructurada: 4 módulos General + 5 módulos Especialidad (Total: 9 módulos · ≈ 27 meses)
+            </span>
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap mb-2">
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">A2 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B1 General</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white border-2 border-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs text-tinta">B2 General</span>
+              <span class="text-menta font-bold">→</span>
+              <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-menta text-tinta rounded-xl font-display font-bold text-[11px] sm:text-xs shadow-sm">Esp. Médico I a V</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-muted font-medium">60–80 h por nivel · Con dedicación estimada de mínimo 5 horas semanales.</p>
+          </div>
+          <div class="mb-6 sm:mb-8">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-tinta block mb-2 sm:mb-3">
+              Temario Oficial Desarrollado:
+            </span>
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Anamnesis e historial clínico</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Anatomía y sistemas corporales</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Farmacología y dosificación</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Comunicación empática con pacientes</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Triage y urgencias hospitalarias</span>
+              <span class="px-2.5 sm:px-3 py-1 bg-white rounded-full text-[11px] sm:text-xs font-bold text-tinta border border-menta/30">Estudios de diagnóstico e imagen</span>
+            </div>
+          </div>
+          <a class="pill-btn w-full sm:w-auto h-12 px-7 bg-menta text-tinta hover:bg-menta/90 font-bold text-sm shadow-md text-center" href="#formulario">
+            Solicitar propuesta de Medicina ↗
+          </a>
+        </div>
+        <div class="col-span-12 lg:col-span-5 flex justify-center mt-4 lg:mt-0">
+          <div class="w-full max-w-[300px] bg-white rounded-[40px] sm:rounded-[44px] border-[8px] sm:border-[10px] border-tinta p-4 shadow-2xl relative">
+            <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-tinta rounded-full mx-auto mb-4"></div>
+            <div class="bg-[#fbf7f1] rounded-2xl p-3 border border-borde mb-3">
+              <span class="text-[10px] font-extrabold uppercase text-menta block">Simulación en Consulta / Triage</span>
+              <p class="text-xs font-bold text-tinta">Patient Intake & Symptom Check</p>
+            </div>
+            <div class="space-y-3 mb-4 text-xs">
+              <div class="bg-gray-100 p-2.5 rounded-2xl rounded-tl-none border border-gray-200">
+                <span class="font-bold text-[10px] text-muted block">Médico Adscrito</span>
+                <p class="font-medium text-tinta">“Could you summarize the patient's chief complaint and onset of symptoms?”</p>
+              </div>
+              <div class="bg-menta text-tinta p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[90%] shadow-sm font-medium">
+                <span class="font-bold text-[10px] text-tinta/80 block">Personal Médico / Residente</span>
+                <p>“The patient reports severe abdominal pain that radiated to the right flank two hours ago.”</p>
+              </div>
+            </div>
+            <div class="bg-lima/30 border border-lima p-2.5 rounded-xl text-center">
+              <span class="text-[11px] font-extrabold text-tinta flex items-center justify-center gap-1">✓ Lección completada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Tarjetas de Especialidades Compactas Responsivas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 sm:mb-12">
+      
+      <!-- Card Turismo -->
+      <div class="bg-cielo-card rounded-2xl sm:rounded-[28px] p-5 sm:p-6 border-2 border-cielo/30 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="pill-tag bg-white text-cielo font-display text-xs border border-cielo/20">02 / Turismo</span>
+            <span class="text-xs font-bold text-tinta/70 bg-white/60 px-2 py-0.5 rounded-md">6 módulos</span>
+          </div>
+          <h4 class="font-display font-extrabold text-lg sm:text-xl text-tinta mb-2">Atención al huésped y excelencia de servicio</h4>
+          <p class="text-xs font-bold text-muted mb-3">4 niveles General + 2 Especialidad = 6 módulos (≈ 18 meses)</p>
+          <div class="bg-white/80 p-3 sm:p-3.5 rounded-xl border border-cielo/30 mb-3 space-y-1.5 text-xs text-tinta/90 font-medium">
+            <span class="text-[11px] font-extrabold uppercase text-cielo block mb-1">Temario oficial clave:</span>
+            <p>✦ Check-in y concierge</p>
+            <p>✦ Atención a huéspedes y quejas</p>
+            <p>✦ Servicios e instalaciones</p>
+            <p>✦ Emergencias y traslados</p>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-cielo/30">
+          <button class="card-switch-tab text-xs font-extrabold text-tinta hover:text-cielo flex items-center gap-1 cursor-pointer bg-transparent border-none p-0" data-switch="turismo">
+            Ver detalle y simulación →
+          </button>
+        </div>
+      </div>
+
+      <!-- Card Gastronomía -->
+      <div class="bg-[#ffe7e0] rounded-2xl sm:rounded-[28px] p-5 sm:p-6 border-2 border-coral/30 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="pill-tag bg-white text-coral font-display text-xs border border-coral/20">03 / Gastronomía</span>
+            <span class="text-xs font-bold text-tinta/70 bg-white/60 px-2 py-0.5 rounded-md">6 módulos</span>
+          </div>
+          <h4 class="font-display font-extrabold text-lg sm:text-xl text-tinta mb-2">Cocina internacional, técnicas y servicio</h4>
+          <p class="text-xs font-bold text-muted mb-3">4 niveles General + 2 Especialidad = 6 módulos (≈ 18 meses)</p>
+          <div class="bg-white/80 p-3 sm:p-3.5 rounded-xl border border-coral/30 mb-3 space-y-1.5 text-xs text-tinta/90 font-medium">
+            <span class="text-[11px] font-extrabold uppercase text-coral block mb-1">Temario oficial clave:</span>
+            <p>✦ Cocina internacional y brigada</p>
+            <p>✦ Técnicas y métodos de cocción</p>
+            <p>✦ Vocabulario de salón y barra</p>
+            <p>✦ Alergias y solicitudes especiales</p>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-coral/30">
+          <button class="card-switch-tab text-xs font-extrabold text-tinta hover:text-coral flex items-center gap-1 cursor-pointer bg-transparent border-none p-0" data-switch="gastronomia">
+            Ver detalle y simulación →
+          </button>
+        </div>
+      </div>
+
+      <!-- Card Medicina -->
+      <div class="bg-menta-card rounded-2xl sm:rounded-[28px] p-5 sm:p-6 border-2 border-menta/30 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="pill-tag bg-white text-menta font-display text-xs border border-menta/20">04 / Inglés Médico</span>
+            <span class="text-xs font-bold text-tinta/70 bg-white/60 px-2 py-0.5 rounded-md">9 módulos</span>
+          </div>
+          <h4 class="font-display font-extrabold text-lg sm:text-xl text-tinta mb-2">Comunicación clínica y terminología</h4>
+          <p class="text-xs font-bold text-muted mb-3">4 niveles General + 5 Especialidad = 9 módulos (≈ 27 meses)</p>
+          <div class="bg-white/80 p-3 sm:p-3.5 rounded-xl border border-menta/30 mb-3 space-y-1.5 text-xs text-tinta/90 font-medium">
+            <span class="text-[11px] font-extrabold uppercase text-menta block mb-1">Temario oficial clave:</span>
+            <p>✦ Consulta y anamnesis bilingüe</p>
+            <p>✦ Terminología clínica y anatomía</p>
+            <p>✦ Cuidados y dosificación</p>
+            <p>✦ Urgencias y comunicación empática</p>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-menta/30">
+          <button class="card-switch-tab text-xs font-extrabold text-tinta hover:text-menta flex items-center gap-1 cursor-pointer bg-transparent border-none p-0" data-switch="medicina">
+            Ver detalle y simulación →
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Banner con borde punteado: Opción Corta Turismo Fundamental -->
+    <div class="bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-8 border-2 border-dashed border-tinta flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-sol/25 px-3 py-1 rounded-full text-[11px] sm:text-xs font-extrabold text-tinta mb-2.5">
+          <span>⚡ OPCIÓN CORTA · RÁPIDA IMPLEMENTACIÓN</span>
+        </div>
+        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-tinta mb-2">
+          Curso de Inglés Fundamental para Turismo (1 nivel · 3 meses · 60–80 h)
+        </h3>
+        <p class="text-xs sm:text-sm text-muted leading-relaxed font-medium">
+          Diseñado para personal de atención al visitante que requiere comunicarse en corto plazo: básicos del idioma, direcciones, recepción, atención de quejas simples y protocolos de emergencias.
+        </p>
+      </div>
+      <a class="pill-btn w-full md:w-auto h-12 px-6 sm:px-7 border-2 border-tinta text-tinta hover:bg-tinta hover:text-white text-xs sm:text-sm shrink-0 whitespace-nowrap text-center" href="#formulario">
+        Incluir en mi propuesta ↗
+      </a>
+    </div>
+
+  </section>
+
+  <!-- 6. BANDA TIPOGRÁFICA -->
+  <div class="py-8 sm:py-12 bg-crema border-y border-borde overflow-hidden select-none">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
+      <p class="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-tinta tracking-tight text-center leading-tight">
+        Your work <span class="text-violeta">✦</span> Your world <span class="text-lima">✦</span> Your English <span class="text-coral">✦</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. SECCIÓN RUTA DE APRENDIZAJE ADAPTATIVA -->
+  <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20" id="ruta">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+      <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-2 sm:mb-3">
+        RUTA DE APRENDIZAJE ADAPTATIVA
+      </span>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-tinta">
+        Cada integrante de tu equipo inicia donde realmente lo necesita.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      
+      <!-- Izquierda: Timeline vertical responsivo -->
+      <div class="col-span-12 lg:col-span-5 space-y-6 sm:space-y-8 relative">
+        <div class="absolute left-[23px] sm:left-[27px] top-4 sm:top-6 bottom-4 sm:bottom-6 w-1 bg-gradient-to-b from-violeta to-coral -z-10"></div>
+        
+        <div class="flex items-start gap-4 sm:gap-6">
+          <div class="w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full bg-white border-4 border-violeta text-violeta font-display font-extrabold text-lg sm:text-xl flex items-center justify-center shrink-0 shadow-md">
+            01
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-tinta mb-1">Evaluación de ubicación inicial</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed font-normal">
+              Evaluamos a todos los participantes para posicionarlos en el nivel correcto (Nivel 1, 2, 3, 4 o directo a especialización). Incluye Certificación de Nivel General de Inglés.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 sm:gap-6">
+          <div class="w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full bg-white border-4 border-cielo text-cielo font-display font-extrabold text-lg sm:text-xl flex items-center justify-center shrink-0 shadow-md">
+            02
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-tinta mb-1">Tronco común de Inglés General (A1–B2)</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed font-normal">
+              4 niveles de 60 a 80 horas cada uno (≈ 3 meses por nivel, mínimo 5 h/semana): gramática funcional, vocabulario, conversaciones de audio y comprensión lectora.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 sm:gap-6">
+          <div class="w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full bg-white border-4 border-coral text-coral font-display font-extrabold text-lg sm:text-xl flex items-center justify-center shrink-0 shadow-md">
+            03
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-tinta mb-1">Especialización técnica (desde intermedio)</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed font-normal">
+              Transición hacia el léxico y las simulaciones reales de Negocios (3 niveles), Turismo (2), Gastronomía (2) o Medicina (5).
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 sm:gap-6">
+          <div class="w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full bg-lima border-4 border-tinta text-tinta font-display font-extrabold text-xl sm:text-2xl flex items-center justify-center shrink-0 shadow-md">
+            ✦
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-tinta mb-1">Adaptabilidad e imagen institucional</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed font-normal">
+              Algoritmo que adapta la duración de las lecciones según el desempeño. En proyectos corporativos: opción de personalización (<span class="font-semibold text-tinta">white label</span>) y planes a medida.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Derecha: Tarjeta Grande Componente Visual con scroll táctil limpio en mobile -->
+      <div class="col-span-12 lg:col-span-7 bg-white rounded-2xl sm:rounded-[36px] p-5 sm:p-7 lg:p-10 border border-borde custom-shadow">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-borde gap-2">
+          <div>
+            <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-1">VISUALIZACIÓN DE GRUPO</span>
+            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-tinta">Tronco Común → Especialización</h3>
+          </div>
+          <span class="text-xs font-bold text-muted bg-[#fbf7f1] px-3 py-1 rounded-full border border-borde self-start sm:self-auto">
+            Por nivel de entrada
+          </span>
+        </div>
+
+        <div class="space-y-5 sm:space-y-6">
+          
+          <!-- Grupo A -->
+          <div class="bg-[#fbf7f1] p-4 sm:p-5 rounded-2xl border border-borde">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-violeta"></span>
+                <span class="font-display font-bold text-xs sm:text-sm text-tinta">Grupo A: Principiantes (Inician desde A1)</span>
+              </div>
+              <span class="text-[11px] sm:text-xs font-semibold text-muted">Duración completa según especialidad</span>
+            </div>
+            
+            <!-- Contenedor con scroll horizontal suave para mobile -->
+            <div class="touch-scroll overflow-x-auto pb-2">
+              <div class="min-w-[540px] grid grid-cols-7 gap-1.5 text-center text-[10px] sm:text-[11px] font-bold">
+                <div class="bg-white border border-tinta py-2 rounded-lg">A1 General</div>
+                <div class="bg-white border border-tinta py-2 rounded-lg">A2 General</div>
+                <div class="bg-white border border-tinta py-2 rounded-lg">B1 General</div>
+                <div class="bg-white border border-tinta py-2 rounded-lg">B2 General</div>
+                <div class="col-span-3 bg-violeta text-white py-2 rounded-lg shadow-sm">Especialización Sectorial</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grupo B -->
+          <div class="bg-[#fbf7f1] p-4 sm:p-5 rounded-2xl border border-borde">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-cielo"></span>
+                <span class="font-display font-bold text-xs sm:text-sm text-tinta">Grupo B: Nivel Intermedio (Exentos de A1–A2)</span>
+              </div>
+              <span class="text-[11px] sm:text-xs font-semibold text-muted">Acreditación por diagnóstico</span>
+            </div>
+            
+            <div class="touch-scroll overflow-x-auto pb-2">
+              <div class="min-w-[540px] grid grid-cols-7 gap-1.5 text-center text-[10px] sm:text-[11px] font-bold">
+                <div class="bg-gray-200/80 text-muted py-2 rounded-lg line-through">A1 Exento</div>
+                <div class="bg-gray-200/80 text-muted py-2 rounded-lg line-through">A2 Exento</div>
+                <div class="bg-white border-2 border-cielo py-2 rounded-lg text-tinta">B1 Refuerzo</div>
+                <div class="bg-white border-2 border-cielo py-2 rounded-lg text-tinta">B2 Consolidación</div>
+                <div class="col-span-3 bg-cielo text-tinta py-2 rounded-lg shadow-sm font-extrabold">Especialidad Directa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grupo C -->
+          <div class="bg-[#fbf7f1] p-4 sm:p-5 rounded-2xl border border-borde">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-sol"></span>
+                <span class="font-display font-bold text-xs sm:text-sm text-tinta">Grupo C: Operación Turística Express</span>
+              </div>
+              <span class="text-[11px] sm:text-xs font-semibold text-muted">1 Nivel · 3 meses (60–80 h)</span>
+            </div>
+            <div class="bg-sol/20 border-2 border-sol p-3 rounded-xl text-center">
+              <span class="text-xs font-extrabold text-tinta">Turismo Fundamental · 1 nivel corto · Atención inmediata al visitante</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-borde flex flex-col sm:flex-row sm:items-center justify-between text-xs text-muted gap-2">
+          <span>✦ Mínimo recomendado: 5 horas por semana en autoestudio asincrónico</span>
+          <span class="font-bold text-tinta">Avance a ritmo propio de cada colaborador</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. SECCIÓN OSCURA BENTO: METODOLOGÍA Y REPORTE DE SEGUIMIENTO -->
+  <section class="bg-tinta text-white rounded-t-[32px] sm:rounded-t-[48px] pt-14 sm:pt-20 lg:pt-24 pb-16 sm:pb-24 lg:pb-28 px-4 sm:px-6 lg:px-8" id="metodologia">
+    <div class="max-w-[1440px] mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-lima block mb-2 sm:mb-3">
+          METODOLOGÍA Y VISIBILIDAD PARA TU ORGANIZACIÓN
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-white">
+          Aprendizaje natural para tu gente. Control y seguimiento para tu empresa.
+        </h2>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-12 gap-5 sm:gap-6">
+        
+        <!-- Tarjeta Grande con Tabla de Reportes -->
+        <div class="col-span-12 bg-tinta-card rounded-2xl sm:rounded-[30px] p-5 sm:p-7 lg:p-8 border border-white/10 shadow-2xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="pill-tag bg-sol text-tinta text-[10px] sm:text-xs font-extrabold">VISTA ILUSTRATIVA · REPORTE CORPORATIVO</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white">Reporte de avance y desempeño para Recursos Humanos</h3>
+            </div>
+            <span class="text-xs text-white/60 self-start sm:self-auto">Actualización periódica</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#e2def0] mb-5 sm:mb-6 font-normal">
+            Métricas precisas de tu equipo: horas de dedicación semanal, lecciones cubiertas, evaluaciones superadas y porcentaje global de avance.
+          </p>
+
+          <div class="text-[11px] text-white/50 mb-2 sm:hidden flex items-center gap-1.5">
+            <span>↔</span> Desliza la tabla lateralmente para ver todas las columnas
+          </div>
+
+          <div class="bg-tinta/80 rounded-xl sm:rounded-2xl border border-white/15 touch-scroll overflow-x-auto">
+            <table class="w-full text-left text-xs min-w-[580px]">
+              <thead class="bg-white/5 border-b border-white/10 font-bold text-[#e2def0] uppercase">
+                <tr>
+                  <th class="py-3 sm:py-3.5 px-3 sm:px-4">Participante</th>
+                  <th class="py-3 sm:py-3.5 px-3 sm:px-4">Nivel asignado</th>
+                  <th class="py-3 sm:py-3.5 px-3 sm:px-4">Horas dedicadas</th>
+                  <th class="py-3 sm:py-3.5 px-3 sm:px-4">Lecciones</th>
+                  <th class="py-3 sm:py-3.5 px-3 sm:px-4">Avance del nivel (%)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/10 font-medium text-white/90">
+                <tr class="hover:bg-white/5 transition-colors">
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-bold">Colaborador A · Gerencia</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <span class="px-2 py-0.5 rounded bg-violeta/40 border border-violeta text-[10px] sm:text-[11px]">Negocios - Mód. 2</span>
+                  </td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-display font-bold text-lima">6.5 h / sem</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">18 de 20 lecciones</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 sm:w-24 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div class="h-full bg-lima rounded-full" style="width: 90%"></div>
+                      </div>
+                      <span class="font-bold">90%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-white/5 transition-colors">
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-bold">Colaborador B · Operaciones</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <span class="px-2 py-0.5 rounded bg-cielo/30 border border-cielo text-[10px] sm:text-[11px]">Turismo - Mód. 1</span>
+                  </td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-display font-bold text-lima">5.2 h / sem</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">14 de 20 lecciones</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 sm:w-24 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div class="h-full bg-cielo rounded-full" style="width: 70%"></div>
+                      </div>
+                      <span class="font-bold">70%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-white/5 transition-colors">
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-bold">Colaborador C · Salud</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <span class="px-2 py-0.5 rounded bg-menta/30 border border-menta text-[10px] sm:text-[11px]">Médico - Mód. 3</span>
+                  </td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-display font-bold text-lima">7.0 h / sem</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">19 de 20 lecciones</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 sm:w-24 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div class="h-full bg-menta rounded-full" style="width: 95%"></div>
+                      </div>
+                      <span class="font-bold">95%</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot class="bg-white/10 font-bold border-t-2 border-white/20 text-white">
+                <tr>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">Desempeño del grupo</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 text-white/70">Resumen general</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4 font-display text-lima">Promedio: 6.2 h / sem</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">17 de 20 lecciones</td>
+                  <td class="py-3 sm:py-3.5 px-3 sm:px-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 sm:w-24 h-2 bg-white/30 rounded-full overflow-hidden">
+                        <div class="h-full bg-lima rounded-full" style="width: 85%"></div>
+                      </div>
+                      <span class="text-lima">85% promedio</span>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4 Tarjetas Bento Cuadradas -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 bg-tinta-card rounded-2xl sm:rounded-[30px] p-5 sm:p-7 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-violeta/30 flex items-center justify-center text-violeta-pastel mb-3 sm:mb-4 font-display text-xl sm:text-2xl font-bold">🧠</div>
+            <h4 class="font-display font-extrabold text-lg sm:text-xl text-white mb-2">Método declarativo y neurociencia</h4>
+            <p class="text-xs text-[#e2def0] leading-relaxed font-normal">Aprendizaje natural con repetición espaciada para retener léxico en la memoria a largo plazo.</p>
+          </div>
+        </div>
+
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 bg-tinta-card rounded-2xl sm:rounded-[30px] p-5 sm:p-7 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-lima/20 flex items-center justify-center text-lima mb-3 sm:mb-4 font-display text-xl sm:text-2xl font-bold">⚡</div>
+            <h4 class="font-display font-extrabold text-lg sm:text-xl text-white mb-2">Se adapta a cada persona</h4>
+            <p class="text-xs text-[#e2def0] leading-relaxed font-normal">Evaluaciones automatizadas continuas que recalibran la dificultad según el ritmo individual.</p>
+          </div>
+        </div>
+
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 bg-tinta-card rounded-2xl sm:rounded-[30px] p-5 sm:p-7 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-cielo/20 flex items-center justify-center text-cielo mb-3 sm:mb-4 font-display text-xl sm:text-2xl font-bold">🎯</div>
+            <h4 class="font-display font-extrabold text-lg sm:text-xl text-white mb-2">Las 4 habilidades del idioma</h4>
+            <p class="text-xs text-[#e2def0] leading-relaxed font-normal">Práctica balanceada de escucha, pronunciación en casos reales, lectura técnica y redacción.</p>
+          </div>
+        </div>
+
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 bg-tinta-card rounded-2xl sm:rounded-[30px] p-5 sm:p-7 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-coral/20 flex items-center justify-center text-coral mb-3 sm:mb-4 font-display text-xl sm:text-2xl font-bold">🛠</div>
+            <h4 class="font-display font-extrabold text-lg sm:text-xl text-white mb-2">Accesos y soporte técnico</h4>
+            <p class="text-xs text-[#e2def0] leading-relaxed font-normal">Entrega masiva de credenciales, inducción a la plataforma y soporte de L–V 8:00 a 18:00 hrs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. SECCIÓN INVERSIÓN / PRECIO CORPORATIVO -->
+  <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24" id="inversion">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <div class="col-span-12 lg:col-span-6 pr-0 lg:pr-8 text-left">
+        <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-2 sm:mb-3">
+          UNA INVERSIÓN EN TU EQUIPO
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-tinta mb-4 sm:mb-6">
+          Una propuesta a la medida de tu organización.
+        </h2>
+        <p class="text-base sm:text-lg text-muted leading-relaxed font-normal mb-6 sm:mb-8">
+          El plan se adapta al número de participantes, sector productivo y especialidades requeridas por tu empresa. Sin horarios forzosos ni traslados.
+        </p>
+        <div class="hidden lg:block space-y-3 text-sm text-tinta font-semibold">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-menta"></span>
+            <span>Acceso ilimitado 24/7 a lecciones precargadas</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-violeta"></span>
+            <span>Flexibilidad de estudio desde computadora o dispositivo móvil</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-sol"></span>
+            <span>Planes con descuentos por volumen de colaboradores</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-6">
+        <div class="bg-tinta rounded-2xl sm:rounded-[36px] p-6 sm:p-8 lg:p-10 text-white shadow-2xl border border-white/10 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-violeta/20 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-lima block mb-2">
+            PRECIO BASE MENSUAL POR PARTICIPANTE
+          </span>
+
+          <div class="flex items-baseline gap-2 mb-4 sm:mb-6">
+            <span class="font-display font-extrabold text-3xl sm:text-4xl md:text-[46px] leading-none text-white">$499 MXN</span>
+            <span class="text-white/70 text-sm sm:text-base font-medium">/ mes por persona</span>
+          </div>
+
+          <p class="text-xs text-white/60 mb-6 sm:mb-8 pb-5 sm:pb-6 border-b border-white/15">
+            Las promociones y condiciones preferenciales varían según el tamaño del grupo. Solicita tu cotización formal.
+          </p>
+
+          <div class="space-y-3.5 sm:space-y-4 mb-6 sm:mb-8 text-xs sm:text-sm font-medium">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-lima text-tinta font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span>Evaluación de ubicación inicial + ruta completa de Inglés General y Especialidad técnica.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-lima text-tinta font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span>Capacitación inicial de plataforma, envío de credenciales y soporte L–V 8:00–18:00 (GMT-6).</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-lima text-tinta font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span>Reportes periódicos de seguimiento y horas dedicadas para tu organización.</span>
+            </div>
+          </div>
+
+          <a class="pill-btn w-full h-12 sm:h-14 bg-violeta text-white hover:bg-violeta/90 text-sm sm:text-base font-bold shadow-lg shadow-violeta/30 text-center" href="#formulario">
+            Solicitar propuesta para mi equipo ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. SECCIÓN PREGUNTAS FRECUENTES -->
+  <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 border-t border-borde" id="preguntas">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+      <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-2 sm:mb-3">
+        RESOLVEMOS TUS DUDAS
+      </span>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-tinta">
+        Preguntas frecuentes sobre la capacitación corporativa
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-3.5 sm:space-y-4">
+      
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Todos los integrantes del grupo deben empezar desde cero?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          No. Realizamos una evaluación de diagnóstico inicial para posicionar a cada colaborador en su nivel adecuado (General o especialidad directa), optimizando tiempo y presupuesto.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Son clases en vivo con horarios fijos o autoestudio en plataforma?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          Es una plataforma digital de autoestudio asincrónico con lecciones interactivas precargadas. Cada colaborador avanza a su propio ritmo sin interferir con sus turnos laborales.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Cuánto tiempo debe dedicar cada participante por nivel?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          Cada nivel comprende entre 60 y 80 horas de estudio. Con una dedicación mínima recomendada de 5 horas semanales, cada participante concluye su nivel en aproximadamente 3 meses.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Cómo recibe nuestra organización los reportes de avance y desempeño?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          Enviamos reportes periódicos al departamento de Recursos Humanos o Capacitación con métricas de horas dedicadas, lecciones completadas y porcentaje de progreso del equipo.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Qué incluye el acompañamiento de implementación y soporte técnico?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          Incluye alta administrativa de participantes, entrega individual de accesos, inducción inicial en la plataforma y asistencia técnica de lunes a viernes de 8:00 a 18:00 hrs (GMT-6).
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-borde shadow-xs">
+        <div class="flex items-center justify-between cursor-pointer select-none">
+          <h3 class="font-display font-bold text-base sm:text-lg text-tinta pr-4">¿Ofrecen certificación de nivel o personalización para instituciones?</h3>
+          <div class="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-violeta-light text-violeta font-bold flex items-center justify-center shrink-0 text-sm sm:text-base">+</div>
+        </div>
+        <div class="mt-3 text-xs sm:text-sm text-muted leading-relaxed font-normal">
+          Sí, integramos opciones de certificación y personalización con imagen institucional (white label) y planes adaptados para convenios corporativos o gubernamentales.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. SECCIÓN FORMULARIO CORPORATIVO -->
+  <section class="py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-violeta-light to-[#fff4ec] border-t border-borde" id="formulario">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <div class="col-span-12 lg:col-span-5 text-left">
+          <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-violeta block mb-2 sm:mb-3">
+            DEMOS EL SIGUIENTE PASO
+          </span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-tight text-tinta mb-4 sm:mb-6">
+            Solicita una propuesta para tu organización.
+          </h2>
+          <p class="text-sm sm:text-base text-muted leading-relaxed mb-6 font-normal">
+            Compártenos los datos de tu empresa y te enviaremos una propuesta formal con la estructura de módulos sugerida y la cotización según tu volumen de colaboradores.
+          </p>
+          <div class="p-4 bg-white/70 rounded-2xl border border-violeta/20 text-xs text-tinta space-y-2">
+            <div class="font-bold text-violeta">Respuesta ágil garantizada:</div>
+            <p class="text-muted">Recibe la cotización directamente en tu correo con condiciones institucionales aplicables.</p>
+          </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-7">
+          <div class="bg-white rounded-2xl sm:rounded-[34px] p-5 sm:p-8 lg:p-10 border border-borde custom-shadow">
+            
+            <div class="mb-6 sm:mb-8">
+              <div class="flex items-center justify-between text-xs font-bold mb-2">
+                <span class="text-violeta">Paso 1 de 3: Datos de tu Organización</span>
+                <span class="text-muted">33% completado</span>
+              </div>
+              <div class="w-full h-2.5 bg-[#ede6ff] rounded-full overflow-hidden">
+                <div class="h-full bg-violeta rounded-full" style="width: 33%"></div>
+              </div>
+            </div>
+
+            <form class="space-y-4 sm:space-y-5" onsubmit="event.preventDefault();">
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-tinta mb-1.5">
+                  Nombre de la organización o empresa <span class="text-coral">*</span>
+                </label>
+                <input class="w-full h-11 sm:h-12 px-4 rounded-xl border border-borde bg-[#fbf7f1] text-sm font-medium focus:outline-none focus:border-violeta focus:ring-2 focus:ring-violeta/20 transition-all" placeholder="Ej. Grupo Hotelero del Sureste / Logística Médica MX" type="text" required/>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-extrabold uppercase tracking-wider text-tinta mb-1.5">
+                    Giro o sector de actividad <span class="text-coral">*</span>
+                  </label>
+                  <input class="w-full h-11 sm:h-12 px-4 rounded-xl border border-borde bg-[#fbf7f1] text-sm font-medium focus:outline-none focus:border-violeta focus:ring-2 focus:ring-violeta/20 transition-all" placeholder="Ej. Hotelería, Hospital, Corporativo..." required type="text"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-extrabold uppercase tracking-wider text-tinta mb-1.5">
+                    Número aprox. de participantes <span class="text-coral">*</span>
+                  </label>
+                  <input class="w-full h-11 sm:h-12 px-4 rounded-xl border border-borde bg-[#fbf7f1] text-sm font-medium focus:outline-none focus:border-violeta focus:ring-2 focus:ring-violeta/20 transition-all" min="1" placeholder="Ej. 25" required type="number"/>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-extrabold uppercase tracking-wider text-tinta mb-1.5">
+                    Correo electrónico de contacto <span class="text-coral">*</span>
+                  </label>
+                  <input class="w-full h-11 sm:h-12 px-4 rounded-xl border border-borde bg-[#fbf7f1] text-sm font-medium focus:outline-none focus:border-violeta focus:ring-2 focus:ring-violeta/20 transition-all" placeholder="contacto@empresa.com" required type="email"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-extrabold uppercase tracking-wider text-tinta mb-1.5">
+                    Teléfono / WhatsApp de enlace
+                  </label>
+                  <input class="w-full h-11 sm:h-12 px-4 rounded-xl border border-borde bg-[#fbf7f1] text-sm font-medium focus:outline-none focus:border-violeta focus:ring-2 focus:ring-violeta/20 transition-all" placeholder="+52 (55) 0000 0000" type="tel"/>
+                </div>
+              </div>
+
+              <div class="pt-3 sm:pt-4 flex items-center justify-end">
+                <button class="pill-btn w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-10 bg-violeta text-white hover:bg-violeta/90 text-sm sm:text-base shadow-lg shadow-violeta/25 cursor-pointer text-center" type="submit">
+                  Solicitar propuesta para mi equipo →
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER OSCURO COMPLETO -->
+  <footer class="bg-tinta text-white pt-14 sm:pt-20 pb-10 sm:pb-12 border-t-4 border-lima">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-12 gap-8 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
+        
+        <!-- Logo y descripción -->
+        <div class="col-span-12 md:col-span-6 lg:col-span-4">
+          <div class="flex flex-col select-none mb-4">
+            <div class="flex items-center gap-1.5">
+              <span class="font-display font-extrabold text-2xl sm:text-3xl leading-none tracking-tight text-white">TEST</span>
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-lima"></span>
+            </div>
+            <span class="text-[10px] sm:text-xs font-extrabold tracking-[0.22em] text-lima uppercase leading-none mt-1">IDIOMAS</span>
+          </div>
+          <p class="text-xs text-white/70 leading-relaxed font-normal mb-6 max-w-sm">
+            Plataforma de autoestudio asincrónico para empresas y organizaciones. Construyendo fluidez técnica desde el tronco común general hasta la especialización sectorial.
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <a class="pill-btn h-9 sm:h-10 px-4 sm:px-5 bg-lima text-tinta hover:bg-lima/90 text-xs font-bold whitespace-nowrap" href="#formulario">
+              WhatsApp institucional
+            </a>
+            <a class="pill-btn h-9 sm:h-10 px-4 sm:px-5 bg-violeta text-white hover:bg-violeta/90 text-xs font-bold whitespace-nowrap" href="#formulario">
+              Solicitar propuesta ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+          <h4 class="font-display font-bold text-xs sm:text-sm text-white mb-3 sm:mb-4 uppercase tracking-wider">Navegación</h4>
+          <ul class="space-y-2 sm:space-y-2.5 text-xs text-white/70 font-medium">
+            <li><a class="hover:text-lima transition-colors" href="#hero">Inicio</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Especialidades</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#ruta">Ruta del equipo</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#metodologia">Seguimiento</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#inversion">Inversión</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#preguntas">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Especialidades -->
+        <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+          <h4 class="font-display font-bold text-xs sm:text-sm text-white mb-3 sm:mb-4 uppercase tracking-wider">Especialidades</h4>
+          <ul class="space-y-2 sm:space-y-2.5 text-xs text-white/70 font-medium">
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Negocios y Administración</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Hospitalidad y Turismo</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Gastronomía y Alimentos</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Inglés Médico y Clínico</a></li>
+            <li><a class="hover:text-lima transition-colors" href="#especialidades">Turismo Fundamental (Curso corto)</a></li>
+          </ul>
+        </div>
+
+        <!-- Atención Institucional -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+          <h4 class="font-display font-bold text-xs sm:text-sm text-white mb-3 sm:mb-4 uppercase tracking-wider">Atención Institucional</h4>
+          <div class="space-y-2 sm:space-y-2.5 text-xs text-white/70 font-medium">
+            <p>✉ Correo: <span class="text-white font-semibold">empresas@testidiomas.com</span></p>
+            <p>📞 Enlace corporativo: <span class="text-white font-semibold">+52 (55) 0000 0000</span></p>
+            <p>⏰ Soporte técnico: <span class="text-lima font-bold">Lunes a Viernes 8:00 a 18:00 hrs (GMT-6)</span></p>
+            <p class="pt-2 text-white/50 text-[11px]">Acceso 24/7 disponible desde cualquier dispositivo con internet.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright y legales -->
+      <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50 gap-3 text-center md:text-left">
+        <div>© 2026 TEST Idiomas · Todos los derechos reservados.</div>
+        <div class="flex items-center gap-4 sm:gap-6">
+          <a class="hover:text-white transition-colors underline" href="#">Aviso de privacidad</a>
+          <span>México (GMT-6)</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript de la aplicación -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
