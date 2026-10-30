@@ -9,26 +9,21 @@ export default {
       colors: {
         crema: '#fbf7f1',
         tinta: '#17132b',
-        'tinta-dark': '#0f0c1e',
-        'tinta-card': '#231d40',
-        violeta: '#6b3cff',
-        'violeta-light': '#ede6ff',
-        'violeta-pastel': '#c9b6ff',
-        lima: '#c9f45c',
-        'lima-pastel': '#e6fb9f',
-        coral: '#ff6b4a',
-        'coral-pastel': '#ffc2b0',
-        cielo: '#4cc2f5',
-        'cielo-card': '#e0f4fd',
-        menta: '#38d39f',
-        'menta-card': '#ddf8ee',
-        sol: '#ffc93c',
+        'tinta-muted': '#5d5873',
+        violeta: '#2B1B7A',
+        'violeta-hover': '#20135d',
+        'violeta-light': '#f4f1fa',
+        'violeta-border': '#d8d0ee',
         borde: '#e7e0d4',
-        muted: '#5d5873'
+        'borde-subtle': '#f0ebe1'
       },
       fontFamily: {
-        display: ['"Bricolage Grotesque"', 'sans-serif'],
-        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+        display: ['"Source Serif 4"', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+      },
+      borderRadius: {
+        btn: '8px'
       }
     }
   },

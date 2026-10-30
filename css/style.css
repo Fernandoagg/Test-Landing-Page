@@ -2,107 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados del proyecto */
+/* Estilos base del proyecto TEST */
 html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background-color: #fbf7f1;
-      color: #17132b;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    h1, h2, h3, h4, .font-heading {
-      font-family: 'Bricolage Grotesque', sans-serif;
-      letter-spacing: -0.02em;
-    }
-    .pill-btn {
-      border-radius: 999px;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      text-decoration: none;
-      user-select: none;
-    }
-    .pill-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px -8px rgba(107, 60, 255, 0.25);
-    }
-    .pill-btn:active {
-      transform: translateY(0);
-    }
-    .pill-tag {
-      border-radius: 999px;
-      padding: 0.35rem 0.85rem;
-      font-weight: 700;
-      font-size: 0.8125rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      white-space: nowrap;
-    }
-    .scribble-underline {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    .scribble-underline svg {
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 10px;
-      pointer-events: none;
-    }
-    @media (min-width: 640px) {
-      .scribble-underline svg {
-        bottom: -8px;
-        height: 12px;
-      }
-    }
-    .marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .marquee-track {
-      display: inline-flex;
-      animation: marquee 35s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .tab-active {
-      background-color: #17132b !important;
-      color: #ffffff !important;
-      border-color: #17132b !important;
-    }
-    .tab-active span {
-      box-shadow: 0 0 0 2px #ffffff;
-    }
-    .custom-shadow {
-      box-shadow: 0 20px 40px -12px rgba(23, 19, 43, 0.1), 0 8px 16px -6px rgba(23, 19, 43, 0.05);
-    }
-    /* Estilización de scroll horizontal táctil */
-    .touch-scroll {
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: #c9b6ff transparent;
-    }
-    .touch-scroll::-webkit-scrollbar {
-      height: 6px;
-    }
-    .touch-scroll::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
-    }
-    .touch-scroll::-webkit-scrollbar-thumb {
-      background: #c9b6ff;
-      border-radius: 10px;
-    }
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbf7f1;
+  color: #17132b;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografía de títulos en Serif elegante */
+h1, h2, h3, h4, .font-serif-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+/* Enfoque accesible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2B1B7A;
+  outline-offset: 2px;
+}
+
+/* Botones rectangulares sobrios (8px de radio) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #2B1B7A;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #20135d;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #17132b;
+  border: 1px solid #e7e0d4;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #f4f1fa;
+  border-color: #d8d0ee;
+}
+
+/* Botones selectores de pestañas */
+.tab-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #e7e0d4;
+  background-color: #ffffff;
+  color: #17132b;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.tab-trigger:hover {
+  border-color: #2B1B7A;
+}
+
+.tab-trigger.is-active {
+  background-color: #2B1B7A;
+  color: #ffffff;
+  border-color: #2B1B7A;
+  font-weight: 600;
+}
+
+/* Acordeón de preguntas frecuentes */
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #17132b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid #e7e0d4;
+  transition: color 0.15s ease;
+}
+
+.faq-trigger:hover {
+  color: #2B1B7A;
+}
+
+.faq-content {
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+
+/* Respeto estricto a preferencias de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,111 +1,71 @@
-# TEST Idiomas · Landing Page B2B Corporativa
+# TEST Idiomas · Landing Page para Empresas y Organizaciones
 
-Landing page comercial y de captación de leads orientada al segmento corporativo (**B2B**), diseñada para presentar y cotizar programas de **inglés especializado para empresas, hoteles, clínicas y organizaciones**.
-
----
-
-## 🎯 Objetivo del Sitio Web
-
-Convertir prospectos institucionales (Directores de RRHH, Gerentes de Capacitación, Directores de Operaciones y Líderes de Área) en oportunidades comerciales mediante:
-1. Presentación clara de las **5 especialidades de inglés técnico** adaptadas al puesto de trabajo.
-2. Oferta de valor con **diagnóstico inicial sin costo** para el personal de la empresa.
-3. Transparencia en la metodología, reportes de desempeño y beneficios corporativos.
-4. Un **formulario de cotización interactivo** de alta conversión con respuesta inmediata.
+Landing page oficial de **TEST Idiomas** ("Inglés diferente, inglés especializado"). Formación en inglés técnico y laboral para empresas, instituciones y organizaciones en cuatro especialidades: **Negocios**, **Turismo**, **Gastronomía** y **Medicina**.
 
 ---
 
-## 👥 Público Objetivo
+## 🧭 Estructura y Dirección Visual
 
-- **Empresas del sector turístico y hotelero**: Cadenas de hoteles, resorts, agencias y operadores receptivos.
-- **Restaurantes y grupos gastronómicos**: Chefs, brigadas de cocina y personal de servicio de sala.
-- **Instituciones médicas y de salud**: Clínicas, hospitales con turismo médico y centros de diagnóstico.
-- **Empresas corporativas y financieras**: Equipos de ventas internacionales, finanzas y operaciones.
-- **Departamentos de Recursos Humanos y Capacitación (L&D)**.
-
----
-
-## 📚 Especialidades y Programas Formativos
-
-El sitio destaca 5 módulos clave con currícula técnica y vocabulario aplicado:
-
-| Especialidad | Enfoque Principal |
-| :--- | :--- |
-| **Hospitalidad y Turismo** | Recepción, concierge, atención a huéspedes VIP y resolución de incidencias. |
-| **Inglés Gastronómico** | Términos culinarios, servicio en mesa, maridaje y alérgenos alimentarios. |
-| **Inglés Médico** | Consulta clínica, terminología médica, consentimientos y urgencias con pacientes angloparlantes. |
-| **Negocios y Finanzas** | Negociaciones ejecutivas, presentaciones de impacto, contratos y correos comerciales. |
-| **Turismo Fundamental** | Guías turísticos, transportación, logística y atención al visitante internacional. |
+El diseño sigue una línea editorial formal y sobria inspirada en referencias de educación para adultos (+16 años):
+- **Tipografía**: Títulos en **Source Serif 4** (peso regular, mayúsculas/minúsculas de oración) y cuerpo en **Plus Jakarta Sans**.
+- **Paleta sobria**: Fondo crema institucional (`#fbf7f1`), texto tinta (`#17132b`), acento violeta corporativo (`#2B1B7A`), fondos de apoyo blanco y neutros.
+- **Botones**: Rectángulos con radio pequeño de 8 px (sin elementos infantiles ni estilo pill exagerado).
+- **Redacción formal**: Tono usted/corporativo, sin exclamaciones ni modismos juveniles.
+- **Compatibilidad multiplataforma**: Se destaca de forma sobria la disponibilidad en **celular, tableta y computadora** (vía app o navegador web).
 
 ---
 
-## 🧭 Estructura y Secciones de la Landing
+## 📐 Estructura de Secciones (En orden estricto)
 
-1. **Header Sticky & Navegación**: Acceso directo a secciones y botón de contacto prioritario (*Cotizar para mi empresa*).
-2. **Hero Section**: Promesa de valor principal, métricas de confianza, insignias de calidad y doble CTA de conversión.
-3. **Marquee de Confianza**: Cinta continua de industrias y perfiles que utilizan la plataforma.
-4. **Módulo de Diagnóstico Gratuito**: Invitación a evaluar el nivel del equipo sin costo previo.
-5. **Especialidades Interactivas (Tabs Dinámicos)**: Explorador de contenidos, competencias desarrolladas y temarios por industria.
-6. **Metodología y Ventajas B2B**: Detalle del seguimiento a RRHH (asistencia, progreso, exámenes y reportes mensuales).
-7. **Preguntas Frecuentes (Acordeón FAQ)**: Dudas habituales sobre horarios flexibles, niveles MCER (A1 a C1) y certificaciones.
-8. **Formulario de Cotización**: Captura estructurada de datos (empresa, participantes, industria y objetivos) con pantalla de éxito dinámica.
-9. **Footer Corporativo**: Información de soporte técnico, horarios de atención (GMT-6) y aviso de privacidad.
-
----
-
-## 🎨 Identidad Visual y Paleta de Color
-
-- **Fondo base (`crema`)**: `#fbf7f1`
-- **Texto principal / fondos oscuros (`tinta`)**: `#17132b`
-- **Acento primario (`violeta`)**: `#6b3cff`
-- **Acento de contraste y éxito (`lima`)**: `#c9f45c`
-- **Colores secundarios de soporte**: Coral (`#ff6b4a`), Cielo (`#4cc2f5`), Menta (`#38d39f`), Sol (`#ffc93c`).
-- **Tipografías**:
-  - Títulos y encabezados: **Bricolage Grotesque**
-  - Textos de lectura y componentes: **Plus Jakarta Sans**
+1. **Header sobrio**: Logotipo TEST Idiomas, menú de navegación anclado y botón "Solicitar propuesta".
+2. **Hero**: Propuesta de valor clara, CTA principal, franja de tres datos ("4 especialidades", "100% en línea", "≈5 horas por semana") y mención de disponibilidad en celular, tableta y computadora con íconos lineales.
+3. **Banda oscura**: Franja en violeta oscuro (`#2B1B7A`) con una sola frase destacada de impacto institucional.
+4. **Por qué TEST**: Tres bloques con ícono lineal, título corto y una línea descriptiva (Contenido por sector, Ruta según el nivel, Seguimiento para la organización).
+5. **Especialidades**: Selector simple de cuatro opciones en botones anchos (Negocios, Turismo, Gastronomía, Medicina) con fichas resumidas (estructura de módulos, duración estimada y máximo 3 temas clave avalados por presentaciones CID).
+6. **Cómo funciona**: Tres pasos horizontales (Examen de ubicación, 4 módulos de inglés general, Módulos de especialización) con nota única al pie sobre la dedicación (60 a 80 horas por módulo en ≈3 meses).
+7. **Seguimiento para la organización**: Descripción del reporte mensual (horas de estudio, avance individual y avance del grupo) y vista ilustrativa tipo tabla sin datos personales ficticios.
+8. **Precio**: Tarjeta sobria con la tarifa base de **$499 MXN al mes por persona** y mención a variaciones según el grupo.
+9. **Preguntas frecuentes**: Acordeón accesible (máximo 6 preguntas) cubriendo dispositivos, edad mínima (+16 años), examen de ubicación, flexibilidad, reportes mensuales y metodología.
+10. **Formulario institucional**: Dirigido a organizaciones (empresa, giro, contacto, participantes, correo, teléfono/WhatsApp, especialidad, comentarios y casilla de privacidad). Sin barras ficticias de pasos.
+11. **Footer sobrio**: Navegación, horarios de atención, placeholders claros de contacto y aviso de privacidad.
 
 ---
 
-## 🛠️ Arquitectura Técnica
+## 📌 Datos Pendientes de Confirmar con el Cliente
 
-- **HTML5 Semántico**: Marcado limpio con accesibilidad, etiquetas de sección y optimización SEO.
-- **Tailwind CSS 3.4**: Sistema de diseño basado en utilidades con purga automática para producción.
-- **JavaScript Moderno (ES Modules)**:
-  - Menú hamburguesa móvil reactivo.
-  - Conmutador dinámico de pestañas de especialidades.
-  - Acordeón FAQ accesible.
-  - Manejador de envío de formulario asíncrono con confirmación visual.
-  - Scroll suave con compensación de barra de navegación fija.
-- **Vite 5**: Entorno de desarrollo ultrarrápido y empaquetador para producción.
-
----
-
-## 📁 Archivos del Proyecto
-
-```text
-D:\TestLanding\
-├── index.html            # Marcado semántico de la landing
-├── css/
-│   └── style.css         # Directivas Tailwind y componentes personalizados
-├── js/
-│   └── main.js           # Lógica interactiva en Vanilla JS
-├── tailwind.config.js    # Tokens de diseño (colores, fuentes y breakpoints)
-├── postcss.config.js     # Configuración de PostCSS
-├── package.json          # Dependencias y scripts npm
-├── README.md             # Documentación del proyecto
-└── dist/                 # Archivos finales minificados listos para desplegar
-```
+1. **Estructura y módulos de Turismo**:
+   - Brief: 5 módulos totales / 18 meses.
+   - Presentación CID: 4 módulos de inglés general + 2 módulos de especialidad (6 en total).
+2. **Estructura y módulos de Gastronomía**:
+   - Brief: 6 módulos totales / 18 meses.
+   - Presentación CID: 4 módulos de inglés general + 2 módulos de especialidad.
+3. **Canales de contacto oficial**:
+   - Dirección de correo institucional para atención de solicitudes.
+   - Número oficial de teléfono / WhatsApp.
+4. **Aviso de privacidad**:
+   - URL definitiva o texto legal del aviso de privacidad para el enlace del formulario y footer.
 
 ---
 
-## ⚡ Comandos de Trabajo
+## 🛠️ Tecnologías y Construcción
+
+- **Vite 5**
+- **Tailwind CSS 3.4**
+- **JavaScript Vanilla** (sin frameworks pesados, 100% estático para hosting en GoDaddy)
+- **HTML5 Semántico y Accesibilidad**: Cumplimiento WCAG AA, focus visible y atributos ARIA (`role="tab"`, `aria-selected`, `aria-expanded`).
+
+### Comandos de desarrollo
 
 ```bash
-# Iniciar servidor de desarrollo en tiempo real (http://localhost:5173)
+# Instalar dependencias (si se requiere)
+npm install
+
+# Servidor local de desarrollo
 npm run dev
 
-# Generar versión optimizada para producción en carpeta dist/
+# Compilar para producción (carpeta dist/)
 npm run build
 
-# Probar localmente el resultado de producción
+# Previsualizar el build generado
 npm run preview
 ```

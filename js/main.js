@@ -1,169 +1,164 @@
 document.addEventListener("DOMContentLoaded", () => {
-      
-      // 1. Menú Móvil Hamburguesa
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const hamburgerIcon = document.getElementById("hamburger-icon");
-      const closeIcon = document.getElementById("close-icon");
+  // 1. Navegación móvil accesible
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
 
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener("click", () => {
-          const isClosed = mobileMenu.classList.contains("hidden");
-          if (isClosed) {
-            mobileMenu.classList.remove("hidden");
-            hamburgerIcon.classList.add("hidden");
-            closeIcon.classList.remove("hidden");
-          } else {
-            mobileMenu.classList.add("hidden");
-            hamburgerIcon.classList.remove("hidden");
-            closeIcon.classList.add("hidden");
-          }
-        });
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+      mobileMenuBtn.setAttribute("aria-expanded", String(!isExpanded));
+      mobileMenu.classList.toggle("hidden");
+      hamburgerIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
+    });
 
-        // Cerrar menú al hacer clic en cualquier enlace
-        mobileMenu.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            hamburgerIcon.classList.remove("hidden");
-            closeIcon.classList.add("hidden");
-          });
-        });
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+        hamburgerIcon?.classList.remove("hidden");
+        closeIcon?.classList.add("hidden");
+      });
+    });
+  }
+
+  // 2. Selector de Especialidades (Tabs accesibles)
+  const tabTriggers = document.querySelectorAll("[role='tab']");
+  const tabPanels = document.querySelectorAll("[role='tabpanel']");
+
+  function selectTab(targetId) {
+    tabTriggers.forEach((btn) => {
+      const isMatch = btn.getAttribute("aria-controls") === targetId;
+      btn.setAttribute("aria-selected", String(isMatch));
+      if (isMatch) {
+        btn.classList.add("is-active");
+      } else {
+        btn.classList.remove("is-active");
+      }
+    });
+
+    tabPanels.forEach((panel) => {
+      if (panel.id === targetId) {
+        panel.classList.remove("hidden");
+      } else {
+        panel.classList.add("hidden");
+      }
+    });
+  }
+
+  tabTriggers.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const panelId = btn.getAttribute("aria-controls");
+      if (panelId) selectTab(panelId);
+    });
+
+    // Soporte teclado (flechas izquierda/derecha)
+    btn.addEventListener("keydown", (e) => {
+      const tabsArray = Array.from(tabTriggers);
+      const currentIndex = tabsArray.indexOf(btn);
+      let nextIndex = null;
+
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        nextIndex = (currentIndex + 1) % tabsArray.length;
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        nextIndex = (currentIndex - 1 + tabsArray.length) % tabsArray.length;
       }
 
-      // 2. Especialidades: Pestañas Interactivas Dinámicas
-      const tabButtons = document.querySelectorAll(".tab-btn");
-      const tabPanels = document.querySelectorAll(".tab-panel");
-      const cardSwitchButtons = document.querySelectorAll(".card-switch-tab");
-
-      function switchTab(tabId) {
-        // Actualizar estado botones de pestañas
-        tabButtons.forEach(btn => {
-          const isCurrent = btn.getAttribute("data-tab") === tabId;
-          if (isCurrent) {
-            btn.classList.add("tab-active", "bg-tinta", "text-white");
-            btn.classList.remove("bg-white", "text-tinta");
-          } else {
-            btn.classList.remove("tab-active", "bg-tinta", "text-white");
-            btn.classList.add("bg-white", "text-tinta");
-          }
-        });
-
-        // Ocultar / Mostrar paneles
-        tabPanels.forEach(panel => {
-          if (panel.id === `panel-${tabId}`) {
-            panel.classList.remove("hidden");
-          } else {
-            panel.classList.add("hidden");
-          }
-        });
+      if (nextIndex !== null) {
+        e.preventDefault();
+        tabsArray[nextIndex].focus();
+        const panelId = tabsArray[nextIndex].getAttribute("aria-controls");
+        if (panelId) selectTab(panelId);
       }
+    });
+  });
 
-      tabButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          const tab = btn.getAttribute("data-tab");
-          if (tab) switchTab(tab);
-        });
-      });
+  // 3. Acordeón accesible de Preguntas Frecuentes
+  const faqButtons = document.querySelectorAll(".faq-trigger");
 
-      // Conexión desde las tarjetas resumen inferiores a las pestañas superiores
-      cardSwitchButtons.forEach(cardBtn => {
-        cardBtn.addEventListener("click", () => {
-          const tab = cardBtn.getAttribute("data-switch");
-          if (tab) {
-            switchTab(tab);
-            const especialidadesSection = document.getElementById("especialidades");
-            if (especialidadesSection) {
-              const headerOffset = 90;
-              const elementPosition = especialidadesSection.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-            }
-          }
-        });
-      });
+  faqButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const panelId = btn.getAttribute("aria-controls");
+      const content = document.getElementById(panelId);
+      const icon = btn.querySelector(".faq-icon");
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
 
-      // 3. FAQ Acordeón Interactivo
-      const faqCards = document.querySelectorAll("#preguntas .bg-white");
-      faqCards.forEach((card, idx) => {
-        const header = card.querySelector(".cursor-pointer");
-        const answer = card.querySelector(".mt-3");
-        const icon = card.querySelector(".w-7, .w-8");
-        
-        if (header && answer && icon) {
-          if (idx !== 0) {
-            answer.style.display = "none";
-            icon.textContent = "+";
-          } else {
-            answer.style.display = "block";
-            icon.textContent = "×";
-          }
-
-          header.addEventListener("click", () => {
-            const isOpen = answer.style.display === "block";
-            
-            // Cerrar todos
-            faqCards.forEach(c => {
-              const a = c.querySelector(".mt-3");
-              const ic = c.querySelector(".w-7, .w-8");
-              if (a) a.style.display = "none";
-              if (ic) ic.textContent = "+";
-            });
-
-            // Abrir seleccionado si estaba cerrado
-            if (!isOpen) {
-              answer.style.display = "block";
-              icon.textContent = "×";
-            }
-          });
+      // Cerrar otros acordeones si se desea mantener uno solo abierto
+      faqButtons.forEach((otherBtn) => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute("aria-expanded", "false");
+          const otherPanelId = otherBtn.getAttribute("aria-controls");
+          const otherContent = document.getElementById(otherPanelId);
+          const otherIcon = otherBtn.querySelector(".faq-icon");
+          if (otherContent) otherContent.classList.add("hidden");
+          if (otherIcon) otherIcon.textContent = "+";
         }
       });
 
-      // 4. Envío de Formulario con Estado de Éxito
-      const form = document.querySelector("#formulario form");
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const btn = form.querySelector("button[type=submit]");
-          const originalText = btn.innerHTML;
-          btn.innerHTML = "Enviando solicitud...";
-          btn.style.opacity = "0.7";
-          btn.disabled = true;
+      // Alternar estado actual
+      btn.setAttribute("aria-expanded", String(!isExpanded));
+      if (content) {
+        content.classList.toggle("hidden");
+      }
+      if (icon) {
+        icon.textContent = isExpanded ? "+" : "−";
+      }
+    });
+  });
 
-          setTimeout(() => {
-            const formContainer = form.closest(".bg-white");
-            if (formContainer) {
-              formContainer.innerHTML = `
-                <div style="text-align: center; padding: 36px 16px;">
-                  <div style="width: 58px; height: 58px; border-radius: 50%; background: #c9f45c; color: #17132b; font-weight: 800; font-size: 28px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 10px 25px -5px rgba(201, 244, 92, 0.5);">✓</div>
-                  <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; color: #17132b; margin-bottom: 10px;">¡Solicitud recibida con éxito!</h3>
-                  <p style="font-size: 14px; color: #5d5873; max-width: 440px; margin: 0 auto 24px; line-height: 1.6;">
-                    Recibimos la información de tu organización. Un asesor corporativo preparará la propuesta con la cotización ajustada a tu grupo.
-                  </p>
-                  <div style="display: inline-block; padding: 8px 16px; background: #ede6ff; color: #6b3cff; border-radius: 999px; font-size: 12px; font-weight: 700;">
-                    Atención de Lunes a Viernes 8:00 a 18:00 hrs (GMT-6)
-                  </div>
-                </div>
-              `;
-            }
-          }, 600);
-        });
+  // 4. Validación del Formulario de Solicitud Institucional
+  // NOTA TÉCNICA: El envío real mediante servicio backend (PHP / API de correo)
+  // se conectará en el entorno de producción. Por regla del proyecto, no se simula
+  // un estado de éxito ficticio al cliente.
+  const form = document.getElementById("proposal-form");
+  const formFeedback = document.getElementById("form-feedback");
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
       }
 
-      // 5. Scroll suave compensando el sticky navbar
-      document.querySelectorAll("a[href^='#']").forEach(link => {
-        link.addEventListener("click", (e) => {
-          const targetId = link.getAttribute("href");
-          if (targetId && targetId !== "#") {
-            const target = document.querySelector(targetId);
-            if (target) {
-              e.preventDefault();
-              const headerOffset = window.innerWidth < 640 ? 70 : 90;
-              const elementPosition = target.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-            }
-          }
-        });
-      });
+      const submitBtn = form.querySelector("button[type='submit']");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-70", "cursor-not-allowed");
+      }
 
+      if (formFeedback) {
+        formFeedback.classList.remove("hidden");
+        formFeedback.innerHTML = `
+          <div class="p-4 rounded-lg bg-violeta-light border border-violeta-border text-tinta text-sm leading-relaxed">
+            <p class="font-semibold text-violeta mb-1">Información validada localmente</p>
+            <p>Los datos requeridos fueron completados correctamente. El endpoint de procesamiento y envío por correo quedará habilitado al vincular el servicio de producción (PHP / servidor de correo del cliente).</p>
+          </div>
+        `;
+        formFeedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
     });
+  }
+
+  // 5. Desplazamiento suave compensando la barra de navegación fija
+  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const targetId = anchor.getAttribute("href");
+      if (targetId && targetId !== "#") {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerHeight = document.querySelector("header")?.offsetHeight || 72;
+          const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+          window.scrollTo({
+            top: targetTop,
+            behavior: "smooth"
+          });
+        }
+      }
+    });
+  });
+});
