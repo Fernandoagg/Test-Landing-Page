@@ -76,37 +76,79 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 3. Acordeón accesible de Preguntas Frecuentes
+  // La altura se anima con grid-template-rows (ver .faq-content en style.css)
   const faqButtons = document.querySelectorAll(".faq-trigger");
 
   faqButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const panelId = btn.getAttribute("aria-controls");
       const content = document.getElementById(panelId);
-      const icon = btn.querySelector(".faq-icon");
       const isExpanded = btn.getAttribute("aria-expanded") === "true";
 
       // Cerrar otros acordeones si se desea mantener uno solo abierto
       faqButtons.forEach((otherBtn) => {
         if (otherBtn !== btn) {
           otherBtn.setAttribute("aria-expanded", "false");
-          const otherPanelId = otherBtn.getAttribute("aria-controls");
-          const otherContent = document.getElementById(otherPanelId);
-          const otherIcon = otherBtn.querySelector(".faq-icon");
-          if (otherContent) otherContent.classList.add("hidden");
-          if (otherIcon) otherIcon.textContent = "+";
+          const otherContent = document.getElementById(otherBtn.getAttribute("aria-controls"));
+          if (otherContent) otherContent.classList.remove("is-open");
         }
       });
 
       // Alternar estado actual
       btn.setAttribute("aria-expanded", String(!isExpanded));
       if (content) {
-        content.classList.toggle("hidden");
-      }
-      if (icon) {
-        icon.textContent = isExpanded ? "+" : "−";
+        content.classList.toggle("is-open", !isExpanded);
       }
     });
   });
+
+  // 3.1 Movimiento sutil: entrada al hacer scroll y contador del hero
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = document.querySelectorAll(".reveal");
+  const counters = document.querySelectorAll("[data-count]");
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    // Cada elemento aparece una sola vez
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+    revealItems.forEach((el) => revealObserver.observe(el));
+
+    // El HTML ya contiene el valor final; aquí solo se anima de 0 a ese valor
+    const animateCount = (el) => {
+      const target = Number(el.dataset.count);
+      const duration = 900;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach((el) => counterObserver.observe(el));
+  }
 
   // 4. Validación del Formulario de Solicitud Institucional
   // NOTA TÉCNICA: El envío real mediante servicio backend (PHP / API de correo)
@@ -133,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (formFeedback) {
         formFeedback.classList.remove("hidden");
         formFeedback.innerHTML = `
-          <div class="p-4 rounded-lg bg-violeta-light border border-violeta-border text-tinta text-sm leading-relaxed">
-            <p class="font-semibold text-violeta mb-1">Información validada localmente</p>
+          <div class="p-4 rounded-lg bg-marino-light border border-marino-border text-tinta text-sm leading-relaxed">
+            <p class="font-semibold text-marino mb-1">Información validada localmente</p>
             <p>Los datos requeridos fueron completados correctamente. El endpoint de procesamiento y envío por correo quedará habilitado al vincular el servicio de producción (PHP / servidor de correo del cliente).</p>
           </div>
         `;
