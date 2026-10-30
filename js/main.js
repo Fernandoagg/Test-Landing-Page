@@ -27,31 +27,69 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Selector de Especialidades (Tabs accesibles)
   const tabTriggers = document.querySelectorAll("[role='tab']");
   const tabPanels = document.querySelectorAll("[role='tabpanel']");
+  const tabDots = document.querySelectorAll("#tab-dots .tab-dot");
+  const tabList = document.querySelector("[role='tablist']");
 
-  function selectTab(targetId) {
-    tabTriggers.forEach((btn) => {
+  // direction: 1 = siguiente, -1 = anterior (define el lado desde el que entra la ficha)
+  function selectTab(targetId, direction = 0) {
+    tabTriggers.forEach((btn, i) => {
       const isMatch = btn.getAttribute("aria-controls") === targetId;
       btn.setAttribute("aria-selected", String(isMatch));
-      if (isMatch) {
-        btn.classList.add("is-active");
-      } else {
-        btn.classList.remove("is-active");
+      btn.classList.toggle("is-active", isMatch);
+      tabDots[i]?.classList.toggle("is-active", isMatch);
+
+      // Mantener visible la pestaña activa en la fila deslizable de móvil
+      if (isMatch && tabList && tabList.scrollWidth > tabList.clientWidth) {
+        const offset = btn.getBoundingClientRect().left - tabList.getBoundingClientRect().left;
+        tabList.scrollTo({ left: tabList.scrollLeft + offset - 16, behavior: "smooth" });
       }
     });
 
     tabPanels.forEach((panel) => {
-      if (panel.id === targetId) {
-        panel.classList.remove("hidden");
-      } else {
-        panel.classList.add("hidden");
+      const isMatch = panel.id === targetId;
+      panel.classList.toggle("hidden", !isMatch);
+      if (isMatch) {
+        panel.style.setProperty("--panel-dx", `${direction * 16}px`);
+        panel.classList.remove("panel-enter");
+        void panel.offsetWidth; // reinicia la animación
+        panel.classList.add("panel-enter");
       }
     });
   }
 
+  function selectTabByOffset(step) {
+    const tabsArray = Array.from(tabTriggers);
+    const current = tabsArray.findIndex((btn) => btn.getAttribute("aria-selected") === "true");
+    const next = (current + step + tabsArray.length) % tabsArray.length;
+    selectTab(tabsArray[next].getAttribute("aria-controls"), step);
+  }
+
+  // Gesto de deslizar sobre la ficha (móvil)
+  const tabPanelsBox = document.getElementById("tab-panels");
+  if (tabPanelsBox) {
+    let startX = 0;
+    let startY = 0;
+
+    tabPanelsBox.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    tabPanelsBox.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      const dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        selectTabByOffset(dx < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+  }
+
   tabTriggers.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const tabsArray = Array.from(tabTriggers);
+      const current = tabsArray.findIndex((t) => t.getAttribute("aria-selected") === "true");
       const panelId = btn.getAttribute("aria-controls");
-      if (panelId) selectTab(panelId);
+      if (panelId) selectTab(panelId, Math.sign(tabsArray.indexOf(btn) - current));
     });
 
     // Soporte teclado (flechas izquierda/derecha)
@@ -70,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         tabsArray[nextIndex].focus();
         const panelId = tabsArray[nextIndex].getAttribute("aria-controls");
-        if (panelId) selectTab(panelId);
+        if (panelId) selectTab(panelId, nextIndex > currentIndex ? 1 : -1);
       }
     });
   });
@@ -102,9 +140,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3.1 Movimiento sutil: entrada al hacer scroll y contador del hero
+  // 3.1 Mini ejercicio de la tarjeta de lección
+  const quiz = document.getElementById("hero-quiz");
+  if (quiz) {
+    const options = quiz.querySelectorAll(".quiz-option");
+    const feedback = quiz.querySelector(".quiz-feedback");
+    const progress = document.querySelector(".quiz-progress");
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        const isCorrect = option.dataset.correct === "true";
+        if (feedback) {
+          feedback.textContent = option.dataset.feedback || "";
+          feedback.classList.toggle("is-correct", isCorrect);
+          feedback.classList.toggle("is-wrong", !isCorrect);
+        }
+
+        if (isCorrect) {
+          option.classList.add("is-correct");
+          options.forEach((o) => { o.disabled = true; });
+          if (progress) progress.style.width = "80%";
+        } else {
+          option.classList.add("is-wrong");
+          option.disabled = true;
+        }
+      });
+    });
+  }
+
+  // 3.2 Barra fija de propuesta en móvil: oculta mientras se ven el hero, el formulario o el footer
+  const mobileCta = document.getElementById("mobile-cta");
+  const ctaHideZones = ["hero", "formulario"].map((id) => document.getElementById(id))
+    .concat(document.querySelector("footer"))
+    .filter(Boolean);
+
+  if (mobileCta && ctaHideZones.length && "IntersectionObserver" in window) {
+    const visibleZones = new Set();
+    const ctaObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleZones.add(entry.target);
+        else visibleZones.delete(entry.target);
+      });
+      const show = visibleZones.size === 0;
+      mobileCta.classList.toggle("is-shown", show);
+      mobileCta.setAttribute("aria-hidden", String(!show));
+      if (show) {
+        mobileCta.removeAttribute("inert");
+      } else {
+        mobileCta.setAttribute("inert", "");
+      }
+      mobileCta.inert = !show;
+    });
+    ctaHideZones.forEach((zone) => ctaObserver.observe(zone));
+  }
+
+  // 3.3 Movimiento sutil: entrada al hacer scroll, línea de pasos y contador del hero
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const revealItems = document.querySelectorAll(".reveal");
+  const revealItems = document.querySelectorAll(".reveal, .draw-line");
   const counters = document.querySelectorAll("[data-count]");
 
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {

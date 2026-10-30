@@ -60,8 +60,13 @@ textarea:focus-visible {
 
 .btn-primary:hover {
   background-color: #0A1F38;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px -4px rgba(15, 42, 74, 0.35);
+}
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -4px rgba(15, 42, 74, 0.35);
+  }
 }
 
 .btn-secondary {
@@ -83,38 +88,213 @@ textarea:focus-visible {
 .btn-secondary:hover {
   background-color: #EEF2F7;
   border-color: #CBD6E4;
-  transform: translateY(-2px);
 }
 
-/* Tarjetas con elevación sutil al pasar el cursor */
+/* Tarjetas con elevación sutil al pasar el cursor (solo dispositivos con puntero) */
 .card-lift {
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.card-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -12px rgba(15, 42, 74, 0.28);
+@media (hover: hover) {
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -12px rgba(15, 42, 74, 0.28);
+  }
+}
+
+/* Respuesta táctil: ligera compresión al presionar */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.tab-trigger:active,
+.quiz-option:active,
+.faq-trigger:active,
+#mobile-menu-btn:active {
+  transform: scale(0.98);
+  transition-duration: 0.08s;
+}
+
+.faq-trigger:active {
+  background-color: #fbf7f1;
+}
+
+/* Subtítulo de sección con línea de acento */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0F2A4A;
+}
+
+.eyebrow::before {
+  content: "";
+  flex: none;
+  width: 1.25rem;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.eyebrow-light {
+  color: #CBD6E4;
+}
+
+.eyebrow-light::before {
+  background-color: #F2A93B;
+}
+
+/* En móvil la barra inferior sustituye al botón del header */
+@media (max-width: 1023px) {
+  .js .header-cta {
+    display: none;
+  }
+}
+
+/* Mini ejercicio de la tarjeta de lección */
+html:not(.js) .quiz {
+  display: none;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #e7e0d4;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #17132b;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+@media (hover: hover) {
+  .quiz-option:not(:disabled):hover {
+    border-color: #0F2A4A;
+  }
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.is-correct {
+  border-color: #0F2A4A;
+  background-color: #EEF2F7;
+  color: #0F2A4A;
+  font-weight: 600;
+}
+
+.quiz-option.is-correct::after {
+  content: "✓";
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.quiz-option.is-wrong {
+  background-color: #fbf7f1;
+  color: #5d5873;
+  text-decoration: line-through;
+}
+
+.quiz-feedback.is-correct {
+  color: #0F2A4A;
+  font-weight: 600;
+}
+
+.quiz-feedback.is-wrong {
+  color: #17132b;
+}
+
+.quiz-progress {
+  transition: width 0.5s ease;
 }
 
 /* Botones selectores de pestañas */
 .tab-trigger {
-  width: 100%;
+  width: auto;
   text-align: left;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 8px;
   border: 1px solid #e7e0d4;
   background-color: #ffffff;
   color: #17132b;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
 
-.tab-trigger:hover {
-  border-color: #0F2A4A;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px -8px rgba(15, 42, 74, 0.3);
+@media (min-width: 768px) {
+  .tab-trigger {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  .tab-trigger:hover {
+    border-color: #0F2A4A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -8px rgba(15, 42, 74, 0.3);
+  }
+}
+
+/* Fila de pestañas deslizable en móvil, sin barra de desplazamiento visible */
+.tabs-scroll {
+  scrollbar-width: none;
+  scroll-padding-inline: 1rem;
+}
+
+.tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Entrada de ficha al cambiar de especialidad (una vez por cambio) */
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--panel-dx, 0px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.panel-enter {
+  animation: panel-in 0.3s ease;
+}
+
+/* Indicador de ficha activa en móvil */
+.tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #CBD6E4;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.tab-dot.is-active {
+  width: 18px;
+  background-color: #0F2A4A;
 }
 
 .tab-trigger.is-active {
@@ -133,7 +313,8 @@ textarea:focus-visible {
   padding: 0;
 }
 
-.steps::before {
+.steps::before,
+.steps::after {
   content: "";
   position: absolute;
   left: 1.75rem;
@@ -141,6 +322,23 @@ textarea:focus-visible {
   bottom: 1.75rem;
   width: 1px;
   background-color: #CBD6E4;
+}
+
+/* Trazo marino que recorre la línea una sola vez al entrar en pantalla */
+.steps::after {
+  width: 2px;
+  margin-left: -0.5px;
+  background-color: #0F2A4A;
+  transform-origin: top;
+  transition: transform 0.9s ease 0.15s;
+}
+
+.js .steps.draw-line::after {
+  transform: scaleY(0);
+}
+
+.js .steps.draw-line.is-visible::after {
+  transform: none;
 }
 
 .step {
@@ -171,13 +369,24 @@ textarea:focus-visible {
     gap: 2.5rem;
   }
 
-  .steps::before {
+  .steps::before,
+  .steps::after {
     left: 0;
     right: 0;
     top: 1.75rem;
     bottom: auto;
     width: auto;
     height: 1px;
+  }
+
+  .steps::after {
+    height: 2px;
+    margin: -0.5px 0 0;
+    transform-origin: left;
+  }
+
+  .js .steps.draw-line::after {
+    transform: scaleX(0);
   }
 
   .step {
@@ -239,10 +448,30 @@ textarea:focus-visible {
   min-height: 0;
 }
 
+/* Barra fija de propuesta en móvil */
+.mobile-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background-color: rgba(251, 247, 241, 0.97);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid #e7e0d4;
+  box-shadow: 0 -8px 24px -12px rgba(15, 42, 74, 0.25);
+  padding-bottom: env(safe-area-inset-bottom);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+
+.mobile-cta.is-shown {
+  transform: none;
+}
+
 /* Entrada al hacer scroll (solo si JS está activo; ver clase .js en <html>) */
 .js .reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(16px);
   transition: opacity 0.35s ease, transform 0.35s ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
@@ -273,7 +502,18 @@ textarea:focus-visible {
   .btn-primary:hover,
   .btn-secondary:hover,
   .tab-trigger:hover,
-  .card-lift:hover {
+  .card-lift:hover,
+  .btn-primary:active,
+  .btn-secondary:active,
+  .tab-trigger:active,
+  .quiz-option:active,
+  .faq-trigger:active {
     transform: none;
+  }
+  .js .steps.draw-line::after {
+    transform: none;
+  }
+  .panel-enter {
+    animation: none;
   }
 }
