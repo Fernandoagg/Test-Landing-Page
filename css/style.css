@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos base del proyecto TEST */
+/* Estilos base del proyecto TEST
+   Paleta: teal #0B5C66 / teal-hover #084852 / teal-claro #DDF1EF
+           coral #F26B4F (solo fondos, íconos y líneas) / coral-oscuro #C4452C (texto)
+           sol #FFC93C (solo sobre teal o tinta) / arena #FFF8EE / tinta #1B2A2F / muted #4F5F63 */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #fbf7f1;
-  color: #17132b;
+  background-color: #FFF8EE;
+  color: #1B2A2F;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   margin: 0;
@@ -18,11 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Tipografía de títulos en Serif elegante */
+/* Títulos en Fraunces (500–600, sin extrabold) */
 h1, h2, h3, h4, .font-serif-title {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
 }
 
 /* Enfoque accesible */
@@ -31,41 +35,61 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #0F2A4A;
+  outline: 2px solid #0B5C66;
   outline-offset: 2px;
 }
 
-/* Sobre fondos marino el foco se marca en ámbar */
-.bg-marino a:focus-visible,
-.bg-marino button:focus-visible {
-  outline-color: #F2A93B;
+/* Sobre fondos teal o tinta el foco se marca en sol */
+.on-dark a:focus-visible,
+.on-dark button:focus-visible {
+  outline-color: #FFC93C;
 }
 
-/* Botones rectangulares sobrios (8px de radio) */
-.btn-primary {
+/* Botones: radio de 12px (nada de píldoras) */
+.btn-primary,
+.btn-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background-color: #0F2A4A;
+  gap: 0.5rem;
+  border-radius: 12px;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9375rem;
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 1px 2px rgba(15, 42, 74, 0.12);
   transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
   text-decoration: none;
   cursor: pointer;
 }
 
+.btn-primary {
+  background-color: #0B5C66;
+  box-shadow: 0 1px 2px rgba(11, 92, 102, 0.16);
+}
+
 .btn-primary:hover {
-  background-color: #0A1F38;
+  background-color: #084852;
+}
+
+/* Botón de acento: coral-oscuro con texto blanco (contraste AA) */
+.btn-accent {
+  background-color: #C4452C;
+  box-shadow: 0 1px 2px rgba(27, 42, 47, 0.2);
+}
+
+.btn-accent:hover {
+  background-image: linear-gradient(rgba(27, 42, 47, 0.1), rgba(27, 42, 47, 0.1));
 }
 
 @media (hover: hover) {
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px -4px rgba(15, 42, 74, 0.35);
+    box-shadow: 0 8px 18px -6px rgba(11, 92, 102, 0.45);
+  }
+
+  .btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px -6px rgba(27, 42, 47, 0.45);
   }
 }
 
@@ -73,10 +97,10 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #ffffff;
-  color: #17132b;
-  border: 1px solid #e7e0d4;
+  color: #1B2A2F;
+  border: 1px solid #EADFCF;
   font-weight: 600;
   font-size: 0.9375rem;
   padding: 0.75rem 1.5rem;
@@ -86,8 +110,8 @@ textarea:focus-visible {
 }
 
 .btn-secondary:hover {
-  background-color: #EEF2F7;
-  border-color: #CBD6E4;
+  background-color: #DDF1EF;
+  border-color: #0B5C66;
 }
 
 /* Tarjetas con elevación sutil al pasar el cursor (solo dispositivos con puntero) */
@@ -101,8 +125,8 @@ textarea:focus-visible {
   }
 
   .card-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px -12px rgba(15, 42, 74, 0.28);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px -18px rgba(11, 92, 102, 0.35);
   }
 }
 
@@ -113,6 +137,7 @@ button {
 }
 
 .btn-primary:active,
+.btn-accent:active,
 .btn-secondary:active,
 .tab-trigger:active,
 .quiz-option:active,
@@ -122,43 +147,113 @@ button {
   transition-duration: 0.08s;
 }
 
-.faq-trigger:active {
-  background-color: #fbf7f1;
-}
-
-/* Subtítulo de sección con línea de acento */
+/* Etiqueta de sección: minúscula normal, sin tracking amplio, línea coral */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #0F2A4A;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #0B5C66;
 }
 
 .eyebrow::before {
   content: "";
   flex: none;
-  width: 1.25rem;
-  height: 1px;
-  background-color: currentColor;
+  width: 1.5rem;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #F26B4F;
 }
 
 .eyebrow-light {
-  color: #CBD6E4;
+  color: #DDF1EF;
 }
 
 .eyebrow-light::before {
-  background-color: #F2A93B;
+  background-color: #FFC93C;
 }
 
-/* En móvil la barra inferior sustituye al botón del header */
-@media (max-width: 1023px) {
-  .js .header-cta {
-    display: none;
+/* Forma orgánica para imágenes e ilustraciones: una esquina de radio mayor */
+.shape-organic {
+  border-radius: 28px 28px 28px 80px;
+}
+
+@media (max-width: 639px) {
+  .shape-organic {
+    border-radius: 22px 22px 22px 56px;
   }
+}
+
+/* Divisores de sección: onda suave (40px en móvil, 56px en adelante) */
+.wave {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: -1px;
+}
+
+@media (min-width: 640px) {
+  .wave {
+    height: 56px;
+  }
+}
+
+/* Bloque curvo teal-claro detrás de la tarjeta de lección */
+.hero-blob {
+  position: absolute;
+  inset: -7% -10% -9% -8%;
+  background-color: #DDF1EF;
+  border-radius: 44% 56% 48% 52% / 54% 44% 56% 46%;
+}
+
+@media (min-width: 1024px) {
+  .hero-blob {
+    inset: -12% -18% -12% -14%;
+  }
+}
+
+/* Tarjeta de lección: diálogo rotativo por especialidad (fade, sin rotación) */
+.scene {
+  transition: opacity 0.3s ease;
+}
+
+.scene.is-fading {
+  opacity: 0;
+}
+
+html:not(.js) .scene-dots {
+  display: none;
+}
+
+/* Área táctil de 24px con punto visible más pequeño */
+.scene-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.scene-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #B9CFCC;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.scene-dot[aria-pressed="true"]::before {
+  width: 18px;
+  background-color: #0B5C66;
 }
 
 /* Mini ejercicio de la tarjeta de lección */
@@ -174,10 +269,10 @@ html:not(.js) .quiz {
   width: 100%;
   text-align: left;
   padding: 0.7rem 0.9rem;
-  border: 1px solid #e7e0d4;
-  border-radius: 8px;
+  border: 1px solid #EADFCF;
+  border-radius: 12px;
   background-color: #ffffff;
-  color: #17132b;
+  color: #1B2A2F;
   font-size: 0.875rem;
   line-height: 1.35;
   cursor: pointer;
@@ -186,7 +281,8 @@ html:not(.js) .quiz {
 
 @media (hover: hover) {
   .quiz-option:not(:disabled):hover {
-    border-color: #0F2A4A;
+    border-color: #0B5C66;
+    background-color: #F4FAF9;
   }
 }
 
@@ -195,9 +291,9 @@ html:not(.js) .quiz {
 }
 
 .quiz-option.is-correct {
-  border-color: #0F2A4A;
-  background-color: #EEF2F7;
-  color: #0F2A4A;
+  border-color: #0B5C66;
+  background-color: #DDF1EF;
+  color: #0B5C66;
   font-weight: 600;
 }
 
@@ -208,33 +304,134 @@ html:not(.js) .quiz {
 }
 
 .quiz-option.is-wrong {
-  background-color: #fbf7f1;
-  color: #5d5873;
+  background-color: #FFF8EE;
+  color: #4F5F63;
   text-decoration: line-through;
 }
 
 .quiz-feedback.is-correct {
-  color: #0F2A4A;
+  color: #0B5C66;
   font-weight: 600;
 }
 
 .quiz-feedback.is-wrong {
-  color: #17132b;
+  color: #1B2A2F;
 }
 
 .quiz-progress {
   transition: width 0.5s ease;
 }
 
-/* Botones selectores de pestañas */
+/* Color por especialidad (solo dentro de la sección Especialidades) */
+.sector-negocios {
+  --s-soft: #DDF1EF;
+  --s-chip: #DDF1EF;
+  --s-strong: #0B5C66;
+  --s-offset: #FFE3DC;
+}
+
+.sector-turismo {
+  --s-soft: #CFE6F2;
+  --s-chip: #CFE6F2;
+  --s-strong: #1E5A7A;
+  --s-offset: #FFE3DC;
+}
+
+/* En chips con texto se usa un coral suave más claro para que coral-oscuro alcance AA (4.5:1) */
+.sector-gastronomia {
+  --s-soft: #FFE3DC;
+  --s-chip: #FFF3EF;
+  --s-strong: #C4452C;
+  --s-offset: #DDF1EF;
+}
+
+.sector-medicina {
+  --s-soft: #D8F2E6;
+  --s-chip: #D8F2E6;
+  --s-strong: #17684A;
+  --s-offset: #FFE3DC;
+}
+
+.sector-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  background-color: var(--s-chip);
+  color: var(--s-strong);
+  box-shadow: inset 0 0 0 1px var(--s-soft);
+}
+
+.sector-chip::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--s-strong);
+}
+
+.sector-media {
+  background-color: var(--s-soft);
+  color: var(--s-strong);
+}
+
+.sector-soft {
+  background-color: var(--s-soft);
+}
+
+.sector-offset {
+  background-color: var(--s-offset);
+}
+
+.sector-bullet {
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  background-color: var(--s-strong);
+}
+
+/* Banda de frases: chips estáticos con el color de cada especialidad */
+.phrase-chip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.5rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  background-color: var(--s-chip);
+  color: #1B2A2F;
+  box-shadow: inset 0 0 0 1px var(--s-soft);
+}
+
+.phrase-chip strong {
+  color: var(--s-strong);
+  font-weight: 700;
+}
+
+@media (max-width: 639px) {
+  .phrase-chip {
+    border-radius: 20px;
+  }
+}
+
+/* Botones selectores de especialidad */
 .tab-trigger {
   width: auto;
   text-align: left;
   padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid #e7e0d4;
+  border-radius: 12px;
+  border: 1px solid #EADFCF;
   background-color: #ffffff;
-  color: #17132b;
+  color: #1B2A2F;
   font-weight: 500;
   font-size: 0.9375rem;
   transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
@@ -251,10 +448,18 @@ html:not(.js) .quiz {
 
 @media (hover: hover) {
   .tab-trigger:hover {
-    border-color: #0F2A4A;
+    border-color: var(--s-strong, #0B5C66);
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px -8px rgba(15, 42, 74, 0.3);
+    box-shadow: 0 8px 16px -10px rgba(27, 42, 47, 0.35);
   }
+}
+
+/* El botón activo adopta el color de su especialidad (texto blanco, AA) */
+.tab-trigger.is-active {
+  background-color: var(--s-strong, #0B5C66);
+  color: #ffffff;
+  border-color: var(--s-strong, #0B5C66);
+  font-weight: 600;
 }
 
 /* Fila de pestañas deslizable en móvil, sin barra de desplazamiento visible */
@@ -288,20 +493,13 @@ html:not(.js) .quiz {
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background-color: #CBD6E4;
+  background-color: #D9CFC0;
   transition: width 0.2s ease, background-color 0.2s ease;
 }
 
 .tab-dot.is-active {
   width: 18px;
-  background-color: #0F2A4A;
-}
-
-.tab-trigger.is-active {
-  background-color: #0F2A4A;
-  color: #ffffff;
-  border-color: #0F2A4A;
-  font-weight: 600;
+  background-color: var(--s-strong, #0B5C66);
 }
 
 /* Pasos de "Cómo funciona": línea vertical en móvil, horizontal en desktop */
@@ -320,17 +518,18 @@ html:not(.js) .quiz {
   left: 1.75rem;
   top: 1.75rem;
   bottom: 1.75rem;
-  width: 1px;
-  background-color: #CBD6E4;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 2px;
+  background-color: #DDF1EF;
 }
 
-/* Trazo marino que recorre la línea una sola vez al entrar en pantalla */
+/* Trazo teal → coral que se dibuja una sola vez al entrar en pantalla */
 .steps::after {
-  width: 2px;
-  margin-left: -0.5px;
-  background-color: #0F2A4A;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #0B5C66, #F26B4F);
   transform-origin: top;
-  transition: transform 0.9s ease 0.15s;
+  transition: transform 1s ease 0.15s;
 }
 
 .js .steps.draw-line::after {
@@ -349,18 +548,32 @@ html:not(.js) .quiz {
   align-items: start;
 }
 
+/* Círculos numerados de color (anillo blanco para separar de la línea) */
 .step-num {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 3.5rem;
   height: 3.5rem;
-  background-color: #ffffff;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 3rem;
+  border-radius: 999px;
+  background-color: #0B5C66;
+  box-shadow: 0 0 0 6px #ffffff;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
   line-height: 1;
-  color: #0F2A4A;
+  color: #ffffff;
+}
+
+.step-num--2 {
+  background-color: #C4452C;
+}
+
+.step-num--3 {
+  background-color: #1B2A2F;
+  color: #FFC93C;
 }
 
 @media (min-width: 768px) {
@@ -369,19 +582,20 @@ html:not(.js) .quiz {
     gap: 2.5rem;
   }
 
+  /* De centro del primer círculo a centro del último */
   .steps::before,
   .steps::after {
-    left: 0;
-    right: 0;
+    left: 1.75rem;
+    right: calc((100% - 5rem) / 3 - 1.75rem);
     top: 1.75rem;
     bottom: auto;
     width: auto;
-    height: 1px;
+    height: 2px;
+    margin: -1px 0 0;
   }
 
   .steps::after {
-    height: 2px;
-    margin: -0.5px 0 0;
+    background-image: linear-gradient(to right, #0B5C66, #F26B4F);
     transform-origin: left;
   }
 
@@ -396,7 +610,6 @@ html:not(.js) .quiz {
 
   .step-num {
     justify-self: start;
-    padding-right: 1rem;
   }
 }
 
@@ -410,24 +623,67 @@ html:not(.js) .quiz {
   text-align: left;
   font-size: 1.0625rem;
   font-weight: 600;
-  color: #17132b;
+  color: #1B2A2F;
   background: transparent;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: color 0.18s ease;
+  transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .faq-trigger:hover {
-  color: #0F2A4A;
+  color: #0B5C66;
 }
 
+.faq-trigger:active {
+  background-color: #FFF8EE;
+}
+
+/* Ícono + / − construido con dos barras (sin girar) */
 .faq-icon {
-  display: inline-block;
-  transition: transform 0.25s ease;
+  position: relative;
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 1rem;
+  border-radius: 999px;
+  background-color: #DDF1EF;
+  transition: background-color 0.2s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  background-color: #0B5C66;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease, background-color 0.2s ease;
+}
+
+.faq-icon::before {
+  width: 0.75rem;
+  height: 2px;
+}
+
+.faq-icon::after {
+  width: 2px;
+  height: 0.75rem;
 }
 
 .faq-trigger[aria-expanded="true"] .faq-icon {
-  transform: rotate(45deg);
+  background-color: #0B5C66;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon::before {
+  background-color: #ffffff;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon::after {
+  background-color: #ffffff;
+  transform: translate(-50%, -50%) scaleY(0);
 }
 
 .faq-content {
@@ -448,6 +704,43 @@ html:not(.js) .quiz {
   min-height: 0;
 }
 
+/* Campos del formulario: radio de 12px */
+.field {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.875rem;
+  color: #1B2A2F;
+  background-color: #FFF8EE;
+  border: 1px solid #EADFCF;
+  border-radius: 12px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.field::placeholder {
+  color: rgba(79, 95, 99, 0.7);
+}
+
+.field:focus {
+  border-color: #0B5C66;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(11, 92, 102, 0.15);
+}
+
+/* Barras de la vista ilustrativa del reporte */
+.mock-bar {
+  display: block;
+  height: 0.5rem;
+  border-radius: 999px;
+  background-color: #F3EBDF;
+  overflow: hidden;
+}
+
+.mock-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
 /* Barra fija de propuesta en móvil */
 .mobile-cta {
   position: fixed;
@@ -455,10 +748,10 @@ html:not(.js) .quiz {
   right: 0;
   bottom: 0;
   z-index: 40;
-  background-color: rgba(251, 247, 241, 0.97);
+  background-color: rgba(255, 248, 238, 0.97);
   backdrop-filter: blur(6px);
-  border-top: 1px solid #e7e0d4;
-  box-shadow: 0 -8px 24px -12px rgba(15, 42, 74, 0.25);
+  border-top: 1px solid #EADFCF;
+  box-shadow: 0 -8px 24px -12px rgba(27, 42, 47, 0.25);
   padding-bottom: env(safe-area-inset-bottom);
   transform: translateY(110%);
   transition: transform 0.25s ease;
@@ -472,7 +765,7 @@ html:not(.js) .quiz {
 .js .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -500,10 +793,12 @@ html:not(.js) .quiz {
     transform: none;
   }
   .btn-primary:hover,
+  .btn-accent:hover,
   .btn-secondary:hover,
   .tab-trigger:hover,
   .card-lift:hover,
   .btn-primary:active,
+  .btn-accent:active,
   .btn-secondary:active,
   .tab-trigger:active,
   .quiz-option:active,
@@ -515,5 +810,8 @@ html:not(.js) .quiz {
   }
   .panel-enter {
     animation: none;
+  }
+  .scene.is-fading {
+    opacity: 1;
   }
 }

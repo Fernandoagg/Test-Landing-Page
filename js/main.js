@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // 1. Navegación móvil accesible
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Selector de Especialidades (Tabs accesibles)
+  // 2. Selector de Especialidades (Tabs accesibles con color propio)
   const tabTriggers = document.querySelectorAll("[role='tab']");
   const tabPanels = document.querySelectorAll("[role='tabpanel']");
   const tabDots = document.querySelectorAll("#tab-dots .tab-dot");
@@ -123,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = document.getElementById(panelId);
       const isExpanded = btn.getAttribute("aria-expanded") === "true";
 
-      // Cerrar otros acordeones si se desea mantener uno solo abierto
+      // Cerrar otros acordeones para mantener uno solo abierto
       faqButtons.forEach((otherBtn) => {
         if (otherBtn !== btn) {
           otherBtn.setAttribute("aria-expanded", "false");
@@ -140,35 +142,206 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3.1 Mini ejercicio de la tarjeta de lección
-  const quiz = document.getElementById("hero-quiz");
-  if (quiz) {
-    const options = quiz.querySelectorAll(".quiz-option");
-    const feedback = quiz.querySelector(".quiz-feedback");
-    const progress = document.querySelector(".quiz-progress");
+  // 4. Tarjeta de lección: rotación entre 4 especialidades cada 6 s (fade, sin rotación)
+  // Sin cambio automático si prefers-reduced-motion
+  const lessonCard = document.getElementById("lesson-card");
+  const heroQuiz = document.getElementById("hero-quiz");
 
-    options.forEach((option) => {
-      option.addEventListener("click", () => {
+  const SCENES = [
+    {
+      sector: "Negocios",
+      title: "Lección 2 · Reunión de seguimiento",
+      leftLabel: "Colleague",
+      leftText: "Could we review the quarterly report this afternoon?",
+      rightLabel: "You",
+      rightText: "Sure, let's schedule a follow-up meeting at 3 PM.",
+      prompt: "Elija la respuesta adecuada del colega:",
+      options: [
+        { text: "I don't know what you say.", feedback: "Informal e inapropiado para el entorno corporativo." },
+        { text: "Perfect. I'll send the calendar invite right away.", correct: true, feedback: "Correcto. Es una respuesta profesional y eficiente." },
+        { text: "Meeting tomorrow yes.", feedback: "La estructura gramatical no es adecuada." }
+      ]
+    },
+    {
+      sector: "Turismo",
+      title: "Lección 4 · Atención al cliente",
+      leftLabel: "Agent",
+      leftText: "Good afternoon. How may I help you today?",
+      rightLabel: "Customer",
+      rightText: "I'd like to change my reservation, please.",
+      prompt: "Elija la respuesta adecuada del agente:",
+      options: [
+        { text: "What do you want?", feedback: "Se entiende, pero es poco cortés para atención al cliente." },
+        { text: "Of course. May I have your name, please?", correct: true, feedback: "Correcto. Es una respuesta cortés y profesional." },
+        { text: "Yes, I am change it now.", feedback: "La estructura no es correcta. Intente con otra opción." }
+      ]
+    },
+    {
+      sector: "Gastronomía",
+      title: "Lección 3 · Servicio en sala",
+      leftLabel: "Server",
+      leftText: "Good evening. Are you ready to order?",
+      rightLabel: "Guest",
+      rightText: "Could you tell me more about today's special, please?",
+      prompt: "Elija la respuesta adecuada del mesero:",
+      options: [
+        { text: "It has meat and things.", feedback: "Demasiado informal y poco descriptivo." },
+        { text: "Certainly. It's grilled salmon served with seasonal vegetables.", correct: true, feedback: "Correcto. Describe el platillo con cortesía y claridad profesional." },
+        { text: "You read the menu.", feedback: "Inadecuado y descortés con el comensal." }
+      ]
+    },
+    {
+      sector: "Medicina",
+      title: "Lección 5 · Consulta inicial",
+      leftLabel: "Doctor",
+      leftText: "Hello. What brings you in today?",
+      rightLabel: "Patient",
+      rightText: "I've had a persistent headache since yesterday.",
+      prompt: "Elija la respuesta adecuada del médico:",
+      options: [
+        { text: "Take pills now.", feedback: "Respuesta incompleta y poco profesional." },
+        { text: "I understand. Can you describe where the pain is located?", correct: true, feedback: "Correcto. Es una pregunta clínica precisa y empática." },
+        { text: "Headache is bad thing.", feedback: "La formulación gramatical no es profesional." }
+      ]
+    }
+  ];
+
+  if (lessonCard) {
+    let currentScene = 1; // Inicia en Turismo (índice 1) como en la maqueta inicial
+    const sceneContainer = lessonCard.querySelector(".scene");
+    const titleEl = lessonCard.querySelector("[data-scene='title']");
+    const sectorEl = lessonCard.querySelector("[data-scene='sector']");
+    const leftLabelEl = lessonCard.querySelector("[data-scene='left-label']");
+    const leftTextEl = lessonCard.querySelector("[data-scene='left-text']");
+    const rightLabelEl = lessonCard.querySelector("[data-scene='right-label']");
+    const rightTextEl = lessonCard.querySelector("[data-scene='right-text']");
+    const promptEl = lessonCard.querySelector("[data-scene='prompt']");
+    const optionsContainer = lessonCard.querySelector("[data-scene='options']");
+    const feedbackEl = lessonCard.querySelector(".quiz-feedback");
+    const progressEl = lessonCard.querySelector(".quiz-progress");
+    const sceneDots = lessonCard.querySelectorAll(".scene-dot");
+
+    function renderScene(index) {
+      const data = SCENES[index];
+      if (!data) return;
+
+      if (titleEl) titleEl.textContent = data.title;
+      if (sectorEl) sectorEl.textContent = data.sector;
+      if (leftLabelEl) leftLabelEl.textContent = data.leftLabel;
+      if (leftTextEl) leftTextEl.textContent = data.leftText;
+      if (rightLabelEl) rightLabelEl.textContent = data.rightLabel;
+      if (rightTextEl) rightTextEl.textContent = data.rightText;
+      if (promptEl) promptEl.textContent = data.prompt;
+
+      if (optionsContainer) {
+        optionsContainer.innerHTML = data.options.map((opt) => `
+          <button type="button" class="quiz-option"${opt.correct ? ' data-correct="true"' : ''} data-feedback="${opt.feedback}">
+            ${opt.text}
+          </button>
+        `).join("");
+      }
+
+      if (feedbackEl) {
+        feedbackEl.textContent = "";
+        feedbackEl.className = "quiz-feedback text-xs mt-3 min-h-[1rem]";
+      }
+
+      if (progressEl) {
+        progressEl.style.width = "60%";
+      }
+
+      sceneDots.forEach((dot, i) => {
+        dot.setAttribute("aria-pressed", String(i === index));
+      });
+    }
+
+    function goToScene(nextIndex) {
+      if (nextIndex === currentScene) return;
+      currentScene = nextIndex;
+
+      if (prefersReducedMotion || !sceneContainer) {
+        renderScene(currentScene);
+        return;
+      }
+
+      sceneContainer.classList.add("is-fading");
+      setTimeout(() => {
+        renderScene(currentScene);
+        sceneContainer.classList.remove("is-fading");
+      }, 250);
+    }
+
+    // Selector manual con botones dot
+    sceneDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = Number(dot.dataset.index);
+        if (!Number.isNaN(idx)) {
+          goToScene(idx);
+          restartInterval();
+        }
+      });
+    });
+
+    // Delegación de eventos para las opciones del mini ejercicio
+    if (heroQuiz) {
+      heroQuiz.addEventListener("click", (e) => {
+        const option = e.target.closest(".quiz-option");
+        if (!option || option.disabled) return;
+
         const isCorrect = option.dataset.correct === "true";
-        if (feedback) {
-          feedback.textContent = option.dataset.feedback || "";
-          feedback.classList.toggle("is-correct", isCorrect);
-          feedback.classList.toggle("is-wrong", !isCorrect);
+        if (feedbackEl) {
+          feedbackEl.textContent = option.dataset.feedback || "";
+          feedbackEl.classList.toggle("is-correct", isCorrect);
+          feedbackEl.classList.toggle("is-wrong", !isCorrect);
         }
 
         if (isCorrect) {
           option.classList.add("is-correct");
-          options.forEach((o) => { o.disabled = true; });
-          if (progress) progress.style.width = "80%";
+          heroQuiz.querySelectorAll(".quiz-option").forEach((o) => { o.disabled = true; });
+          if (progressEl) progressEl.style.width = "80%";
         } else {
           option.classList.add("is-wrong");
           option.disabled = true;
         }
+
+        restartInterval();
       });
-    });
+    }
+
+    // Rotación automática cada 6 segundos (solo si el usuario no tiene reducción de movimiento)
+    let rotationTimer = null;
+
+    function startInterval() {
+      if (prefersReducedMotion) return;
+      stopInterval();
+      rotationTimer = setInterval(() => {
+        const next = (currentScene + 1) % SCENES.length;
+        goToScene(next);
+      }, 6000);
+    }
+
+    function stopInterval() {
+      if (rotationTimer) {
+        clearInterval(rotationTimer);
+        rotationTimer = null;
+      }
+    }
+
+    function restartInterval() {
+      stopInterval();
+      startInterval();
+    }
+
+    // Pausar rotación al interactuar directamente con la tarjeta
+    lessonCard.addEventListener("mouseenter", stopInterval);
+    lessonCard.addEventListener("mouseleave", startInterval);
+    lessonCard.addEventListener("focusin", stopInterval);
+    lessonCard.addEventListener("focusout", startInterval);
+
+    startInterval();
   }
 
-  // 3.2 Barra fija de propuesta en móvil: oculta mientras se ven el hero, el formulario o el footer
+  // 5. Barra fija de propuesta en móvil: oculta mientras se ven el hero, el formulario o el footer
   const mobileCta = document.getElementById("mobile-cta");
   const ctaHideZones = ["hero", "formulario"].map((id) => document.getElementById(id))
     .concat(document.querySelector("footer"))
@@ -194,8 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctaHideZones.forEach((zone) => ctaObserver.observe(zone));
   }
 
-  // 3.3 Movimiento sutil: entrada al hacer scroll, línea de pasos y contador del hero
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // 6. Movimiento sutil: entrada al hacer scroll, línea de pasos y contador del hero (solo 4 y 5)
   const revealItems = document.querySelectorAll(".reveal, .draw-line");
   const counters = document.querySelectorAll("[data-count]");
 
@@ -214,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealItems.forEach((el) => revealObserver.observe(el));
 
-    // El HTML ya contiene el valor final; aquí solo se anima de 0 a ese valor
+    // Animar contadores con data-count (solo 4 y 5 en hero; 60-80 se mantiene fijo)
     const animateCount = (el) => {
       const target = Number(el.dataset.count);
       const duration = 900;
@@ -242,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach((el) => counterObserver.observe(el));
   }
 
-  // 4. Validación del Formulario de Solicitud Institucional
+  // 7. Validación del Formulario de Solicitud Institucional
   // NOTA TÉCNICA: El envío real mediante servicio backend (PHP / API de correo)
   // se conectará en el entorno de producción. Por regla del proyecto, no se simula
   // un estado de éxito ficticio al cliente.
@@ -267,8 +439,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (formFeedback) {
         formFeedback.classList.remove("hidden");
         formFeedback.innerHTML = `
-          <div class="p-4 rounded-lg bg-marino-light border border-marino-border text-tinta text-sm leading-relaxed">
-            <p class="font-semibold text-marino mb-1">Información validada localmente</p>
+          <div class="p-4 rounded-btn bg-teal-claro border border-teal/20 text-tinta text-sm leading-relaxed">
+            <p class="font-semibold text-teal mb-1">Información validada localmente</p>
             <p>Los datos requeridos fueron completados correctamente. El endpoint de procesamiento y envío por correo quedará habilitado al vincular el servicio de producción (PHP / servidor de correo del cliente).</p>
           </div>
         `;
@@ -277,7 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 5. Desplazamiento suave compensando la barra de navegación fija
+  // 8. Desplazamiento suave compensando la barra de navegación fija
   document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const targetId = anchor.getAttribute("href");

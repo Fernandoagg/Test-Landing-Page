@@ -5,50 +5,53 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>TEST Idiomas · Cursos de inglés especializado para empresas y organizaciones</title>
   <meta name="description" content="Capacitación de inglés técnico y profesional para organizaciones en Negocios, Turismo, Gastronomía y Medicina. Modalidad 100% en línea disponible en celular, tableta y computadora." />
+  <meta name="theme-color" content="#0B5C66" />
 
   <!-- Marca JS activo antes del primer pintado: las animaciones de entrada solo aplican con JS -->
   <script>document.documentElement.classList.add('js');</script>
 
-  <!-- Google Fonts: Source Serif 4 & Plus Jakarta Sans -->
+  <!-- Google Fonts: Fraunces (títulos 500–600) & Plus Jakarta Sans (cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
   <link rel="stylesheet" href="./css/style.css" />
 </head>
-<body class="bg-crema text-tinta antialiased">
+<body class="bg-arena text-tinta antialiased">
 
-  <!-- 1. HEADER SOBRIO -->
-  <header class="sticky top-0 z-50 bg-crema/95 backdrop-blur-sm border-b border-borde">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <!-- 1. HEADER -->
+  <header class="sticky top-0 z-50 bg-arena/95 backdrop-blur-sm border-b border-borde">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.5rem] sm:h-20 flex items-center justify-between gap-3">
 
       <!-- Logotipo TEST -->
-      <a class="flex items-baseline gap-2 text-tinta hover:text-marino transition-colors" href="#hero">
-        <span class="font-serif text-2xl font-semibold tracking-tight text-tinta">TEST</span>
-        <span class="text-xs font-semibold uppercase tracking-wider text-muted">Idiomas</span>
+      <a class="flex items-baseline gap-1.5 text-tinta hover:text-teal transition-colors shrink-0" href="#hero">
+        <span class="font-serif text-2xl font-semibold tracking-tight">TEST</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-coral" aria-hidden="true"></span>
+        <span class="text-sm font-semibold text-muted">Idiomas</span>
       </a>
 
       <!-- Navegación principal -->
       <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-muted" aria-label="Navegación principal">
-        <a class="hover:text-marino transition-colors" href="#por-que">Por qué TEST</a>
-        <a class="hover:text-marino transition-colors" href="#especialidades">Especialidades</a>
-        <a class="hover:text-marino transition-colors" href="#como-funciona">Cómo funciona</a>
-        <a class="hover:text-marino transition-colors" href="#seguimiento">Seguimiento</a>
-        <a class="hover:text-marino transition-colors" href="#inversion">Inversión</a>
-        <a class="hover:text-marino transition-colors" href="#preguntas">Preguntas</a>
+        <a class="hover:text-teal transition-colors" href="#por-que">Por qué TEST</a>
+        <a class="hover:text-teal transition-colors" href="#especialidades">Especialidades</a>
+        <a class="hover:text-teal transition-colors" href="#como-funciona">Cómo funciona</a>
+        <a class="hover:text-teal transition-colors" href="#seguimiento">Seguimiento</a>
+        <a class="hover:text-teal transition-colors" href="#inversion">Inversión</a>
+        <a class="hover:text-teal transition-colors" href="#preguntas">Preguntas</a>
       </nav>
 
-      <!-- Botón de acción y menú móvil -->
-      <div class="flex items-center gap-3">
-        <a class="header-cta btn-primary whitespace-nowrap text-sm py-2 px-3 sm:px-5" href="#formulario">
-          Solicitar propuesta
+      <!-- Botón de acción (texto corto "Cotizar" en pantallas < 640px) y menú móvil -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a class="header-cta btn-primary whitespace-nowrap text-sm py-2 px-3.5 sm:px-5" href="#formulario">
+          <span class="sm:hidden">Cotizar</span>
+          <span class="hidden sm:inline">Solicitar propuesta</span>
         </a>
 
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-tinta rounded-lg hover:bg-marino-light focus:outline-none" aria-label="Menú de navegación" aria-expanded="false">
-          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-tinta rounded-btn hover:bg-teal-claro" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
@@ -56,32 +59,32 @@
     </div>
 
     <!-- Menú móvil desplegable -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-borde bg-crema px-4 py-4 space-y-3 text-sm font-medium text-muted shadow-lg">
-      <a class="block py-2 hover:text-marino" href="#por-que">Por qué TEST</a>
-      <a class="block py-2 hover:text-marino" href="#especialidades">Especialidades</a>
-      <a class="block py-2 hover:text-marino" href="#como-funciona">Cómo funciona</a>
-      <a class="block py-2 hover:text-marino" href="#seguimiento">Seguimiento</a>
-      <a class="block py-2 hover:text-marino" href="#inversion">Inversión</a>
-      <a class="block py-2 hover:text-marino" href="#preguntas">Preguntas frecuentes</a>
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-borde bg-arena px-4 py-4 space-y-1 text-sm font-medium text-muted shadow-lg">
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#por-que">Por qué TEST</a>
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#especialidades">Especialidades</a>
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#como-funciona">Cómo funciona</a>
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#seguimiento">Seguimiento</a>
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#inversion">Inversión</a>
+      <a class="block py-2 px-2 rounded-btn hover:text-teal hover:bg-teal-claro/60" href="#preguntas">Preguntas frecuentes</a>
     </div>
   </header>
 
   <main>
-    <!-- 2. HERO (crema) — móvil: texto, tarjeta y datos; desktop: dos columnas -->
-    <section class="pt-10 pb-14 sm:py-20 lg:py-24 overflow-hidden" id="hero">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-10">
+    <!-- 2. HERO (arena) — móvil: texto, tarjeta y datos; desktop: dos columnas + franja de datos en banda teal -->
+    <section class="pt-10 sm:pt-16 lg:pt-20 overflow-hidden" id="hero">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-10 items-center pb-14 sm:pb-20">
 
         <!-- Texto principal -->
-        <div class="lg:col-span-7 lg:row-start-1">
+        <div class="lg:col-span-7">
           <p class="eyebrow mb-4">
             Inglés especializado para empresas y organizaciones
           </p>
 
-          <h1 class="text-[2.125rem] leading-[1.12] sm:text-5xl lg:text-[3.375rem] text-tinta mb-5">
-            El inglés que impulsa el desempeño laboral de <em class="italic text-marino">su equipo</em>
+          <h1 class="text-[2.125rem] leading-[1.12] sm:text-5xl lg:text-[3.5rem] text-tinta mb-5">
+            El inglés que impulsa el desempeño laboral de <em class="italic text-coral-oscuro">su equipo</em>
           </h1>
 
-          <p class="text-[1.0625rem] sm:text-lg text-muted max-w-xl mb-7 font-normal leading-relaxed">
+          <p class="text-[1.0625rem] sm:text-lg text-muted max-w-xl mb-8 font-normal leading-relaxed">
             Programas de autoestudio 100% en línea enfocados en las necesidades prácticas de su sector productivo.
           </p>
 
@@ -90,127 +93,158 @@
           </a>
         </div>
 
-        <!-- Tarjeta de lección ilustrativa con mini ejercicio (HTML/CSS, sin datos reales) -->
-        <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-2 lg:self-center">
-          <div class="relative max-w-md mx-auto lg:mr-0 pr-3 pb-3 sm:pr-4 sm:pb-4">
-            <!-- Bloque marino decorativo detrás de la tarjeta -->
-            <div class="absolute inset-0 top-3 left-3 sm:top-4 sm:left-4 rounded-xl bg-marino" aria-hidden="true">
-              <span class="absolute bottom-1.5 right-6 h-0.5 w-16 bg-ambar"></span>
-            </div>
+        <!-- Tarjeta de lección ilustrativa con mini ejercicio (HTML/CSS, sin datos reales).
+             Con JS, el diálogo rota entre Negocios, Turismo, Gastronomía y Medicina cada 6 s
+             (fade; sin cambio automático con prefers-reduced-motion). -->
+        <div class="lg:col-span-5 lg:col-start-8">
+          <div class="relative max-w-md mx-auto lg:mr-0 px-2 sm:px-0">
+            <!-- Bloque curvo teal-claro detrás de la tarjeta -->
+            <div class="hero-blob" aria-hidden="true"></div>
+            <span class="absolute -bottom-4 -left-2 sm:-left-5 w-14 h-14 rounded-full bg-coral" aria-hidden="true"></span>
 
-            <figure class="card-lift relative bg-white rounded-xl border border-borde shadow-sm p-5 sm:p-7" aria-label="Vista ilustrativa de una lección">
+            <figure id="lesson-card" class="card-lift relative bg-white rounded-card border border-borde shadow-[0_24px_48px_-24px_rgba(11,92,102,0.35)] p-5 sm:p-7 m-0" aria-label="Vista ilustrativa de una lección">
               <div class="flex items-start justify-between gap-4 pb-4 border-b border-borde">
-                <p class="font-serif text-lg text-tinta leading-snug">Lección 4 · Atención al cliente</p>
-                <span class="shrink-0 text-xs text-muted bg-crema border border-borde rounded px-2.5 py-1">Vista ilustrativa</span>
+                <p class="font-serif text-lg text-tinta leading-snug" data-scene="title">Lección 4 · Atención al cliente</p>
+                <span class="shrink-0 text-xs text-muted bg-arena border border-borde rounded-full px-2.5 py-1">Vista ilustrativa</span>
               </div>
 
-              <!-- Diálogo breve en inglés -->
-              <div class="space-y-3 mt-5" lang="en">
-                <div class="max-w-[85%]">
-                  <p class="text-[11px] uppercase tracking-wider text-muted font-semibold mb-1">Agent</p>
-                  <p class="bg-crema border border-borde/70 rounded-lg rounded-tl-none px-4 py-2.5 text-sm text-tinta">Good afternoon. How may I help you today?</p>
+              <div class="scene">
+                <!-- Especialidad del diálogo y selector manual -->
+                <div class="flex items-center justify-between gap-3 mt-4">
+                  <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-claro text-teal text-xs font-semibold px-2.5 py-1" data-scene="sector">Turismo</span>
+                  <div class="scene-dots flex items-center" role="group" aria-label="Elegir especialidad del diálogo">
+                    <button type="button" class="scene-dot" data-index="0" aria-pressed="false" aria-label="Negocios"></button>
+                    <button type="button" class="scene-dot" data-index="1" aria-pressed="true" aria-label="Turismo"></button>
+                    <button type="button" class="scene-dot" data-index="2" aria-pressed="false" aria-label="Gastronomía"></button>
+                    <button type="button" class="scene-dot" data-index="3" aria-pressed="false" aria-label="Medicina"></button>
+                  </div>
                 </div>
-                <div class="max-w-[85%] ml-auto text-right">
-                  <p class="text-[11px] uppercase tracking-wider text-muted font-semibold mb-1">Customer</p>
-                  <p class="bg-marino text-white rounded-lg rounded-tr-none px-4 py-2.5 text-sm text-left">I'd like to change my reservation, please.</p>
-                </div>
-              </div>
 
-              <!-- Mini ejercicio (solo con JS). PENDIENTE: aprobar frase y opciones con el cliente -->
-              <div class="quiz mt-5" id="hero-quiz">
-                <p class="text-xs font-semibold text-tinta mb-2.5">Elija la respuesta adecuada del agente:</p>
-                <div class="space-y-2" lang="en">
-                  <button type="button" class="quiz-option" data-feedback="Se entiende, pero es poco cortés para atención al cliente.">What do you want?</button>
-                  <button type="button" class="quiz-option" data-correct="true" data-feedback="Correcto. Es una respuesta cortés y profesional.">Of course. May I have your name, please?</button>
-                  <button type="button" class="quiz-option" data-feedback="La estructura no es correcta. Intente con otra opción.">Yes, I am change it now.</button>
+                <!-- Diálogo breve en inglés -->
+                <div class="space-y-3 mt-4" lang="en">
+                  <div class="max-w-[85%]">
+                    <p class="text-xs text-muted font-semibold mb-1" data-scene="left-label">Agent</p>
+                    <p class="bg-arena border border-borde/70 rounded-2xl rounded-tl-md px-4 py-2.5 text-sm text-tinta" data-scene="left-text">Good afternoon. How may I help you today?</p>
+                  </div>
+                  <div class="max-w-[85%] ml-auto text-right">
+                    <p class="text-xs text-muted font-semibold mb-1" data-scene="right-label">Customer</p>
+                    <p class="bg-teal text-white rounded-2xl rounded-tr-md px-4 py-2.5 text-sm text-left" data-scene="right-text">I'd like to change my reservation, please.</p>
+                  </div>
                 </div>
-                <p class="quiz-feedback text-xs mt-3 min-h-[1rem]" aria-live="polite"></p>
+
+                <!-- Mini ejercicio (solo con JS). PENDIENTE: aprobar frase y opciones con el cliente
+                     (también las de Negocios, Gastronomía y Medicina definidas en js/main.js) -->
+                <div class="quiz mt-5" id="hero-quiz">
+                  <p class="text-xs font-semibold text-tinta mb-2.5" data-scene="prompt">Elija la respuesta adecuada del agente:</p>
+                  <div class="space-y-2" lang="en" data-scene="options">
+                    <button type="button" class="quiz-option" data-feedback="Se entiende, pero es poco cortés para atención al cliente.">What do you want?</button>
+                    <button type="button" class="quiz-option" data-correct="true" data-feedback="Correcto. Es una respuesta cortés y profesional.">Of course. May I have your name, please?</button>
+                    <button type="button" class="quiz-option" data-feedback="La estructura no es correcta. Intente con otra opción.">Yes, I am change it now.</button>
+                  </div>
+                  <p class="quiz-feedback text-xs mt-3 min-h-[1rem]" aria-live="polite"></p>
+                </div>
               </div>
 
               <!-- Barra de avance sin porcentajes -->
               <div class="mt-4">
                 <p class="text-xs text-muted font-medium mb-2">Avance de la lección</p>
-                <div class="h-2 rounded-full bg-marino-light overflow-hidden" aria-hidden="true">
-                  <div class="quiz-progress h-full w-3/5 rounded-full bg-marino"></div>
+                <div class="h-2 rounded-full bg-teal-claro overflow-hidden" aria-hidden="true">
+                  <div class="quiz-progress h-full w-3/5 rounded-full bg-teal"></div>
                 </div>
               </div>
             </figure>
           </div>
         </div>
 
-        <!-- Franja de 3 datos (contador animado; sin JS muestra el valor final) -->
-        <div class="lg:col-span-7 lg:row-start-2">
-          <div class="pt-8 border-t border-borde max-w-xl">
-            <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-6" id="hero-stats">
-              <div>
-                <p class="font-serif text-4xl sm:text-5xl text-marino leading-none mb-2"><span data-count="4">4</span></p>
-                <p class="text-xs sm:text-sm text-muted font-medium">especialidades laborales</p>
-              </div>
-              <div class="pl-3 sm:pl-4 border-l border-borde">
-                <p class="font-serif text-4xl sm:text-5xl text-marino leading-none mb-2 whitespace-nowrap"><span data-count="60">60</span>–<span data-count="80">80</span></p>
-                <p class="text-xs sm:text-sm text-muted font-medium">horas por módulo</p>
-              </div>
-              <div class="pl-3 sm:pl-4 border-l border-borde">
-                <p class="font-serif text-4xl sm:text-5xl text-marino leading-none mb-2">≈<span data-count="5">5</span></p>
-                <p class="text-xs sm:text-sm text-muted font-medium">horas por semana</p>
-              </div>
-            </div>
+      </div>
 
-            <!-- Mención única de dispositivos en Hero con íconos lineales -->
-            <div class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-muted bg-white/70 border border-borde rounded-lg px-4 py-2">
-              <!-- Icono smartphone -->
-              <svg class="w-4 h-4 text-marino" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
-                <line x1="11" y1="18" x2="13" y2="18"></line>
-              </svg>
-              <!-- Icono tableta -->
-              <svg class="w-4 h-4 text-marino" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-              </svg>
-              <!-- Icono computadora -->
-              <svg class="w-4 h-4 text-marino" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-              <span>100% en línea y asincrónico · Disponible en celular, tableta y computadora</span>
+      <!-- Franja de 3 datos sobre banda teal (solo 4 y 5 cuentan; el rango 60–80 es fijo) -->
+      <svg class="wave text-teal" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 30C180 52 420 58 720 40S1260 6 1440 22V64H0Z"/>
+      </svg>
+      <div class="bg-teal text-white on-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:pt-8 sm:pb-12">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-6" id="hero-stats">
+            <div class="flex sm:block items-center gap-5 py-3 sm:py-0">
+              <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 min-w-[6.5rem]"><span data-count="4">4</span></p>
+              <p class="text-sm sm:text-base text-teal-claro font-medium">especialidades laborales</p>
+            </div>
+            <div class="flex sm:block items-center gap-5 py-3 sm:py-0 border-t sm:border-t-0 sm:border-l border-white/15 sm:pl-6">
+              <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 whitespace-nowrap min-w-[6.5rem]">60–80</p>
+              <p class="text-sm sm:text-base text-teal-claro font-medium">horas por módulo</p>
+            </div>
+            <div class="flex sm:block items-center gap-5 py-3 sm:py-0 border-t sm:border-t-0 sm:border-l border-white/15 sm:pl-6">
+              <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 min-w-[6.5rem]">≈<span data-count="5">5</span></p>
+              <p class="text-sm sm:text-base text-teal-claro font-medium">horas por semana</p>
             </div>
           </div>
+
+          <!-- Mención única de dispositivos en Hero con íconos lineales -->
+          <div class="mt-6 sm:mt-8 pt-5 border-t border-white/15 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-teal-claro">
+            <!-- Icono smartphone -->
+            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
+              <line x1="11" y1="18" x2="13" y2="18"></line>
+            </svg>
+            <!-- Icono tableta -->
+            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <!-- Icono computadora -->
+            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>100% en línea y asincrónico · Disponible en celular, tableta y computadora</span>
+          </div>
         </div>
-
       </div>
     </section>
 
-    <!-- 3. BANDA OSCURA (MARINO) -->
-    <section class="bg-marino text-white py-12 sm:py-16 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto text-center reveal">
-        <span class="block w-12 h-0.5 bg-ambar mx-auto mb-6" aria-hidden="true"></span>
-        <blockquote class="font-serif text-xl sm:text-2xl md:text-3xl font-normal leading-relaxed text-crema">
-          «Un modelo diseñado para que los colaboradores utilicen el inglés como una herramienta de trabajo directa y medible.»
+    <!-- 3. BANDA DE FRASE (teal-claro, breve; frase no promocional) -->
+    <div class="bg-teal text-teal-claro" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" focusable="false">
+        <path fill="currentColor" d="M0 22C240 4 480 0 720 18S1200 58 1440 36V64H0Z"/>
+      </svg>
+    </div>
+    <section class="bg-teal-claro py-7 sm:py-9 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto flex items-center justify-center gap-4 sm:gap-6 reveal">
+        <span class="hidden sm:block h-[3px] w-10 rounded-full bg-coral shrink-0" aria-hidden="true"></span>
+        <blockquote class="font-serif italic text-xl sm:text-2xl md:text-[1.75rem] leading-snug text-teal text-center">
+          «El inglés como herramienta de trabajo.»
         </blockquote>
+        <span class="hidden sm:block h-[3px] w-10 rounded-full bg-coral shrink-0" aria-hidden="true"></span>
       </div>
     </section>
+    <div class="bg-teal-claro text-arena" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" focusable="false">
+        <path fill="currentColor" d="M0 30C180 52 420 58 720 40S1260 6 1440 22V64H0Z"/>
+      </svg>
+    </div>
 
-    <!-- 4. POR QUÉ TEST (blanco) -->
-    <section class="bg-white py-16 sm:py-24" id="por-que">
+    <!-- 4. POR QUÉ TEST (arena, tres bloques con ícono en círculo de color suave) -->
+    <section class="pt-10 pb-16 sm:pt-14 sm:pb-24" id="por-que">
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
-        <div class="text-center mb-12 sm:mb-16 reveal">
+        <div class="text-center mb-12 sm:mb-14 reveal">
           <p class="eyebrow mb-3">Ventajas del programa</p>
           <h2 class="text-[1.875rem] leading-tight sm:text-4xl md:text-[2.5rem] text-tinta">
             Por qué capacitar a su organización con TEST
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
 
           <!-- Bloque 1: Contenido por sector -->
-          <div class="reveal grid grid-cols-[auto_1fr] gap-x-4 md:block">
-            <svg class="w-10 h-10 md:w-11 md:h-11 text-marino md:mb-5 row-span-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
+          <div class="card-lift reveal bg-white rounded-card border border-borde p-6 sm:p-7 grid grid-cols-[auto_1fr] gap-x-4 md:block">
+            <span class="flex items-center justify-center w-14 h-14 rounded-full bg-teal-claro text-teal md:mb-5 row-span-2" aria-hidden="true">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </span>
             <h3 class="text-xl text-tinta mb-2">Contenido por sector</h3>
             <p class="text-sm text-muted leading-relaxed">
               Lecciones y vocabulario técnico enfocados exclusivamente en las situaciones cotidianas de su industria.
@@ -218,11 +252,13 @@
           </div>
 
           <!-- Bloque 2: Ruta según el nivel -->
-          <div class="reveal grid grid-cols-[auto_1fr] gap-x-4 md:block" style="--reveal-delay: 80ms">
-            <svg class="w-10 h-10 md:w-11 md:h-11 text-marino md:mb-5 row-span-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-            </svg>
+          <div class="card-lift reveal bg-white rounded-card border border-borde p-6 sm:p-7 grid grid-cols-[auto_1fr] gap-x-4 md:block" style="--reveal-delay: 80ms">
+            <span class="flex items-center justify-center w-14 h-14 rounded-full bg-coral-suave text-coral-oscuro md:mb-5 row-span-2" aria-hidden="true">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </span>
             <h3 class="text-xl text-tinta mb-2">Ruta según el nivel</h3>
             <p class="text-sm text-muted leading-relaxed">
               Examen diagnóstico que ubica a cada participante en el módulo adecuado sin repetir temas que ya domina.
@@ -230,13 +266,15 @@
           </div>
 
           <!-- Bloque 3: Seguimiento para la organización -->
-          <div class="reveal grid grid-cols-[auto_1fr] gap-x-4 md:block" style="--reveal-delay: 160ms">
-            <svg class="w-10 h-10 md:w-11 md:h-11 text-marino md:mb-5 row-span-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
+          <div class="card-lift reveal bg-white rounded-card border border-borde p-6 sm:p-7 grid grid-cols-[auto_1fr] gap-x-4 md:block" style="--reveal-delay: 160ms">
+            <span class="flex items-center justify-center w-14 h-14 rounded-full bg-sol-suave text-tinta md:mb-5 row-span-2" aria-hidden="true">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </span>
             <h3 class="text-xl text-tinta mb-2">Seguimiento para la organización</h3>
             <p class="text-sm text-muted leading-relaxed">
               Reportes mensuales con métricas de horas dedicadas, asignaturas cursadas y rendimiento grupal e individual.
@@ -248,8 +286,19 @@
       </div>
     </section>
 
-    <!-- 5. ESPECIALIDADES (crema) -->
-    <section class="py-16 sm:py-24" id="especialidades">
+    <!-- 5. ESPECIALIDADES (arena). Único lugar con color por especialidad. -->
+    <section class="pb-16 sm:pb-24" id="especialidades">
+
+      <!-- Banda de frases: franja estática, una frase por sector (sin movimiento) -->
+      <div class="bg-white border-y border-borde py-5 sm:py-6 mb-14 sm:mb-20">
+        <ul class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center gap-2.5 sm:gap-3" aria-label="Frases de ejemplo por especialidad">
+          <li class="phrase-chip sector-negocios"><strong>Negocios</strong><span lang="en">“Let's schedule a follow-up meeting.”</span></li>
+          <li class="phrase-chip sector-turismo"><strong>Turismo</strong><span lang="en">“Welcome to the hotel, how can I help you?”</span></li>
+          <li class="phrase-chip sector-gastronomia"><strong>Gastronomía</strong><span lang="en">“Would you like to hear today's specials?”</span></li>
+          <li class="phrase-chip sector-medicina"><strong>Medicina</strong><span lang="en">“Can you show me where it hurts?”</span></li>
+        </ul>
+      </div>
+
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
         <div class="text-center mb-12 sm:mb-14 reveal">
@@ -259,66 +308,71 @@
           </h2>
         </div>
 
-        <!-- Selector de opciones en botones anchos y simples -->
-        <div class="tabs-scroll flex md:grid md:grid-cols-4 gap-2 md:gap-3 mb-6 md:mb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 overflow-x-auto snap-x snap-mandatory reveal" role="tablist" aria-label="Especialidades">
-          <button class="tab-trigger is-active text-center shrink-0 snap-start" role="tab" aria-selected="true" aria-controls="panel-negocios" id="tab-negocios">
+        <!-- Selector de opciones en botones anchos; el activo adopta el color de su especialidad -->
+        <div class="tabs-scroll flex md:grid md:grid-cols-4 gap-2 md:gap-3 mb-6 md:mb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 py-1 overflow-x-auto snap-x snap-mandatory reveal" role="tablist" aria-label="Especialidades">
+          <button class="tab-trigger sector-negocios is-active text-center shrink-0 snap-start" role="tab" aria-selected="true" aria-controls="panel-negocios" id="tab-negocios">
             Negocios
           </button>
-          <button class="tab-trigger text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-turismo" id="tab-turismo">
+          <button class="tab-trigger sector-turismo text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-turismo" id="tab-turismo">
             Turismo
           </button>
-          <button class="tab-trigger text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-gastronomia" id="tab-gastronomia">
+          <button class="tab-trigger sector-gastronomia text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-gastronomia" id="tab-gastronomia">
             Gastronomía
           </button>
-          <button class="tab-trigger text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-medicina" id="tab-medicina">
+          <button class="tab-trigger sector-medicina text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-medicina" id="tab-medicina">
             Medicina
           </button>
         </div>
 
         <!-- Paneles de fichas cortas -->
-        <div id="tab-panels" class="bg-white border border-borde rounded-lg p-5 sm:p-8 reveal">
+        <div id="tab-panels" class="bg-white border border-borde rounded-card p-5 sm:p-8 shadow-[0_18px_40px_-28px_rgba(27,42,47,0.35)] reveal">
 
           <!-- Ficha 1: Negocios -->
-          <div id="panel-negocios" role="tabpanel" aria-labelledby="tab-negocios">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
-              <figure class="md:col-span-2 aspect-[4/3] rounded-lg overflow-hidden bg-marino-light">
-                <!-- REEMPLAZAR por fotografía real/licenciada:
-                     <img src="./img/especialidad-negocios.jpg" alt="Equipo de trabajo en una reunión ejecutiva en inglés" width="800" height="600" loading="lazy" class="w-full h-full object-cover rounded-lg" /> -->
-                <div class="w-full h-full flex items-center justify-center text-marino" role="img" aria-label="Equipo de trabajo en una reunión ejecutiva en inglés">
-                  <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                </div>
-              </figure>
+          <div id="panel-negocios" class="sector-negocios" role="tabpanel" aria-labelledby="tab-negocios">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
+              <div class="md:col-span-2 relative pr-3 pb-3">
+                <div class="absolute top-3 left-3 right-0 bottom-0 shape-organic sector-offset" aria-hidden="true"></div>
+                <figure class="relative aspect-[4/3] shape-organic overflow-hidden sector-media m-0">
+                  <!-- REEMPLAZAR por fotografía real/licenciada (no existe aún ./img/):
+                       <img src="./img/especialidad-negocios.jpg" alt="Equipo de trabajo en una reunión ejecutiva en inglés" width="800" height="600" loading="lazy" class="w-full h-full object-cover" /> -->
+                  <div class="w-full h-full flex flex-col items-center justify-center gap-4" role="img" aria-label="Equipo de trabajo en una reunión ejecutiva en inglés">
+                    <svg class="w-20 h-20 sm:w-24 sm:h-24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span class="text-xs font-medium text-muted bg-white/90 rounded-full px-3 py-1">Fotografía pendiente</span>
+                  </div>
+                </figure>
+              </div>
 
               <div class="md:col-span-3">
+                <span class="sector-chip mb-3">Negocios</span>
                 <h3 class="text-xl sm:text-2xl font-serif text-tinta mb-4">Inglés de Negocios y Administración</h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-6 text-sm">
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Estructura</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-3 mb-6 text-sm">
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Estructura</span>
                     <span class="font-medium text-tinta">4 módulos de inglés general + 3 módulos de especialidad (7 módulos en total).</span>
                   </div>
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Duración aproximada</span>
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Duración aproximada</span>
                     <span class="font-medium text-tinta">≈21 meses desde nivel principiante (≈3 meses por módulo).</span>
                   </div>
                 </div>
 
                 <div class="mb-4">
-                  <h4 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Temas clave de especialidad</h4>
+                  <h4 class="text-base text-tinta mb-3">Temas clave de especialidad</h4>
                   <ul class="space-y-2 text-sm text-tinta">
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Reuniones de trabajo y presentaciones ejecutivas.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Comunicación corporativa y redacción de correos profesionales.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Entrevistas, negociación, finanzas y ventas.</span>
                     </li>
                   </ul>
@@ -328,54 +382,59 @@
           </div>
 
           <!-- Ficha 2: Turismo -->
-          <div id="panel-turismo" class="hidden" role="tabpanel" aria-labelledby="tab-turismo">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
-              <figure class="md:col-span-2 aspect-[4/3] rounded-lg overflow-hidden bg-marino-light">
-                <!-- REEMPLAZAR por fotografía real/licenciada:
-                     <img src="./img/especialidad-turismo.jpg" alt="Recepcionista de hotel atendiendo a un huésped internacional" width="800" height="600" loading="lazy" class="w-full h-full object-cover rounded-lg" /> -->
-                <div class="w-full h-full flex items-center justify-center text-marino" role="img" aria-label="Recepcionista de hotel atendiendo a un huésped internacional">
-                  <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                </div>
-              </figure>
+          <div id="panel-turismo" class="sector-turismo hidden" role="tabpanel" aria-labelledby="tab-turismo">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
+              <div class="md:col-span-2 relative pr-3 pb-3">
+                <div class="absolute top-3 left-3 right-0 bottom-0 shape-organic sector-offset" aria-hidden="true"></div>
+                <figure class="relative aspect-[4/3] shape-organic overflow-hidden sector-media m-0">
+                  <!-- REEMPLAZAR por fotografía real/licenciada (no existe aún ./img/):
+                       <img src="./img/especialidad-turismo.jpg" alt="Recepcionista de hotel atendiendo a un huésped internacional" width="800" height="600" loading="lazy" class="w-full h-full object-cover" /> -->
+                  <div class="w-full h-full flex flex-col items-center justify-center gap-4" role="img" aria-label="Recepcionista de hotel atendiendo a un huésped internacional">
+                    <svg class="w-20 h-20 sm:w-24 sm:h-24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="text-xs font-medium text-muted bg-white/90 rounded-full px-3 py-1">Fotografía pendiente</span>
+                  </div>
+                </figure>
+              </div>
 
               <div class="md:col-span-3">
+                <span class="sector-chip mb-3">Turismo</span>
                 <h3 class="text-xl sm:text-2xl font-serif text-tinta mb-4">Inglés de Hospitalidad y Turismo</h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-6 text-sm">
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Estructura</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-3 mb-6 text-sm">
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Estructura</span>
                     <span class="font-medium text-tinta">4 módulos de inglés general + 2 módulos de especialidad.</span>
                     <span class="block text-xs text-muted mt-1 italic">[Pendiente de confirmación con el cliente: el brief indica 5 módulos totales / 18 meses; la presentación CID indica 4+2].</span>
                   </div>
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Duración aproximada</span>
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Duración aproximada</span>
                     <span class="font-medium text-tinta">≈18 meses desde nivel principiante.</span>
                   </div>
                 </div>
 
                 <div class="mb-6">
-                  <h4 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Temas clave de especialidad</h4>
+                  <h4 class="text-base text-tinta mb-3">Temas clave de especialidad</h4>
                   <ul class="space-y-2 text-sm text-tinta">
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Saludos, bienvenida y atención inicial al turista.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Ubicación, direcciones y transporte local.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Alojamiento, servicios turísticos y manejo de quejas o solicitudes.</span>
                     </li>
                   </ul>
                 </div>
 
                 <!-- Nota breve de Turismo Fundamental -->
-                <div class="p-3 bg-marino-light border border-marino-border rounded-lg text-xs text-tinta">
+                <div class="p-3.5 sector-soft rounded-btn text-xs text-tinta">
                   <strong>Nota:</strong> Opción disponible de curso corto de <em>Turismo Fundamental</em> (1 módulo de 60 a 80 horas en ≈3 meses) para requerimientos iniciales de comunicación.
                 </div>
               </div>
@@ -383,48 +442,53 @@
           </div>
 
           <!-- Ficha 3: Gastronomía -->
-          <div id="panel-gastronomia" class="hidden" role="tabpanel" aria-labelledby="tab-gastronomia">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
-              <figure class="md:col-span-2 aspect-[4/3] rounded-lg overflow-hidden bg-marino-light">
-                <!-- REEMPLAZAR por fotografía real/licenciada:
-                     <img src="./img/especialidad-gastronomia.jpg" alt="Personal de cocina y servicio de sala en un restaurante" width="800" height="600" loading="lazy" class="w-full h-full object-cover rounded-lg" /> -->
-                <div class="w-full h-full flex items-center justify-center text-marino" role="img" aria-label="Personal de cocina y servicio de sala en un restaurante">
-                  <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2"></path>
-                    <path d="M6 2v20"></path>
-                    <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
-                  </svg>
-                </div>
-              </figure>
+          <div id="panel-gastronomia" class="sector-gastronomia hidden" role="tabpanel" aria-labelledby="tab-gastronomia">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
+              <div class="md:col-span-2 relative pr-3 pb-3">
+                <div class="absolute top-3 left-3 right-0 bottom-0 shape-organic sector-offset" aria-hidden="true"></div>
+                <figure class="relative aspect-[4/3] shape-organic overflow-hidden sector-media m-0">
+                  <!-- REEMPLAZAR por fotografía real/licenciada (no existe aún ./img/):
+                       <img src="./img/especialidad-gastronomia.jpg" alt="Personal de cocina y servicio de sala en un restaurante" width="800" height="600" loading="lazy" class="w-full h-full object-cover" /> -->
+                  <div class="w-full h-full flex flex-col items-center justify-center gap-4" role="img" aria-label="Personal de cocina y servicio de sala en un restaurante">
+                    <svg class="w-20 h-20 sm:w-24 sm:h-24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2"></path>
+                      <path d="M6 2v20"></path>
+                      <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                    </svg>
+                    <span class="text-xs font-medium text-muted bg-white/90 rounded-full px-3 py-1">Fotografía pendiente</span>
+                  </div>
+                </figure>
+              </div>
 
               <div class="md:col-span-3">
+                <span class="sector-chip mb-3">Gastronomía</span>
                 <h3 class="text-xl sm:text-2xl font-serif text-tinta mb-4">Inglés de Gastronomía</h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-6 text-sm">
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Estructura</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-3 mb-6 text-sm">
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Estructura</span>
                     <span class="font-medium text-tinta">4 módulos de inglés general + 2 módulos de especialidad.</span>
                     <span class="block text-xs text-muted mt-1 italic">[Pendiente de confirmación con el cliente: 2 módulos de especialidad vs. 6 módulos totales indicados en brief].</span>
                   </div>
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Duración aproximada</span>
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Duración aproximada</span>
                     <span class="font-medium text-tinta">≈18 meses desde nivel principiante.</span>
                   </div>
                 </div>
 
                 <div>
-                  <h4 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Temas clave de especialidad</h4>
+                  <h4 class="text-base text-tinta mb-3">Temas clave de especialidad</h4>
                   <ul class="space-y-2 text-sm text-tinta">
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>El restaurante, servicio en sala y atención de comensales.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Técnicas culinarias, verbos en la cocina e ingredientes.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Recetas, bebidas, condimentos y texturas.</span>
                     </li>
                   </ul>
@@ -434,47 +498,52 @@
           </div>
 
           <!-- Ficha 4: Medicina -->
-          <div id="panel-medicina" class="hidden" role="tabpanel" aria-labelledby="tab-medicina">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
-              <figure class="md:col-span-2 aspect-[4/3] rounded-lg overflow-hidden bg-marino-light">
-                <!-- REEMPLAZAR por fotografía real/licenciada:
-                     <img src="./img/especialidad-medicina.jpg" alt="Profesional de la salud atendiendo a un paciente en consulta" width="800" height="600" loading="lazy" class="w-full h-full object-cover rounded-lg" /> -->
-                <div class="w-full h-full flex items-center justify-center text-marino" role="img" aria-label="Profesional de la salud atendiendo a un paciente en consulta">
-                  <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
-                    <path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"></path>
-                    <circle cx="20" cy="10" r="2"></circle>
-                  </svg>
-                </div>
-              </figure>
+          <div id="panel-medicina" class="sector-medicina hidden" role="tabpanel" aria-labelledby="tab-medicina">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
+              <div class="md:col-span-2 relative pr-3 pb-3">
+                <div class="absolute top-3 left-3 right-0 bottom-0 shape-organic sector-offset" aria-hidden="true"></div>
+                <figure class="relative aspect-[4/3] shape-organic overflow-hidden sector-media m-0">
+                  <!-- REEMPLAZAR por fotografía real/licenciada (no existe aún ./img/):
+                       <img src="./img/especialidad-medicina.jpg" alt="Profesional de la salud atendiendo a un paciente en consulta" width="800" height="600" loading="lazy" class="w-full h-full object-cover" /> -->
+                  <div class="w-full h-full flex flex-col items-center justify-center gap-4" role="img" aria-label="Profesional de la salud atendiendo a un paciente en consulta">
+                    <svg class="w-20 h-20 sm:w-24 sm:h-24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                      <path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"></path>
+                      <circle cx="20" cy="10" r="2"></circle>
+                    </svg>
+                    <span class="text-xs font-medium text-muted bg-white/90 rounded-full px-3 py-1">Fotografía pendiente</span>
+                  </div>
+                </figure>
+              </div>
 
               <div class="md:col-span-3">
+                <span class="sector-chip mb-3">Medicina</span>
                 <h3 class="text-xl sm:text-2xl font-serif text-tinta mb-4">Inglés Médico y Sector Salud</h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-6 text-sm">
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Estructura</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-3 mb-6 text-sm">
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Estructura</span>
                     <span class="font-medium text-tinta">4 módulos de inglés general + 5 módulos de especialidad (9 módulos en total).</span>
                   </div>
-                  <div class="p-4 bg-crema rounded-lg border border-borde/70">
-                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold mb-1">Duración aproximada</span>
+                  <div class="p-4 bg-arena rounded-btn border border-borde/70">
+                    <span class="block text-xs text-muted font-semibold mb-1">Duración aproximada</span>
                     <span class="font-medium text-tinta">≈27 meses desde nivel principiante (≈3 meses por módulo).</span>
                   </div>
                 </div>
 
                 <div>
-                  <h4 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Temas clave de especialidad</h4>
+                  <h4 class="text-base text-tinta mb-3">Temas clave de especialidad</h4>
                   <ul class="space-y-2 text-sm text-tinta">
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Primer contacto, historia clínica y atención al paciente.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Anatomía, fisiología y patología general.</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                      <span class="text-marino font-bold">•</span>
+                    <li class="flex items-start gap-2.5">
+                      <span class="sector-bullet" aria-hidden="true"></span>
                       <span>Terminología clínica de especialidades (urgencias, ginecología, neurología).</span>
                     </li>
                   </ul>
@@ -487,10 +556,10 @@
 
         <!-- Indicador de ficha activa (móvil) -->
         <div class="flex justify-center gap-2 mt-4 md:hidden" id="tab-dots" aria-hidden="true">
-          <span class="tab-dot is-active"></span>
-          <span class="tab-dot"></span>
-          <span class="tab-dot"></span>
-          <span class="tab-dot"></span>
+          <span class="tab-dot sector-negocios is-active"></span>
+          <span class="tab-dot sector-turismo"></span>
+          <span class="tab-dot sector-gastronomia"></span>
+          <span class="tab-dot sector-medicina"></span>
         </div>
 
       </div>
@@ -507,13 +576,13 @@
           </h2>
         </div>
 
-        <!-- 3 pasos unidos por una línea (vertical en móvil, horizontal en desktop) -->
+        <!-- 3 pasos con círculos numerados de color unidos por una línea que se dibuja al entrar -->
         <ol class="steps draw-line mb-12">
 
           <li class="step reveal">
             <span class="step-num" aria-hidden="true">1</span>
             <div>
-              <span class="text-xs font-semibold text-marino uppercase tracking-wider block mb-2">Paso 1</span>
+              <span class="text-sm font-semibold text-teal block mb-1.5">Paso 1</span>
               <h3 class="text-xl text-tinta mb-2">Examen de ubicación</h3>
               <p class="text-sm text-muted leading-relaxed">
                 Diagnóstico inicial para identificar el nivel de cada integrante y asignarlo al módulo preciso sin repetir conocimientos previos.
@@ -522,9 +591,9 @@
           </li>
 
           <li class="step reveal" style="--reveal-delay: 80ms">
-            <span class="step-num" aria-hidden="true">2</span>
+            <span class="step-num step-num--2" aria-hidden="true">2</span>
             <div>
-              <span class="text-xs font-semibold text-marino uppercase tracking-wider block mb-2">Paso 2</span>
+              <span class="text-sm font-semibold text-coral-oscuro block mb-1.5">Paso 2</span>
               <h3 class="text-xl text-tinta mb-2">4 módulos de inglés general</h3>
               <p class="text-sm text-muted leading-relaxed">
                 Tronco común para desarrollar las cuatro habilidades comunicativas básicas (habla, escucha, lectura y escritura).
@@ -533,9 +602,9 @@
           </li>
 
           <li class="step reveal" style="--reveal-delay: 160ms">
-            <span class="step-num" aria-hidden="true">3</span>
+            <span class="step-num step-num--3" aria-hidden="true">3</span>
             <div>
-              <span class="text-xs font-semibold text-marino uppercase tracking-wider block mb-2">Paso 3</span>
+              <span class="text-sm font-semibold text-tinta block mb-1.5">Paso 3</span>
               <h3 class="text-xl text-tinta mb-2">Módulos de especialización</h3>
               <p class="text-sm text-muted leading-relaxed">
                 Contenido técnico y situacional enfocado enteramente en el área profesional elegida por su organización.
@@ -553,122 +622,117 @@
       </div>
     </section>
 
-    <!-- 7. SEGUIMIENTO PARA LA ORGANIZACIÓN (banda marino) -->
-    <section class="bg-marino text-white py-16 sm:py-24" id="seguimiento">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- 7. SEGUIMIENTO PARA LA ORGANIZACIÓN (banda teal, dos columnas, detalles en sol) -->
+    <div class="bg-white text-teal" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" focusable="false">
+        <path fill="currentColor" d="M0 22C240 4 480 0 720 18S1200 58 1440 36V64H0Z"/>
+      </svg>
+    </div>
+    <section class="bg-teal text-white on-dark pt-10 pb-16 sm:pt-14 sm:pb-24" id="seguimiento">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-        <div class="text-center mb-12 sm:mb-14 reveal">
+        <!-- Texto y puntos -->
+        <div class="lg:col-span-5 reveal">
           <p class="eyebrow eyebrow-light mb-3">Control institucional</p>
           <h2 class="text-[1.875rem] leading-tight sm:text-4xl md:text-[2.5rem] text-white mb-4">
             Seguimiento para la organización
           </h2>
-          <p class="text-base text-marino-border max-w-2xl mx-auto">
+          <p class="text-base text-teal-claro max-w-xl leading-relaxed">
             El contacto designado de su empresa recibe mensualmente un reporte estructurado para conocer con precisión el avance del grupo.
           </p>
+
+          <!-- Tres métricas del reporte mensual -->
+          <ul class="mt-8 space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="flex items-center justify-center w-9 h-9 rounded-full bg-sol text-tinta shrink-0" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <h3 class="text-lg text-white mb-1">Horas de estudio</h3>
+                <p class="text-sm text-teal-claro">Registro del tiempo acumulado por cada usuario en el periodo mensual.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex items-center justify-center w-9 h-9 rounded-full bg-sol text-tinta shrink-0" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <h3 class="text-lg text-white mb-1">Avance individual</h3>
+                <p class="text-sm text-teal-claro">Número de asignaturas cubiertas frente al total del módulo en curso.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="flex items-center justify-center w-9 h-9 rounded-full bg-sol text-tinta shrink-0" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <div>
+                <h3 class="text-lg text-white mb-1">Avance del grupo</h3>
+                <p class="text-sm text-teal-claro">Porcentaje consolidado de aprovechamiento y desempeño general del equipo.</p>
+              </div>
+            </li>
+          </ul>
         </div>
 
-        <!-- Tres métricas del reporte mensual -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
-          <div class="reveal">
-            <span class="block w-10 h-0.5 bg-ambar mx-auto mb-4" aria-hidden="true"></span>
-            <h3 class="text-lg text-white mb-1">Horas de estudio</h3>
-            <p class="text-sm text-marino-border">Registro del tiempo acumulado por cada usuario en el periodo mensual.</p>
-          </div>
-          <div class="reveal" style="--reveal-delay: 80ms">
-            <span class="block w-10 h-0.5 bg-ambar mx-auto mb-4" aria-hidden="true"></span>
-            <h3 class="text-lg text-white mb-1">Avance individual</h3>
-            <p class="text-sm text-marino-border">Número de asignaturas cubiertas frente al total del módulo en curso.</p>
-          </div>
-          <div class="reveal" style="--reveal-delay: 160ms">
-            <span class="block w-10 h-0.5 bg-ambar mx-auto mb-4" aria-hidden="true"></span>
-            <h3 class="text-lg text-white mb-1">Avance del grupo</h3>
-            <p class="text-sm text-marino-border">Porcentaje consolidado de aprovechamiento y desempeño general del equipo.</p>
-          </div>
-        </div>
+        <!-- Vista ilustrativa del reporte mensual (sin datos, estatus ni cifras reales) -->
+        <div class="lg:col-span-7 reveal" style="--reveal-delay: 80ms">
+          <div class="relative pr-3 pb-3 sm:pr-4 sm:pb-4">
+            <div class="absolute top-3 left-3 right-0 bottom-0 sm:top-4 sm:left-4 shape-organic bg-sol" aria-hidden="true"></div>
+            <div class="relative bg-white text-tinta shape-organic p-6 sm:p-8 shadow-2xl shadow-black/20">
+              <div class="flex items-start justify-between gap-4 pb-4 border-b border-borde mb-2">
+                <div>
+                  <span class="text-xs font-semibold text-muted">Reporte mensual corporativo</span>
+                  <p class="text-sm sm:text-base font-semibold text-tinta">Consolidado de avance formativo</p>
+                </div>
+                <span class="shrink-0 text-xs font-semibold text-teal bg-teal-claro rounded-full px-2.5 py-1">
+                  Vista ilustrativa
+                </span>
+              </div>
 
-        <!-- Vista ilustrativa del reporte mensual (sin datos inventados) -->
-        <div class="bg-white text-tinta rounded-lg p-6 sm:p-8 max-w-3xl mx-auto shadow-2xl shadow-black/20 reveal">
-          <div class="flex items-center justify-between gap-4 pb-4 border-b border-borde mb-4">
-            <div>
-              <span class="text-xs font-semibold uppercase tracking-wider text-muted">Reporte mensual corporativo</span>
-              <p class="text-sm font-semibold text-tinta">Consolidado de avance formativo</p>
+              <table class="w-full text-left text-xs sm:text-sm">
+                <caption class="sr-only">Vista ilustrativa del reporte mensual. Las barras son decorativas y no representan datos reales.</caption>
+                <thead>
+                  <tr class="border-b border-borde/70 text-muted align-bottom">
+                    <th scope="col" class="py-2.5 pr-3 font-medium">Participante</th>
+                    <th scope="col" class="py-2.5 pr-3 font-medium w-[34%]">Horas del mes</th>
+                    <th scope="col" class="py-2.5 font-medium w-[34%]">Avance del módulo</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-borde/60 text-tinta">
+                  <tr>
+                    <td class="py-3.5 pr-3 whitespace-nowrap">Participante 01</td>
+                    <td class="py-3.5 pr-3"><span class="mock-bar" aria-hidden="true"><span class="bg-coral" style="width: 72%"></span></span></td>
+                    <td class="py-3.5"><span class="mock-bar" aria-hidden="true"><span class="bg-teal" style="width: 58%"></span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="py-3.5 pr-3 whitespace-nowrap">Participante 02</td>
+                    <td class="py-3.5 pr-3"><span class="mock-bar" aria-hidden="true"><span class="bg-coral" style="width: 46%"></span></span></td>
+                    <td class="py-3.5"><span class="mock-bar" aria-hidden="true"><span class="bg-teal" style="width: 40%"></span></span></td>
+                  </tr>
+                  <tr>
+                    <td class="py-3.5 pr-3 whitespace-nowrap">Participante 03</td>
+                    <td class="py-3.5 pr-3"><span class="mock-bar" aria-hidden="true"><span class="bg-coral" style="width: 88%"></span></span></td>
+                    <td class="py-3.5"><span class="mock-bar" aria-hidden="true"><span class="bg-teal" style="width: 76%"></span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="text-[11px] text-muted text-center mt-4 px-8 sm:px-12">
+                * Vista ilustrativa. Los reportes se entregan mensualmente en formato compartido para seguimiento interno de la organización.
+              </p>
             </div>
-            <span class="shrink-0 text-xs text-muted bg-crema border border-borde rounded px-2.5 py-1">
-              Vista ilustrativa
-            </span>
           </div>
-
-          <!-- Móvil: un registro por tarjeta -->
-          <div class="space-y-3 sm:hidden">
-              <div class="border border-borde rounded-lg p-4">
-                <p class="font-mono text-xs text-tinta mb-2">Participante 01</p>
-                <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
-                  <dt class="text-muted">Módulo asignado</dt><dd class="text-tinta text-right">Tronco común / Especialidad</dd>
-                  <dt class="text-muted">Dedicación mensual</dt><dd class="text-tinta text-right">Registro de horas</dd>
-                  <dt class="text-muted">Estatus</dt><dd class="text-tinta text-right">En progreso regular</dd>
-                </dl>
-              </div>
-              <div class="border border-borde rounded-lg p-4">
-                <p class="font-mono text-xs text-tinta mb-2">Participante 02</p>
-                <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
-                  <dt class="text-muted">Módulo asignado</dt><dd class="text-tinta text-right">Tronco común / Especialidad</dd>
-                  <dt class="text-muted">Dedicación mensual</dt><dd class="text-tinta text-right">Registro de horas</dd>
-                  <dt class="text-muted">Estatus</dt><dd class="text-tinta text-right">En progreso regular</dd>
-                </dl>
-              </div>
-              <div class="border border-borde rounded-lg p-4">
-                <p class="font-mono text-xs text-tinta mb-2">Participante 03</p>
-                <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
-                  <dt class="text-muted">Módulo asignado</dt><dd class="text-tinta text-right">Tronco común / Especialidad</dd>
-                  <dt class="text-muted">Dedicación mensual</dt><dd class="text-tinta text-right">Registro de horas</dd>
-                  <dt class="text-muted">Estatus</dt><dd class="text-tinta text-right">En progreso regular</dd>
-                </dl>
-              </div>
-          </div>
-
-          <div class="hidden sm:block overflow-x-auto">
-            <table class="w-full text-left text-xs sm:text-sm">
-              <thead>
-                <tr class="border-b border-borde/70 text-muted">
-                  <th class="py-2.5 pr-3 font-medium">Registro</th>
-                  <th class="py-2.5 pr-3 font-medium">Módulo asignado</th>
-                  <th class="py-2.5 pr-3 font-medium">Dedicación mensual</th>
-                  <th class="py-2.5 font-medium">Estatus</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-borde/50 text-tinta">
-                <tr>
-                  <td class="py-2.5 pr-3 font-mono text-xs">Participante 01</td>
-                  <td class="py-2.5 pr-3">Tronco común / Especialidad</td>
-                  <td class="py-2.5 pr-3">Registro de horas</td>
-                  <td class="py-2.5">En progreso regular</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 pr-3 font-mono text-xs">Participante 02</td>
-                  <td class="py-2.5 pr-3">Tronco común / Especialidad</td>
-                  <td class="py-2.5 pr-3">Registro de horas</td>
-                  <td class="py-2.5">En progreso regular</td>
-                </tr>
-                <tr>
-                  <td class="py-2.5 pr-3 font-mono text-xs">Participante 03</td>
-                  <td class="py-2.5 pr-3">Tronco común / Especialidad</td>
-                  <td class="py-2.5 pr-3">Registro de horas</td>
-                  <td class="py-2.5">En progreso regular</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="text-[11px] text-muted text-center mt-4">
-            * Vista ilustrativa. Los reportes se entregan mensualmente en formato compartido para seguimiento interno de la organización.
-          </p>
         </div>
 
       </div>
     </section>
+    <div class="bg-teal text-arena" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" focusable="false">
+        <path fill="currentColor" d="M0 30C180 52 420 58 720 40S1260 6 1440 22V64H0Z"/>
+      </svg>
+    </div>
 
-    <!-- 8. PRECIO (fondo intermedio marino claro para romper alternancia crema/blanco) -->
-    <section class="bg-marino-light border-y border-marino-border/60 py-16 sm:py-24" id="inversion">
+    <!-- 8. PRECIO (arena; tarjeta teal con precio en sol y botón coral-oscuro) -->
+    <section class="pt-10 pb-16 sm:pt-14 sm:pb-24" id="inversion">
       <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
 
         <div class="reveal">
@@ -678,20 +742,23 @@
           </h2>
         </div>
 
-        <!-- Tarjeta de precio -->
-        <div class="card-lift bg-white border border-marino-border rounded-lg p-8 sm:p-10 shadow-sm reveal">
-          <div class="mb-4">
-            <span class="text-4xl sm:text-5xl font-serif text-marino font-normal">$499 MXN</span>
-            <span class="block text-sm text-muted mt-2 font-medium">al mes por persona</span>
+        <!-- Tarjeta de precio con bloque coral suave desplazado detrás -->
+        <div class="relative max-w-md mx-auto pr-3 pb-3 sm:pr-4 sm:pb-4 reveal">
+          <div class="absolute top-3 left-3 right-0 bottom-0 sm:top-4 sm:left-4 rounded-card bg-coral-suave" aria-hidden="true"></div>
+          <div class="card-lift relative bg-teal text-white on-dark rounded-card p-8 sm:p-10 shadow-[0_24px_48px_-24px_rgba(11,92,102,0.55)]">
+            <div class="mb-4">
+              <span class="text-5xl sm:text-6xl font-serif font-semibold text-sol">$499 MXN</span>
+              <span class="block text-sm text-teal-claro mt-3 font-medium">al mes por persona</span>
+            </div>
+
+            <p class="text-sm text-teal-claro mb-8 leading-relaxed">
+              Las promociones pueden variar según el grupo.
+            </p>
+
+            <a class="btn-accent w-full py-3" href="#formulario">
+              Solicitar propuesta para su organización
+            </a>
           </div>
-
-          <p class="text-sm text-muted mb-8 leading-relaxed">
-            Las promociones pueden variar según el grupo.
-          </p>
-
-          <a class="btn-primary w-full py-3" href="#formulario">
-            Solicitar propuesta para su organización
-          </a>
         </div>
 
       </div>
@@ -714,7 +781,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-1">
               <span>¿Qué dispositivos necesito?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-1" class="faq-content">
               <div>
@@ -729,7 +796,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-2">
               <span>¿A quién está dirigido el curso?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-2" class="faq-content">
               <div>
@@ -744,7 +811,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-3">
               <span>¿Es necesario comenzar desde el nivel principiante?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-3" class="faq-content">
               <div>
@@ -759,7 +826,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-4">
               <span>¿Qué ocurre si no se cubren las 5 horas semanales sugeridas?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-4" class="faq-content">
               <div>
@@ -774,7 +841,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-5">
               <span>¿Cómo se conoce el avance del grupo y de cada miembro?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-5" class="faq-content">
               <div>
@@ -789,7 +856,7 @@
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-6">
               <span>¿En qué consiste la metodología de aprendizaje?</span>
-              <span class="faq-icon text-lg ml-4 font-normal text-muted" aria-hidden="true">+</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-6" class="faq-content">
               <div>
@@ -805,7 +872,7 @@
       </div>
     </section>
 
-    <!-- 10. FORMULARIO DIRIGIDO A GRUPOS (crema) -->
+    <!-- 10. FORMULARIO DIRIGIDO A GRUPOS (arena) -->
     <section class="py-16 sm:py-24" id="formulario">
       <div class="max-w-2xl mx-auto px-4 sm:px-6">
 
@@ -819,64 +886,64 @@
           </p>
         </div>
 
-        <div class="bg-white border border-borde rounded-lg p-6 sm:p-8 shadow-sm reveal">
+        <div class="bg-white border border-borde rounded-card p-6 sm:p-8 shadow-[0_18px_40px_-28px_rgba(27,42,47,0.35)] reveal">
 
           <form id="proposal-form" novalidate class="space-y-5">
 
             <!-- Organización y Giro -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="f-org" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
-                  Organización o empresa <span class="text-marino">*</span>
+                <label for="f-org" class="block text-sm font-semibold text-tinta mb-1.5">
+                  Organización o empresa <span class="text-coral-oscuro">*</span>
                 </label>
-                <input id="f-org" name="organizacion" type="text" required class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="Nombre de la institución" />
+                <input id="f-org" name="organizacion" type="text" required class="field" placeholder="Nombre de la institución" />
               </div>
               <div>
-                <label for="f-giro" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
+                <label for="f-giro" class="block text-sm font-semibold text-tinta mb-1.5">
                   Giro o sector
                 </label>
-                <input id="f-giro" name="giro" type="text" class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="Ej. Hotelería, Salud, Servicios" />
+                <input id="f-giro" name="giro" type="text" class="field" placeholder="Ej. Hotelería, Salud, Servicios" />
               </div>
             </div>
 
             <!-- Contacto y Participantes -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="f-contacto" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
-                  Persona de contacto <span class="text-marino">*</span>
+                <label for="f-contacto" class="block text-sm font-semibold text-tinta mb-1.5">
+                  Persona de contacto <span class="text-coral-oscuro">*</span>
                 </label>
-                <input id="f-contacto" name="contacto" type="text" required class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="Nombre y apellido" />
+                <input id="f-contacto" name="contacto" type="text" required class="field" placeholder="Nombre y apellido" />
               </div>
               <div>
-                <label for="f-participantes" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
-                  Número de participantes <span class="text-marino">*</span>
+                <label for="f-participantes" class="block text-sm font-semibold text-tinta mb-1.5">
+                  Número de participantes <span class="text-coral-oscuro">*</span>
                 </label>
-                <input id="f-participantes" name="participantes" type="number" min="1" required class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="Cantidad estimada" />
+                <input id="f-participantes" name="participantes" type="number" min="1" required class="field" placeholder="Cantidad estimada" />
               </div>
             </div>
 
             <!-- Correo y Teléfono/WhatsApp -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="f-correo" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
-                  Correo electrónico <span class="text-marino">*</span>
+                <label for="f-correo" class="block text-sm font-semibold text-tinta mb-1.5">
+                  Correo electrónico <span class="text-coral-oscuro">*</span>
                 </label>
-                <input id="f-correo" name="correo" type="email" required class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="contacto@empresa.com" />
+                <input id="f-correo" name="correo" type="email" required class="field" placeholder="contacto@empresa.com" />
               </div>
               <div>
-                <label for="f-telefono" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
-                  Teléfono / WhatsApp <span class="text-marino">*</span>
+                <label for="f-telefono" class="block text-sm font-semibold text-tinta mb-1.5">
+                  Teléfono / WhatsApp <span class="text-coral-oscuro">*</span>
                 </label>
-                <input id="f-telefono" name="telefono" type="tel" required class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="10 dígitos con lada" />
+                <input id="f-telefono" name="telefono" type="tel" required class="field" placeholder="10 dígitos con lada" />
               </div>
             </div>
 
             <!-- Especialidad de interés -->
             <div>
-              <label for="f-especialidad" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
+              <label for="f-especialidad" class="block text-sm font-semibold text-tinta mb-1.5">
                 Especialidad de interés
               </label>
-              <select id="f-especialidad" name="especialidad" class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta">
+              <select id="f-especialidad" name="especialidad" class="field">
                 <option value="">Seleccione una opción</option>
                 <option value="negocios">Negocios y Administración</option>
                 <option value="turismo">Hospitalidad y Turismo</option>
@@ -888,18 +955,18 @@
 
             <!-- Comentarios -->
             <div>
-              <label for="f-comentarios" class="block text-xs font-semibold text-tinta uppercase tracking-wider mb-1.5">
+              <label for="f-comentarios" class="block text-sm font-semibold text-tinta mb-1.5">
                 Comentarios o requerimientos específicos
               </label>
-              <textarea id="f-comentarios" name="comentarios" rows="3" class="w-full px-3.5 py-2.5 text-sm bg-crema border border-borde rounded-lg text-tinta placeholder-muted/60" placeholder="Detalles adicionales sobre el grupo, objetivos o tiempos previstos"></textarea>
+              <textarea id="f-comentarios" name="comentarios" rows="3" class="field" placeholder="Detalles adicionales sobre el grupo, objetivos o tiempos previstos"></textarea>
             </div>
 
             <!-- Casilla de consentimiento de privacidad -->
             <div class="pt-2">
               <label class="flex items-start gap-2.5 text-xs text-muted leading-relaxed cursor-pointer">
-                <input id="f-privacidad" name="privacidad" type="checkbox" required class="mt-0.5 rounded border-borde accent-marino" />
+                <input id="f-privacidad" name="privacidad" type="checkbox" required class="mt-0.5 w-4 h-4 shrink-0 rounded border-borde accent-teal" />
                 <span>
-                  He leído y acepto el tratamiento de datos para la solicitud de esta propuesta institucional (<span class="underline">Aviso de privacidad: [Pendiente de confirmación con el cliente]</span>). <span class="text-marino">*</span>
+                  He leído y acepto el tratamiento de datos para la solicitud de esta propuesta institucional (<span class="underline">Aviso de privacidad: [Pendiente de confirmación con el cliente]</span>). <span class="text-coral-oscuro">*</span>
                 </span>
               </label>
             </div>
@@ -922,19 +989,25 @@
     </section>
   </main>
 
-  <!-- 11. FOOTER SOBRIO (marino) -->
-  <footer class="bg-marino py-12 text-sm text-marino-border">
+  <!-- 11. FOOTER (tinta, detalles en sol) -->
+  <div class="bg-arena text-tinta" aria-hidden="true">
+    <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" focusable="false">
+      <path fill="currentColor" d="M0 22C240 4 480 0 720 18S1200 58 1440 36V64H0Z"/>
+    </svg>
+  </div>
+  <footer class="bg-tinta on-dark pt-10 pb-24 lg:pb-12 text-sm text-teal-claro/85">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
 
         <!-- Identidad -->
         <div class="md:col-span-2">
-          <div class="flex items-baseline gap-2 mb-3">
+          <div class="flex items-baseline gap-1.5 mb-3">
             <span class="font-serif text-xl font-semibold text-white">TEST</span>
-            <span class="text-xs font-semibold uppercase tracking-wider text-marino-border">Idiomas</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-coral" aria-hidden="true"></span>
+            <span class="text-sm font-semibold text-teal-claro">Idiomas</span>
           </div>
-          <span class="block w-10 h-0.5 bg-ambar mb-4" aria-hidden="true"></span>
+          <span class="block w-10 h-[3px] rounded-full bg-sol mb-4" aria-hidden="true"></span>
           <p class="text-xs max-w-sm leading-relaxed mb-4">
             Inglés diferente, inglés especializado. Programas formativos 100% en línea para empresas y organizaciones.
           </p>
@@ -945,23 +1018,24 @@
 
         <!-- Enlaces -->
         <div>
-          <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-3">Navegación</h4>
+          <h4 class="text-base text-white mb-3">Navegación</h4>
           <ul class="space-y-2 text-xs">
-            <li><a class="hover:text-ambar transition-colors" href="#por-que">Por qué TEST</a></li>
-            <li><a class="hover:text-ambar transition-colors" href="#especialidades">Especialidades</a></li>
-            <li><a class="hover:text-ambar transition-colors" href="#como-funciona">Cómo funciona</a></li>
-            <li><a class="hover:text-ambar transition-colors" href="#seguimiento">Seguimiento</a></li>
-            <li><a class="hover:text-ambar transition-colors" href="#inversion">Inversión</a></li>
-            <li><a class="hover:text-ambar transition-colors" href="#preguntas">Preguntas frecuentes</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#por-que">Por qué TEST</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#especialidades">Especialidades</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#como-funciona">Cómo funciona</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#seguimiento">Seguimiento</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#inversion">Inversión</a></li>
+            <li><a class="hover:text-sol transition-colors" href="#preguntas">Preguntas frecuentes</a></li>
           </ul>
         </div>
 
         <!-- Contacto y legales -->
         <div>
-          <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-3">Contacto institucional</h4>
+          <h4 class="text-base text-white mb-3">Contacto institucional</h4>
           <ul class="space-y-2 text-xs">
-            <li>Correo: <span class="font-mono text-[11px] text-white break-words">[correo-contacto@test-idiomas.com - Pendiente de confirmar]</span></li>
-            <li>Teléfono / WhatsApp: <span class="font-mono text-[11px] text-white">[+52 00 0000 0000 - Pendiente de confirmar]</span></li>
+            <!-- PENDIENTE de confirmar con el cliente: correo de contacto institucional
+                 (antes: correo-contacto@test-idiomas.com) y número oficial de teléfono / WhatsApp (+52 ...). -->
+            <li>Correo y WhatsApp: próximamente</li>
             <li class="pt-2">
               <span class="underline">[Aviso de privacidad - Pendiente de confirmar URL con el cliente]</span>
             </li>
@@ -982,7 +1056,7 @@
   <div id="mobile-cta" class="mobile-cta lg:hidden" aria-hidden="true" inert>
     <div class="max-w-6xl mx-auto flex items-center gap-3 px-4 py-3">
       <div>
-        <p class="font-serif text-lg text-marino leading-none">$499 MXN</p>
+        <p class="font-serif font-semibold text-lg text-teal leading-none">$499 MXN</p>
         <p class="text-[11px] text-muted mt-1">al mes por persona</p>
       </div>
       <a class="btn-primary ml-auto whitespace-nowrap text-sm py-2.5 px-4" href="#formulario">Solicitar propuesta</a>

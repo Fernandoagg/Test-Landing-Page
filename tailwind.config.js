@@ -7,26 +7,50 @@ export default {
   theme: {
     extend: {
       colors: {
-        crema: '#fbf7f1',
-        tinta: '#17132b',
-        'tinta-muted': '#5d5873',
-        muted: '#5d5873',
-        marino: '#0F2A4A',
-        'marino-hover': '#0A1F38',
-        'marino-light': '#EEF2F7',
-        'marino-border': '#CBD6E4',
-        // Ámbar: solo detalles (líneas, íconos, números) sobre fondo marino
-        ambar: '#F2A93B',
-        borde: '#e7e0d4',
-        'borde-subtle': '#f0ebe1'
+        // Fondo base y texto
+        arena: '#FFF8EE',
+        tinta: '#1B2A2F',
+        'tinta-muted': '#4F5F63',
+        muted: '#4F5F63',
+        // Color principal: botones, bandas y enlaces (blanco encima)
+        teal: {
+          DEFAULT: '#0B5C66',
+          hover: '#084852',
+          claro: '#DDF1EF'
+        },
+        // Coral: el tono puro solo en fondos, íconos, líneas y detalles;
+        // para texto se usa siempre coral-oscuro
+        coral: {
+          DEFAULT: '#F26B4F',
+          oscuro: '#C4452C',
+          suave: '#FFE3DC'
+        },
+        // Sol: solo sobre fondos teal o tinta (sol-suave: fondo de ícono)
+        sol: {
+          DEFAULT: '#FFC93C',
+          suave: '#FFF0C7'
+        },
+        // Tonos exclusivos de la sección Especialidades
+        cielo: {
+          DEFAULT: '#CFE6F2',
+          texto: '#1E5A7A'
+        },
+        menta: {
+          DEFAULT: '#D8F2E6',
+          texto: '#17684A'
+        },
+        borde: '#EADFCF',
+        'borde-subtle': '#F3EBDF'
       },
       fontFamily: {
-        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
-        display: ['"Source Serif 4"', 'Georgia', 'serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
         sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
       },
       borderRadius: {
-        btn: '8px'
+        card: '20px',
+        btn: '12px',
+        field: '12px'
       }
     }
   },
