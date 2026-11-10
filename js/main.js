@@ -44,8 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabDots = document.querySelectorAll("#tab-dots .tab-dot");
   const tabList = document.querySelector("[role='tablist']");
 
+  // Última ficha elegida por el usuario (la de carga inicial no cuenta)
+  let chosenPanelId = null;
+
   // direction: 1 = siguiente, -1 = anterior (define el lado desde el que entra la ficha)
   function selectTab(targetId, direction = 0) {
+    chosenPanelId = targetId;
     tabTriggers.forEach((btn, i) => {
       const isMatch = btn.getAttribute("aria-controls") === targetId;
       btn.setAttribute("aria-selected", String(isMatch));
@@ -152,6 +156,15 @@ document.addEventListener("DOMContentLoaded", () => {
         selectEl.value = val;
       }
     });
+  });
+
+  // Barra fija de móvil: si el usuario ya eligió una ficha, el formulario llega con esa especialidad
+  // (los id de panel coinciden con los value del select: panel-turismo-corto → turismo-corto)
+  document.querySelector("#mobile-cta a[href='#formulario']")?.addEventListener("click", () => {
+    const selectEl = document.getElementById("f-especialidad");
+    if (chosenPanelId && selectEl && !selectEl.value) {
+      selectEl.value = chosenPanelId.replace("panel-", "");
+    }
   });
 
   // 3. Acordeón accesible de Preguntas Frecuentes
