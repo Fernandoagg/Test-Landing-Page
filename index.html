@@ -19,6 +19,23 @@
 </head>
 <body class="bg-arena text-tinta antialiased">
 
+  <!-- 0. Barra de anuncio: único punto de entrada global a la promo de Turismo Fundamental -->
+  <div id="announce-bar" class="bg-tinta text-white text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-center gap-3">
+      <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-center">
+        <span class="hidden sm:inline-flex items-center rounded-full bg-coral text-white text-[11px] font-bold uppercase tracking-wider px-2 py-0.5">Nuevo</span>
+        <span class="sm:hidden">Turismo Fundamental: 1 módulo, sin examen.</span>
+        <span class="hidden sm:inline">Turismo Fundamental: 1 módulo, sin examen de ubicación.</span>
+        <a class="font-semibold text-sol underline-offset-4 hover:underline" href="#especialidades" data-open-tab="panel-turismo-corto">Ver curso&nbsp;→</a>
+      </p>
+      <button id="announce-close" type="button" class="shrink-0 p-1 rounded text-white/70 hover:text-white" aria-label="Cerrar aviso">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <!-- 1. HEADER -->
   <header class="sticky top-0 z-50 bg-arena/95 backdrop-blur-sm border-b border-borde">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-[4.5rem] sm:h-20 flex items-center justify-between gap-3">
@@ -158,16 +175,34 @@
 
       </div>
 
-      <!-- Franja de 3 datos sobre banda teal (solo 4 y 5 cuentan; el rango 60–80 es fijo) -->
+      <!-- Banner panorámico montado sobre el borde hero / banda teal: se lee como parte del hero -->
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-24 sm:-mb-32 lg:-mb-36 reveal">
+        <figure class="relative rounded-card overflow-hidden border border-borde bg-white shadow-[0_28px_56px_-24px_rgba(27,42,47,0.45)] m-0">
+          <img
+            src="./img/hero-banner.jpg"
+            alt="Profesionales de Negocios, Hospitalidad y Turismo, Gastronomía y Medicina capacitándose en inglés en tableta, celular y computadora"
+            width="1376"
+            height="768"
+            decoding="async"
+            class="w-full h-56 sm:h-72 md:h-80 lg:h-[22rem] object-cover object-center block"
+          />
+          <figcaption class="absolute top-3 left-3 sm:top-5 sm:left-5 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-sm px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-tinta shadow-sm">
+            <span class="inline-block w-2 h-2 rounded-full bg-teal shrink-0" aria-hidden="true"></span>
+            Inglés aplicado a entornos reales de trabajo
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Franja de datos sobre banda teal -->
       <svg class="wave text-teal" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <path fill="currentColor" d="M0 30C180 52 420 58 720 40S1260 6 1440 22V64H0Z"/>
       </svg>
       <div class="bg-teal text-white on-dark">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:pt-8 sm:pb-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 sm:pt-32 sm:pb-12 lg:pt-36">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-6" id="hero-stats">
             <div class="flex sm:block items-center gap-5 py-3 sm:py-0">
-              <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 min-w-[6.5rem]"><span data-count="4">4</span></p>
-              <p class="text-sm sm:text-base text-teal-claro font-medium">especialidades laborales</p>
+              <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 min-w-[6.5rem]"><span data-count="5">5</span></p>
+              <p class="text-sm sm:text-base text-teal-claro font-medium">modalidades y especialidades</p>
             </div>
             <div class="flex sm:block items-center gap-5 py-3 sm:py-0 border-t sm:border-t-0 sm:border-l border-white/15 sm:pl-6">
               <p class="font-serif font-semibold text-5xl sm:text-6xl lg:text-7xl text-sol leading-none sm:mb-3 whitespace-nowrap min-w-[6.5rem]">60–80</p>
@@ -179,25 +214,27 @@
             </div>
           </div>
 
-          <!-- Mención única de dispositivos en Hero con íconos lineales -->
-          <div class="mt-6 sm:mt-8 pt-5 border-t border-white/15 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-teal-claro">
-            <!-- Icono smartphone -->
-            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
-              <line x1="11" y1="18" x2="13" y2="18"></line>
-            </svg>
-            <!-- Icono tableta -->
-            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-              <line x1="12" y1="18" x2="12.01" y2="18"></line>
-            </svg>
-            <!-- Icono computadora -->
-            <svg class="w-4 h-4 text-sol" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-            <span>100% en línea y asincrónico · Disponible en celular, tableta y computadora</span>
+          <!-- Único bloque de dispositivos (Fase 1): tarjeta translúcida al pie del Hero -->
+          <div class="mt-8 sm:mt-10 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div class="flex items-center gap-3 text-sol shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
+                <line x1="11" y1="18" x2="13" y2="18"></line>
+              </svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <p class="font-serif text-lg sm:text-xl font-semibold text-white leading-snug">Estudia desde cualquier dispositivo</p>
+              <p class="text-xs sm:text-sm text-teal-claro mt-0.5">100% en línea y asincrónico · Compatible con Celular, Tableta y Computadora</p>
+            </div>
           </div>
         </div>
       </div>
@@ -296,31 +333,49 @@
           <li class="phrase-chip sector-turismo"><strong>Turismo</strong><span lang="en">“Welcome to the hotel, how can I help you?”</span></li>
           <li class="phrase-chip sector-gastronomia"><strong>Gastronomía</strong><span lang="en">“Would you like to hear today's specials?”</span></li>
           <li class="phrase-chip sector-medicina"><strong>Medicina</strong><span lang="en">“Can you show me where it hurts?”</span></li>
+          <li class="phrase-chip sector-turismo-corto"><strong>Turismo Fundamental</strong><span lang="en">“Right this way, I can help you right away!”</span></li>
         </ul>
       </div>
 
       <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
-        <div class="text-center mb-12 sm:mb-14 reveal">
+        <div class="text-center mb-10 sm:mb-12 reveal">
           <p class="eyebrow mb-3">Áreas de formación</p>
           <h2 class="text-[1.875rem] leading-tight sm:text-4xl md:text-[2.5rem] text-tinta">
             Especialidades profesionales disponibles
           </h2>
+          <p class="text-sm sm:text-base text-muted mt-3 max-w-2xl mx-auto">
+            Elija entre nuestras 4 rutas completas de especialización o inicie de inmediato con nuestra <strong>opción de 1 solo módulo para Turismo</strong>.
+          </p>
         </div>
 
-        <!-- Selector de opciones en botones anchos; el activo adopta el color de su especialidad -->
-        <div class="tabs-scroll flex md:grid md:grid-cols-4 gap-2 md:gap-3 mb-6 md:mb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 py-1 overflow-x-auto snap-x snap-mandatory reveal" role="tablist" aria-label="Especialidades">
-          <button class="tab-trigger sector-negocios is-active text-center shrink-0 snap-start" role="tab" aria-selected="true" aria-controls="panel-negocios" id="tab-negocios">
-            Negocios
+        <!-- Selector de 5 opciones en botones anchos; la 5ª opción destaca como Producto Gancho -->
+        <div class="tabs-scroll flex md:grid md:grid-cols-5 gap-2 md:gap-2.5 mb-6 md:mb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 pt-3.5 pb-1.5 overflow-x-auto snap-x snap-mandatory items-stretch reveal" role="tablist" aria-label="Especialidades">
+          <button class="tab-trigger sector-negocios is-active text-center shrink-0 snap-start flex flex-col items-center justify-center" role="tab" aria-selected="true" aria-controls="panel-negocios" id="tab-negocios">
+            <span>Negocios</span>
+            <span class="text-[11px] opacity-75 font-normal mt-0.5">7 módulos</span>
           </button>
-          <button class="tab-trigger sector-turismo text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-turismo" id="tab-turismo">
-            Turismo
+          <button class="tab-trigger sector-turismo text-center shrink-0 snap-start flex flex-col items-center justify-center" role="tab" aria-selected="false" aria-controls="panel-turismo" id="tab-turismo">
+            <span>Turismo</span>
+            <span class="text-[11px] opacity-75 font-normal mt-0.5">6 módulos</span>
           </button>
-          <button class="tab-trigger sector-gastronomia text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-gastronomia" id="tab-gastronomia">
-            Gastronomía
+          <button class="tab-trigger sector-gastronomia text-center shrink-0 snap-start flex flex-col items-center justify-center" role="tab" aria-selected="false" aria-controls="panel-gastronomia" id="tab-gastronomia">
+            <span>Gastronomía</span>
+            <span class="text-[11px] opacity-75 font-normal mt-0.5">6 módulos</span>
           </button>
-          <button class="tab-trigger sector-medicina text-center shrink-0 snap-start" role="tab" aria-selected="false" aria-controls="panel-medicina" id="tab-medicina">
-            Medicina
+          <button class="tab-trigger sector-medicina text-center shrink-0 snap-start flex flex-col items-center justify-center" role="tab" aria-selected="false" aria-controls="panel-medicina" id="tab-medicina">
+            <span>Medicina</span>
+            <span class="text-[11px] opacity-75 font-normal mt-0.5">9 módulos</span>
+          </button>
+          <button class="tab-trigger sector-turismo-corto tab-promo text-center shrink-0 snap-start flex flex-col items-center justify-center" role="tab" aria-selected="false" aria-controls="panel-turismo-corto" id="tab-turismo-corto">
+            <span class="tab-promo-badge">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Promo
+            </span>
+            <span>Turismo Corto</span>
+            <span class="text-[11px] opacity-75 font-normal mt-0.5">1 módulo · sin examen</span>
           </button>
         </div>
 
@@ -381,7 +436,7 @@
             </div>
           </div>
 
-          <!-- Ficha 2: Turismo -->
+          <!-- Ficha 2: Turismo (Ruta Completa de 6 Módulos) -->
           <div id="panel-turismo" class="sector-turismo hidden" role="tabpanel" aria-labelledby="tab-turismo">
             <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
               <div class="md:col-span-2 relative pr-3 pb-3">
@@ -400,22 +455,21 @@
               </div>
 
               <div class="md:col-span-3">
-                <span class="sector-chip mb-3">Turismo</span>
+                <span class="sector-chip mb-3">Turismo · Ruta Integral (6 módulos)</span>
                 <h3 class="text-xl sm:text-2xl font-serif text-tinta mb-4">Inglés de Hospitalidad y Turismo</h3>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-3 mb-6 text-sm">
                   <div class="p-4 bg-arena rounded-btn border border-borde/70">
                     <span class="block text-xs text-muted font-semibold mb-1">Estructura</span>
-                    <span class="font-medium text-tinta">4 módulos de inglés general + 2 módulos de especialidad.</span>
-                    <span class="block text-xs text-muted mt-1 italic">[Pendiente de confirmación con el cliente: el brief indica 5 módulos totales / 18 meses; la presentación CID indica 4+2].</span>
+                    <span class="font-medium text-tinta">4 módulos de inglés general + 2 módulos de especialidad (6 módulos en total).</span>
                   </div>
                   <div class="p-4 bg-arena rounded-btn border border-borde/70">
                     <span class="block text-xs text-muted font-semibold mb-1">Duración aproximada</span>
-                    <span class="font-medium text-tinta">≈18 meses desde nivel principiante.</span>
+                    <span class="font-medium text-tinta">≈18 meses desde nivel principiante (≈3 meses por módulo).</span>
                   </div>
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-5">
                   <h4 class="text-base text-tinta mb-3">Temas clave de especialidad</h4>
                   <ul class="space-y-2 text-sm text-tinta">
                     <li class="flex items-start gap-2.5">
@@ -433,9 +487,12 @@
                   </ul>
                 </div>
 
-                <!-- Nota breve de Turismo Fundamental -->
-                <div class="p-3.5 sector-soft rounded-btn text-xs text-tinta">
-                  <strong>Nota:</strong> Opción disponible de curso corto de <em>Turismo Fundamental</em> (1 módulo de 60 a 80 horas en ≈3 meses) para requerimientos iniciales de comunicación.
+                <!-- Enlace rápido hacia la 5ª opción (Curso Corto Gancho) -->
+                <div class="p-3.5 rounded-btn bg-coral-suave/70 border border-coral/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-tinta">
+                  <span><strong>¿Busca capacitación exprés?</strong> Conozca nuestra opción de <strong>1 solo módulo sin examen de ubicación</strong>.</span>
+                  <button type="button" class="shrink-0 font-bold text-coral-oscuro hover:underline text-left sm:text-right" data-open-tab="panel-turismo-corto">
+                    Ver Promo 1 Módulo →
+                  </button>
                 </div>
               </div>
             </div>
@@ -552,14 +609,130 @@
             </div>
           </div>
 
+          <!-- Ficha 5: Turismo Corto (1 Módulo · Producto Gancho en Área Naranja de Promo Especial) -->
+          <div id="panel-turismo-corto" class="sector-turismo-corto hidden" role="tabpanel" aria-labelledby="tab-turismo-corto">
+            <div class="promo-orange-area p-5 sm:p-8">
+              <!-- Cinta superior naranja de oferta especial -->
+              <div class="promo-orange-header -mx-5 -mt-5 sm:-mx-8 sm:-mt-8 px-5 py-3 sm:px-8 sm:py-3.5 mb-6 flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                  <svg class="w-4 h-4 text-sol shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>Oferta Especial Sector Turismo · Producto de Inicio Rápido</span>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-sol text-tinta text-xs font-extrabold px-3 py-0.5">
+                  ¡Sin examen de ubicación!
+                </span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-5 gap-7 md:gap-8 items-start">
+                <div class="md:col-span-2 relative pr-3 pb-3">
+                  <div class="absolute top-3 left-3 right-0 bottom-0 shape-organic bg-coral" aria-hidden="true"></div>
+                  <figure class="relative aspect-[4/3] shape-organic overflow-hidden bg-white border-2 border-coral m-0 shadow-md">
+                    <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-coral-suave via-white to-sol-suave">
+                      <span class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-coral text-white font-serif text-3xl font-bold mb-3 shadow-sm">
+                        1
+                      </span>
+                      <p class="font-serif text-xl text-tinta font-semibold leading-tight">Solo 1 Módulo Intensivo</p>
+                      <p class="text-xs font-semibold text-coral-oscuro mt-1">Inglés Básico + Turismo Esencial</p>
+                      <span class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-tinta text-sol text-xs font-bold px-3.5 py-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" aria-hidden="true">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Pase directo sin examen</span>
+                      </span>
+                    </div>
+                  </figure>
+                </div>
+
+                <div class="md:col-span-3">
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="sector-chip">Curso Corto · 1 Módulo</span>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-coral text-white text-xs font-bold px-3 py-1">
+                      Acceso inmediato sin diagnóstico
+                    </span>
+                  </div>
+
+                  <h3 class="text-2xl sm:text-3xl font-serif text-tinta mb-3">
+                    Inglés Turismo Fundamental (Curso Corto)
+                  </h3>
+                  <p class="text-sm sm:text-base text-tinta/90 mb-5 leading-relaxed">
+                    <strong>Diseñado para resultados inmediatos en atención al turista:</strong> integra los fundamentos del inglés y el vocabulario esencial de hospitalidad en <strong>un solo módulo práctico</strong>. Ideal para capacitar rápidamente a personal de primer contacto.
+                  </p>
+
+                  <!-- Recuadro destacado de NO examen de ubicación -->
+                  <div class="p-4 mb-5 rounded-btn bg-white border-2 border-coral shadow-sm flex items-start gap-3.5">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-coral text-white shrink-0" aria-hidden="true">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="text-sm sm:text-base font-bold text-coral-oscuro">
+                        No es necesario examen de ubicación
+                      </p>
+                      <p class="text-xs sm:text-sm text-tinta mt-0.5">
+                        Todo su equipo ingresa directamente al módulo único sin evaluaciones previas ni esperas, listo para aprender frases y situaciones reales desde el primer día.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-sm">
+                    <div class="p-3.5 bg-white/90 rounded-btn border border-coral/40">
+                      <span class="block text-xs text-coral-oscuro font-bold mb-1">Estructura</span>
+                      <span class="font-semibold text-tinta">1 solo módulo (Inglés básico + Turismo).</span>
+                    </div>
+                    <div class="p-3.5 bg-white/90 rounded-btn border border-coral/40">
+                      <span class="block text-xs text-coral-oscuro font-bold mb-1">Duración</span>
+                      <span class="font-semibold text-tinta">≈3 meses (60 a 80 h · 5 h/semana).</span>
+                    </div>
+                    <div class="p-3.5 bg-white/90 rounded-btn border border-coral/40">
+                      <span class="block text-xs text-coral-oscuro font-bold mb-1">Requisito</span>
+                      <span class="font-semibold text-tinta">Sin examen de ubicación.</span>
+                    </div>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="text-base text-tinta mb-3">Lo que su personal dominará en este módulo</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-tinta">
+                      <li class="flex items-start gap-2">
+                        <span class="sector-bullet" aria-hidden="true"></span>
+                        <span>Saludos, bienvenida y atención inicial al turista.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="sector-bullet" aria-hidden="true"></span>
+                        <span>Dar información básica, horarios, ubicación y direcciones.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="sector-bullet" aria-hidden="true"></span>
+                        <span>Transporte local, lugares turísticos, comida y alojamiento.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="sector-bullet" aria-hidden="true"></span>
+                        <span>Solicitudes corteses, manejo de quejas simples y emergencias.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-2">
+                    <a href="#formulario" data-select-specialty="turismo-corto" class="btn-accent text-base py-3.5 px-7 shadow-md">
+                      Solicitar Promo de 1 Módulo para mi equipo →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Indicador de ficha activa (móvil) -->
+        <!-- Indicador de ficha activa (móvil: 5 puntos) -->
         <div class="flex justify-center gap-2 mt-4 md:hidden" id="tab-dots" aria-hidden="true">
           <span class="tab-dot sector-negocios is-active"></span>
           <span class="tab-dot sector-turismo"></span>
           <span class="tab-dot sector-gastronomia"></span>
           <span class="tab-dot sector-medicina"></span>
+          <span class="tab-dot sector-turismo-corto"></span>
         </div>
 
       </div>
@@ -585,7 +758,7 @@
               <span class="text-sm font-semibold text-teal block mb-1.5">Paso 1</span>
               <h3 class="text-xl text-tinta mb-2">Examen de ubicación</h3>
               <p class="text-sm text-muted leading-relaxed">
-                Diagnóstico inicial para identificar el nivel de cada integrante y asignarlo al módulo preciso sin repetir conocimientos previos.
+                Diagnóstico inicial para identificar el nivel de cada integrante en las rutas completas. <strong class="text-coral-oscuro">Nota: El Curso Corto de Turismo Fundamental (1 módulo) no requiere examen de ubicación.</strong>
               </p>
             </div>
           </li>
@@ -810,13 +983,13 @@
           <!-- FAQ 3: Examen de ubicación -->
           <div>
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-3">
-              <span>¿Es necesario comenzar desde el nivel principiante?</span>
+              <span>¿Es necesario comenzar desde el nivel principiante o presentar examen de ubicación?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-3" class="faq-content">
               <div>
                 <p class="pb-5 px-4 text-sm text-muted leading-relaxed">
-                  No. Se realiza un examen de ubicación que determina el nivel adecuado. Si el participante ya cuenta con conocimientos, puede ingresar en niveles intermedios o directamente a la especialidad correspondiente.
+                  Para los programas integrales se realiza un examen de ubicación que posiciona a cada colaborador en su nivel adecuado (intermedio o especialidad directa). <strong>Para el Curso Corto de Turismo Fundamental (1 módulo), no es necesario realizar examen de ubicación:</strong> el ingreso es directo e inmediato para todo el personal.
                 </p>
               </div>
             </div>
@@ -945,10 +1118,11 @@
               </label>
               <select id="f-especialidad" name="especialidad" class="field">
                 <option value="">Seleccione una opción</option>
-                <option value="negocios">Negocios y Administración</option>
-                <option value="turismo">Hospitalidad y Turismo</option>
-                <option value="gastronomia">Gastronomía</option>
-                <option value="medicina">Medicina y Salud</option>
+                <option value="turismo-corto">Turismo Fundamental · Curso Corto (1 módulo · Sin examen de ubicación)</option>
+                <option value="turismo">Hospitalidad y Turismo · Ruta Completa (6 módulos)</option>
+                <option value="negocios">Negocios y Administración (7 módulos)</option>
+                <option value="gastronomia">Gastronomía (6 módulos)</option>
+                <option value="medicina">Medicina y Salud (9 módulos)</option>
                 <option value="multiple">Más de una especialidad / Por definir</option>
               </select>
             </div>

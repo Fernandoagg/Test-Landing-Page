@@ -26,6 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Barra de anuncio: se puede cerrar y no reaparece durante la sesión
+  const announceBar = document.getElementById("announce-bar");
+  const announceClose = document.getElementById("announce-close");
+  try {
+    if (sessionStorage.getItem("announce-closed") === "1") announceBar?.remove();
+  } catch (_) { /* almacenamiento no disponible: la barra se queda */ }
+
+  announceClose?.addEventListener("click", () => {
+    announceBar?.remove();
+    try { sessionStorage.setItem("announce-closed", "1"); } catch (_) { /* sin almacenamiento */ }
+  });
+
   // 2. Selector de Especialidades (Tabs accesibles con color propio)
   const tabTriggers = document.querySelectorAll("[role='tab']");
   const tabPanels = document.querySelectorAll("[role='tabpanel']");
@@ -111,6 +123,33 @@ document.addEventListener("DOMContentLoaded", () => {
         tabsArray[nextIndex].focus();
         const panelId = tabsArray[nextIndex].getAttribute("aria-controls");
         if (panelId) selectTab(panelId, nextIndex > currentIndex ? 1 : -1);
+      }
+    });
+  });
+
+  // Botones externos que abren directamente una pestaña específica (ej. Promo Turismo Corto)
+  document.querySelectorAll("[data-open-tab]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetPanelId = trigger.getAttribute("data-open-tab");
+      if (targetPanelId) {
+        selectTab(targetPanelId, 1);
+        const tabPanelsEl = document.getElementById("tab-panels");
+        if (tabPanelsEl) {
+          const headerHeight = document.querySelector("header")?.offsetHeight || 72;
+          const top = tabPanelsEl.getBoundingClientRect().top + window.pageYOffset - headerHeight - 24;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }
+    });
+  });
+
+  // Preselección automática de especialidad en el formulario desde botones de promo
+  document.querySelectorAll("[data-select-specialty]").forEach((cta) => {
+    cta.addEventListener("click", () => {
+      const val = cta.getAttribute("data-select-specialty");
+      const selectEl = document.getElementById("f-especialidad");
+      if (val && selectEl) {
+        selectEl.value = val;
       }
     });
   });

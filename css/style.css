@@ -337,11 +337,12 @@ html:not(.js) .quiz {
   --s-offset: #FFE3DC;
 }
 
-/* En chips con texto se usa un coral suave más claro para que coral-oscuro alcance AA (4.5:1) */
+/* Ocre propio para Gastronomía: el coral queda reservado a CTA y promo.
+   #8A5A1F alcanza AA sobre blanco (5.9:1) y sobre #F6EBDD (5:1) */
 .sector-gastronomia {
-  --s-soft: #FFE3DC;
-  --s-chip: #FFF3EF;
-  --s-strong: #C4452C;
+  --s-soft: #F6EBDD;
+  --s-chip: #F6EBDD;
+  --s-strong: #8A5A1F;
   --s-offset: #DDF1EF;
 }
 
@@ -350,6 +351,73 @@ html:not(.js) .quiz {
   --s-chip: #D8F2E6;
   --s-strong: #17684A;
   --s-offset: #FFE3DC;
+}
+
+/* 5ª opción: Producto Gancho Turismo Fundamental (Curso Corto en área naranja) */
+.sector-turismo-corto {
+  --s-soft: #FFE3DC;
+  --s-chip: #FFE3DC;
+  --s-strong: #C4452C;
+  --s-offset: #FFC93C;
+}
+
+/* Pestaña del producto gancho: misma base que las demás, solo el borde coral la distingue */
+.tab-trigger.tab-promo {
+  position: relative;
+  border-color: #F26B4F;
+}
+
+/* Etiqueta flotante en la esquina: no suma altura a la pestaña */
+.tab-promo-badge {
+  position: absolute;
+  top: -0.6rem;
+  right: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background-color: #C4452C;
+  color: #ffffff;
+  box-shadow: 0 0 0 0 rgba(242, 107, 79, 0.45);
+  animation: promo-halo 2.4s ease-out infinite;
+}
+
+@keyframes promo-halo {
+  0%   { box-shadow: 0 0 0 0 rgba(242, 107, 79, 0.45); }
+  70%  { box-shadow: 0 0 0 7px rgba(242, 107, 79, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 107, 79, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-promo-badge {
+    animation: none;
+  }
+}
+
+.tab-trigger.tab-promo.is-active .tab-promo-badge {
+  background-color: #FFC93C;
+  color: #1B2A2F;
+}
+
+/* Contenedor naranja llamativo de oferta especial (Gancho Turismo Corto) */
+.promo-orange-area {
+  background: linear-gradient(135deg, #FFF5EE 0%, #FFE3DC 55%, #FFD4C7 100%);
+  border: 2px solid #F26B4F;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -22px rgba(242, 107, 79, 0.45);
+}
+
+.promo-orange-header {
+  background: linear-gradient(90deg, #C4452C 0%, #F26B4F 100%);
+  color: #ffffff;
 }
 
 .sector-chip {
@@ -397,7 +465,7 @@ html:not(.js) .quiz {
   background-color: var(--s-strong);
 }
 
-/* Banda de frases: chips estáticos con el color de cada especialidad */
+/* Banda de frases: chips neutros; el sector solo se marca con un punto de color */
 .phrase-chip {
   display: inline-flex;
   flex-wrap: wrap;
@@ -407,14 +475,26 @@ html:not(.js) .quiz {
   padding: 0.55rem 1.1rem;
   font-size: 0.875rem;
   line-height: 1.4;
-  background-color: var(--s-chip);
-  color: #1B2A2F;
-  box-shadow: inset 0 0 0 1px var(--s-soft);
+  background-color: #FFF8EE;
+  color: #4F5F63;
+  box-shadow: inset 0 0 0 1px #EADFCF;
 }
 
 .phrase-chip strong {
-  color: var(--s-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #1B2A2F;
   font-weight: 700;
+}
+
+.phrase-chip strong::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: var(--s-strong);
+  flex-shrink: 0;
 }
 
 @media (max-width: 639px) {
