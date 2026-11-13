@@ -1212,10 +1212,22 @@
         <!-- Contacto y legales -->
         <div>
           <h4 class="text-base text-white mb-3">Contacto institucional</h4>
-          <ul class="space-y-2 text-xs">
-            <!-- PENDIENTE de confirmar con el cliente: correo de contacto institucional
-                 (antes: correo-contacto@test-idiomas.com) y número oficial de teléfono / WhatsApp (+52 ...). -->
-            <li>Correo y WhatsApp: próximamente</li>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <!-- Enlace directo de WhatsApp en el footer -->
+              <a
+                class="inline-flex items-center gap-2 hover:text-sol transition-colors"
+                href="https://wa.me/525500000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20ingl%C3%A9s%20para%20empresas"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.16c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.23 8.24zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.63.8-.77.97-.15.16-.29.18-.54.06s-1.04-.38-1.98-1.22c-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.44s-.56-1.35-.77-1.85c-.2-.5-.41-.43-.56-.44l-.48-.01c-.16 0-.43.06-.66.3-.23.25-.86.84-.86 2.05s.88 2.38 1.01 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.41 1.4.52.59.19 1.12.16 1.55.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.09-.22-.16-.47-.28z"/>
+                </svg>
+                <span>WhatsApp: Atención y cotizaciones</span>
+              </a>
+            </li>
+            <li>Correo institucional: contacto@test-idiomas.com</li>
             <li class="pt-2">
               <span class="underline">[Aviso de privacidad - Pendiente de confirmar URL con el cliente]</span>
             </li>
@@ -1242,6 +1254,28 @@
       <a class="btn-primary ml-auto whitespace-nowrap text-sm py-2.5 px-4" href="#formulario">Solicitar propuesta</a>
     </div>
   </div>
+
+  <!-- Botón flotante de WhatsApp (Desktop y Móvil) -->
+  <aside aria-label="Contacto directo por WhatsApp">
+    <a
+      id="whatsapp-float"
+      href="https://wa.me/525500000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20ingl%C3%A9s%20para%20empresas"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Contactar por WhatsApp con un asesor de TEST Idiomas"
+    >
+      <!-- Tooltip informativo en desktop al pasar el cursor o hacer foco -->
+      <span class="whatsapp-tooltip" role="tooltip">
+        ¿Dudas? Chatea con nosotros
+      </span>
+
+      <!-- Ícono oficial de WhatsApp -->
+      <svg class="w-8 h-8 fill-white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.16c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.23 8.24zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.63.8-.77.97-.15.16-.29.18-.54.06s-1.04-.38-1.98-1.22c-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.44s-.56-1.35-.77-1.85c-.2-.5-.41-.43-.56-.44l-.48-.01c-.16 0-.43.06-.66.3-.23.25-.86.84-.86 2.05s.88 2.38 1.01 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.41 1.4.52.59.19 1.12.16 1.55.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.09-.22-.16-.47-.28z"/>
+      </svg>
+    </a>
+  </aside>
 
   <script type="module" src="./js/main.js"></script>
 </body>

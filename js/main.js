@@ -395,6 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5. Barra fija de propuesta en móvil: oculta mientras se ven el hero, el formulario o el footer
   const mobileCta = document.getElementById("mobile-cta");
+  const whatsappFloat = document.getElementById("whatsapp-float");
   const ctaHideZones = ["hero", "formulario"].map((id) => document.getElementById(id))
     .concat(document.querySelector("footer"))
     .filter(Boolean);
@@ -415,6 +416,9 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileCta.setAttribute("inert", "");
       }
       mobileCta.inert = !show;
+      if (whatsappFloat) {
+        whatsappFloat.classList.toggle("has-mobile-cta", show);
+      }
     });
     ctaHideZones.forEach((zone) => ctaObserver.observe(zone));
   }
